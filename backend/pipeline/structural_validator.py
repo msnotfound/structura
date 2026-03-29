@@ -6,9 +6,9 @@ import os
 from typing import Optional, List
 import numpy as np
 
-from ..models.parsing import ParseResult, Room, Point2D
-from ..models.geometry import GeometryResult, ClassifiedWall
-from ..models.structural import (
+from models.parsing import ParseResult, Room, Point2D
+from models.geometry import GeometryResult, ClassifiedWall
+from models.structural import (
     SpanAnalysis,
     StructuralWarning,
     StructuralAnalysisResult,

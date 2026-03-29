@@ -146,19 +146,19 @@ function App() {
               <div className="grid grid-cols-4 gap-4 mt-4">
                 <StatCard 
                   label="Walls" 
-                  value={result.geometry_result.classified_walls.length} 
+                  value={result.geometry_result?.classified_walls?.length ?? 0} 
                 />
                 <StatCard 
                   label="Rooms" 
-                  value={result.geometry_result.rooms.length} 
+                  value={result.geometry_result?.rooms?.length ?? result.geometry_result?.load_bearing_wall_count ?? 0} 
                 />
                 <StatCard 
                   label="Integrity" 
-                  value={`${(result.structural_result.overall_integrity_score * 100).toFixed(0)}%`} 
+                  value={`${(((result.structural_result as any)?.overall_structural_score ?? (result.structural_result as any)?.overall_integrity_score ?? 0) * 100).toFixed(0)}%`} 
                 />
                 <StatCard 
                   label="Est. Cost" 
-                  value={`₹${(result.cost_result.grand_total / 100000).toFixed(1)}L`} 
+                  value={`₹${((result.cost_result?.grand_total ?? 0) / 100000).toFixed(1)}L`} 
                 />
               </div>
             </div>

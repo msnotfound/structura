@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
 import { WallTypeBadge } from '@/components/ui/Badge'
-import type { GeometryResult, ClassifiedWall } from '@/types'
-import { Layers, Grid3X3 } from 'lucide-react'
+import type { GeometryResult } from '@/types'
+import { Layers } from 'lucide-react'
 
 interface WallsPanelProps {
   geometry: GeometryResult
@@ -9,13 +9,30 @@ interface WallsPanelProps {
   onWallSelect?: (id: string) => void
 }
 
+// The API returns classified walls as: { wall: {id, start, end, length_m, ...}, classification, reason, confidence }
+type ApiClassifiedWall = {
+  wall?: { id?: string; length_m?: number; is_exterior?: boolean }
+  classification?: string
+  reason?: string
+  confidence?: number
+  // Also support flat shape for forward compat
+  id?: string
+  span_length?: number
+}
+
 export function WallsPanel({ geometry, selectedWallId, onWallSelect }: WallsPanelProps) {
-  const { classified_walls, junctions, rooms, structural_spine_ids } = geometry
+  const classified_walls: ApiClassifiedWall[] = (geometry.classified_walls as any) ?? []
+  const junctions = geometry.junctions ?? []
+  const rooms = geometry.rooms ?? []
+
+  const getWallId = (w: ApiClassifiedWall) => w.wall?.id ?? w.id ?? ''
+  const getWallLength = (w: ApiClassifiedWall) => w.wall?.length_m ?? (w as any).span_length ?? 0
+  const getWallClass = (w: ApiClassifiedWall) => w.classification ?? 'partition'
 
   const wallsByType = {
-    load_bearing: classified_walls.filter(w => w.classification === 'load_bearing'),
-    structural_spine: classified_walls.filter(w => w.classification === 'structural_spine'),
-    partition: classified_walls.filter(w => w.classification === 'partition'),
+    load_bearing: classified_walls.filter(w => getWallClass(w) === 'load_bearing'),
+    structural_spine: classified_walls.filter(w => getWallClass(w) === 'structural_spine'),
+    partition: classified_walls.filter(w => getWallClass(w) === 'partition'),
   }
 
   return (
@@ -57,57 +74,49 @@ export function WallsPanel({ geometry, selectedWallId, onWallSelect }: WallsPane
 
         {/* Walls List */}
         <div>
-          <h4 className="text-sm font-medium text-muted-foreground mb-2">All Walls</h4>
+          <h4 className="text-sm font-medium text-muted-foreground mb-2">All Walls ({classified_walls.length})</h4>
           <div className="max-h-64 overflow-y-auto space-y-1">
-            {classified_walls.map(wall => (
-              <WallListItem 
-                key={wall.id} 
-                wall={wall}
-                isSelected={wall.id === selectedWallId}
-                onClick={() => onWallSelect?.(wall.id)}
-              />
-            ))}
+            {classified_walls.map((wall, idx) => {
+              const wallId = getWallId(wall)
+              const displayId = wallId || `wall_${idx}`
+              return (
+                <button
+                  key={displayId}
+                  onClick={() => onWallSelect?.(displayId)}
+                  className={`w-full flex items-center justify-between p-2 rounded text-left transition-colors ${
+                    displayId === selectedWallId
+                      ? 'bg-primary/10 border border-primary'
+                      : 'bg-muted hover:bg-muted/80'
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-mono">{displayId.slice(0, 10)}</span>
+                    <WallTypeBadge type={getWallClass(wall) as any} />
+                  </div>
+                  <span className="text-xs text-muted-foreground">
+                    {getWallLength(wall).toFixed(1)}m
+                  </span>
+                </button>
+              )
+            })}
           </div>
         </div>
 
         {/* Rooms */}
-        <div>
-          <h4 className="text-sm font-medium text-muted-foreground mb-2">Detected Rooms</h4>
-          <div className="grid grid-cols-2 gap-2">
-            {rooms.map(room => (
-              <div key={room.id} className="p-2 bg-muted rounded text-sm">
-                <p className="font-medium truncate">{room.name}</p>
-                <p className="text-xs text-muted-foreground">{room.area.toFixed(1)} m²</p>
-              </div>
-            ))}
+        {rooms.length > 0 && (
+          <div>
+            <h4 className="text-sm font-medium text-muted-foreground mb-2">Detected Rooms</h4>
+            <div className="grid grid-cols-2 gap-2">
+              {rooms.map((room: any, idx: number) => (
+                <div key={room.id ?? idx} className="p-2 bg-muted rounded text-sm">
+                  <p className="font-medium truncate">{room.name ?? room.type ?? 'Room'}</p>
+                  <p className="text-xs text-muted-foreground">{(room.area ?? 0).toFixed(1)} m²</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </CardContent>
     </Card>
-  )
-}
-
-interface WallListItemProps {
-  wall: ClassifiedWall
-  isSelected: boolean
-  onClick: () => void
-}
-
-function WallListItem({ wall, isSelected, onClick }: WallListItemProps) {
-  return (
-    <button
-      onClick={onClick}
-      className={`w-full flex items-center justify-between p-2 rounded text-left transition-colors ${
-        isSelected ? 'bg-primary/10 border border-primary' : 'bg-muted hover:bg-muted/80'
-      }`}
-    >
-      <div className="flex items-center gap-2">
-        <span className="text-sm font-mono">{wall.id.slice(0, 8)}</span>
-        <WallTypeBadge type={wall.classification} />
-      </div>
-      <span className="text-xs text-muted-foreground">
-        {wall.span_length.toFixed(1)}m
-      </span>
-    </button>
   )
 }

@@ -1,0 +1,164 @@
+🔴 CRITICAL QUESTIONS — OFFICIAL
+ANSWERS
+
+1. Real system vs mock?
+Answer:
+●​ PS1: Must run on a real Kubernetes cluster (minikube) —
+mocking kubectl outputs is not allowed.
+●​ PS2: Must process actual provided floor plan images, not
+precomputed outputs.
+
+📌 Ref: “Working demo against a real minikube cluster”
+2. LLM usage allowed scope?
+Answer:
+
+●​ LLMs are allowed but cannot replace the pipeline logic
+entirely.
+●​ Core stages (detect, diagnose, plan, etc.) must still exist as
+structured pipeline components, not a single prompt.
+
+📌 Ref: Mandatory multi-stage pipelines in both PS1 (7 stages)
+and PS2 (5 stages)
+
+3. What counts as “working pipeline”?
+
+Answer:​
+A valid pipeline must:
+●​ Execute all mandatory stages
+●​ Pass data stage → stage
+●​ Produce final output + explanation
+Partial/hardcoded pipelines = penalised under Technical
+Execution
+
+📌 Ref: “Core pipeline functional end-to-end. Mandatory stages
+complete.”
+
+4. Can we fully use fallback (manual coordinates)?
+Answer:
+●​ Allowed only if CV fails
+●​ Must be explicitly disclosed
+●​ Will receive reduced marks in parsing criterion
+
+📌 Ref: “fallback clause… must disclose… otherwise 0 marks”
+5. Safety Gate ambiguity (PS1)
+Answer:
+●​ Auto-execute ONLY if:
+○​ confidence > 0.8
+○​ blast_radius = low
+○​ NOT destructive
+
+●​ All other cases → HITL (human approval required)
+
+📌 Ref: Safety Gate logic defined explicitly
+👉 Clarification:
+
+●​ Restart pod → LOW (can auto)
+●​ Scaling / rollout / node ops → NOT LOW → HITL
+
+6. Evaluation strictness
+Answer:
+●​ Judges will:
+○​ Test mandatory scenarios
+○​ Inject live anomalies during demo
+●​ System must respond autonomously (no manual kubectl
+allowed)
+
+📌 Ref: “judges will inject a live anomaly… no manual kubectl”
+7. Concurrency requirement (PS1)
+Answer:
+●​ Not mandatory for passing
+●​ But expected for high scores (80+)
+
+📌 Ref: Mentioned under “Hidden Traps” (advanced robustness)
+
+8. Prometheus required?
+Answer:
+●​ Optional (bonus marks)
+●​ Not required for passing demo
+
+📌 Ref: “Prometheus MCP Optional”
+9. 3D model expectations (PS2)
+Answer:
+●​ Must be:
+○​ structurally correct
+○​ all rooms present
+●​ Visual quality not important
+
+📌 Ref: “judged on structural correctness, not aesthetics”
+10. Material tradeoff formula?
+Answer:
+●​ Must:
+○​ consider cost vs strength tradeoff
+○​ be justified per element type
+●​ Fixed equal weighting = poor score
+
+📌 Ref: “naive formula penalized”
+
+🟡 MEDIUM QUESTIONS — OFFICIAL
+ANSWERS
+
+11. Submission format
+Answer:
+●​ Must submit:
+○​ GitHub repo
+○​ README
+○​ architecture diagram
+
+📌 Ref: Submission rules section
+12. Team contribution
+Answer:
+●​ No restriction internally
+●​ Entire team evaluated as one unit
+
+📌 (Implicit — team size defined, no individual scoring)
+13. External APIs
+Answer:
+●​ Allowed (LLMs explicitly allowed)
+●​ Must not break demo due to API failure
+
+📌 Ref: “Use of any LLM API is permitted”
+14. Pre-built tools
+Answer:
+●​ Allowed but:
+○​ must show significant custom logic
+●​ Direct reuse of existing operators → disqualification
+
+📌 Ref: plagiarism clause
+15. Demo constraints
+Answer:
+
+●​ Live demo required
+●​ Recorded demo = backup only
+
+📌 Ref: evaluation rules
+
+🟢 WEB3 BONUS — OFFICIAL ANSWERS
+16. What is “meaningful integration”?
+Answer:
+●​ Blockchain must:
+○​ interact with pipeline output
+
+○​ not just store random data
+
+❌ Storing hash/log only → 0 marks
+📌 Ref: “random hash… 0 marks”
+17. Frontend requirement
+Answer:
+
+●​ Example uses React + Tailwind
+●​ Other frameworks allowed if:
+○​ repo is clean
+○​ integration exists
+
+📌 Ref: “frontend may vary”
+
+18. Smart contract complexity
+Answer:
+●​ Must:
+○​ be deployed
+○​ be integrated via frontend
+●​ Dummy contract without integration → invalid
+
+📌 Ref: integration logic requirement
+
+

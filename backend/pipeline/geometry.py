@@ -6,8 +6,8 @@ import os
 from typing import Optional, List, Tuple, Set
 import numpy as np
 
-from ..models.parsing import ParseResult, WallSegment, Room, Point2D
-from ..models.geometry import Junction, ClassifiedWall, GeometryResult
+from models.parsing import ParseResult, WallSegment, Room, Point2D
+from models.geometry import Junction, ClassifiedWall, GeometryResult
 
 
 class GeometryAnalyzer:

@@ -10,15 +10,17 @@ interface StructuralPanelProps {
 
 export function StructuralPanel({ result }: StructuralPanelProps) {
   const { 
-    span_analyses, 
-    warnings, 
-    overall_integrity_score, 
-    load_path_valid, 
-    thickness_adequate 
+    span_analyses = [], 
+    warnings = [], 
   } = result
+  
+  const score = result.overall_structural_score ?? result.overall_integrity_score ?? 0
+  const load_path_valid = result.load_path_valid
+  const thickness_adequate = result.thickness_adequate
 
   const criticalWarnings = warnings.filter(w => w.severity === 'critical')
   const otherWarnings = warnings.filter(w => w.severity !== 'critical')
+
 
   return (
     <Card>
@@ -32,9 +34,9 @@ export function StructuralPanel({ result }: StructuralPanelProps) {
         {/* Overall Score */}
         <div>
           <ScoreBar
-            score={overall_integrity_score}
+            score={score}
             label="Structural Integrity"
-            color={overall_integrity_score > 0.7 ? 'green' : overall_integrity_score > 0.4 ? 'yellow' : 'red'}
+            color={score > 0.7 ? 'green' : score > 0.4 ? 'yellow' : 'red'}
           />
         </div>
 

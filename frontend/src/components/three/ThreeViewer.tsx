@@ -1,7 +1,7 @@
 import { useRef, useMemo } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera, Text, Html } from '@react-three/drei'
-import type { SceneGraph, ExtrudedWall, WallClassification } from '@/types'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, PerspectiveCamera, Html } from '@react-three/drei'
+import type { SceneGraph, WallClassification } from '@/types'
 import * as THREE from 'three'
 
 const WALL_COLORS: Record<WallClassification, string> = {
@@ -10,44 +10,62 @@ const WALL_COLORS: Record<WallClassification, string> = {
   structural_spine: '#f59e0b',
 }
 
+// API wall shape: { wall_id, vertices_3d: [{x,y,z}], faces: [{vertices:[i,i,i]}], classification, ... }
+type ApiWall = {
+  wall_id: string
+  vertices_3d?: { x: number; y: number; z: number }[]
+  vertices?: { x: number; y: number; z: number }[]
+  faces?: { vertices: number[] }[]
+  classification: WallClassification
+  color?: string
+}
+
 interface WallMeshProps {
-  wall: ExtrudedWall
+  wall: ApiWall
   selected?: boolean
   onSelect?: (id: string) => void
 }
 
 function WallMesh({ wall, selected, onSelect }: WallMeshProps) {
   const meshRef = useRef<THREE.Mesh>(null)
-  const color = WALL_COLORS[wall.classification]
+  const color = WALL_COLORS[wall.classification] ?? '#888888'
+  const verts = wall.vertices_3d ?? wall.vertices ?? []
+  const faces = wall.faces ?? []
 
-  // Create geometry from vertices and faces
   const geometry = useMemo(() => {
-    const geo = new THREE.BufferGeometry()
-    
-    // Flatten vertices
-    const positions: number[] = []
-    wall.vertices.forEach(v => {
-      positions.push(v.x, v.z, -v.y) // Swap Y/Z for Three.js coordinate system
-    })
-    
-    // Flatten face indices
-    const indices: number[] = []
-    wall.faces.forEach(face => {
-      indices.push(...face.vertices)
-    })
-    
-    geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3))
-    geo.setIndex(indices)
-    geo.computeVertexNormals()
-    
-    return geo
-  }, [wall])
+    if (!verts.length || !faces.length) return null
+    try {
+      const geo = new THREE.BufferGeometry()
+      const positions: number[] = []
+      verts.forEach(v => {
+        // API coords: x=width, y=height(0-2.8m), z=depth(pixels)
+        // Scale pixel coords to meters (approx 60px/m based on data)
+        positions.push(v.x / 60, v.y, v.z / 60)
+      })
+      const indices: number[] = []
+      faces.forEach(face => {
+        if (face.vertices?.length >= 3) {
+          indices.push(...face.vertices)
+        }
+      })
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3))
+      geo.setIndex(indices)
+      geo.computeVertexNormals()
+      return geo
+    } catch {
+      return null
+    }
+  }, [wall.wall_id])
+
+  if (!geometry) return null
+
+  const wallId = wall.wall_id
 
   return (
     <mesh
       ref={meshRef}
       geometry={geometry}
-      onClick={() => onSelect?.(wall.id)}
+      onClick={() => onSelect?.(wallId)}
     >
       <meshStandardMaterial
         color={color}
@@ -58,7 +76,7 @@ function WallMesh({ wall, selected, onSelect }: WallMeshProps) {
       {selected && (
         <lineSegments>
           <edgesGeometry args={[geometry]} />
-          <lineBasicMaterial color="#000" linewidth={2} />
+          <lineBasicMaterial color="#000" />
         </lineSegments>
       )}
     </mesh>
@@ -66,32 +84,19 @@ function WallMesh({ wall, selected, onSelect }: WallMeshProps) {
 }
 
 interface RoomLabelProps {
-  name: string
-  position: [number, number, number]
+  label: string
+  position: { x: number; y: number; z: number }
   area: number
 }
 
-function RoomLabel({ name, position, area }: RoomLabelProps) {
+function RoomLabel({ label, position, area }: RoomLabelProps) {
   return (
-    <Html position={position} center>
-      <div className="bg-white/90 backdrop-blur-sm px-2 py-1 rounded shadow-md text-center pointer-events-none">
-        <p className="text-sm font-medium text-gray-900">{name}</p>
+    <Html position={[position.x / 60, position.y + 0.5, position.z / 60]} center>
+      <div className="bg-white/90 backdrop-blur-sm px-2 py-1 rounded shadow-md text-center pointer-events-none" style={{ whiteSpace: 'nowrap' }}>
+        <p className="text-sm font-medium text-gray-900">{label}</p>
         <p className="text-xs text-gray-500">{area.toFixed(1)} m²</p>
       </div>
     </Html>
-  )
-}
-
-interface FloorPlaneProps {
-  size: [number, number]
-}
-
-function FloorPlane({ size }: FloorPlaneProps) {
-  return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[size[0] / 2, 0, -size[1] / 2]}>
-      <planeGeometry args={size} />
-      <meshStandardMaterial color="#f1f5f9" side={THREE.DoubleSide} />
-    </mesh>
   )
 }
 
@@ -102,43 +107,57 @@ interface SceneContentProps {
 }
 
 function SceneContent({ sceneGraph, selectedWallId, onWallSelect }: SceneContentProps) {
-  const { camera_bounds } = sceneGraph
+  const sg = sceneGraph as any
+  const walls: ApiWall[] = sg.walls ?? []
+  const roomLabels: any[] = sg.room_labels ?? []
+  const bounds = sg.camera_bounds ?? {}
+  const minX = (bounds.min?.x ?? 0) / 60
+  const maxX = (bounds.max?.x ?? 100) / 60
+  const minZ = (bounds.min?.z ?? 0) / 60
+  const maxZ = (bounds.max?.z ?? 100) / 60
+  const sizeX = maxX - minX
+  const sizeZ = maxZ - minZ
+  const centerX = (minX + maxX) / 2
+  const centerZ = (minZ + maxZ) / 2
 
   return (
     <>
       {/* Lighting */}
       <ambientLight intensity={0.6} />
-      <directionalLight position={[10, 20, 10]} intensity={0.8} castShadow />
-      <directionalLight position={[-10, 20, -10]} intensity={0.4} />
+      <directionalLight position={[centerX + 20, 30, centerZ + 10]} intensity={0.8} castShadow />
+      <directionalLight position={[centerX - 10, 20, centerZ - 10]} intensity={0.4} />
 
       {/* Floor */}
-      <FloorPlane size={[
-        camera_bounds.max.x - camera_bounds.min.x + 2,
-        camera_bounds.max.y - camera_bounds.min.y + 2
-      ]} />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[centerX, -0.01, centerZ]}>
+        <planeGeometry args={[sizeX + 4, sizeZ + 4]} />
+        <meshStandardMaterial color="#f1f5f9" side={THREE.DoubleSide} />
+      </mesh>
 
       {/* Walls */}
-      {sceneGraph.walls.map(wall => (
+      {walls.map((wall, idx) => (
         <WallMesh
-          key={wall.id}
+          key={wall.wall_id ?? idx}
           wall={wall}
-          selected={wall.id === selectedWallId}
+          selected={wall.wall_id === selectedWallId}
           onSelect={onWallSelect}
         />
       ))}
 
       {/* Room Labels */}
-      {sceneGraph.room_labels.map(label => (
+      {roomLabels.map((label: any, idx: number) => (
         <RoomLabel
-          key={label.room_id}
-          name={label.name}
-          position={[label.position.x, label.position.z + 0.5, -label.position.y]}
-          area={label.area}
+          key={label.room_id ?? idx}
+          label={label.label ?? label.name ?? 'Room'}
+          position={label.position ?? { x: 0, y: 1.5, z: 0 }}
+          area={label.area_m2 ?? label.area ?? 0}
         />
       ))}
 
-      {/* Grid Helper */}
-      <gridHelper args={[50, 50, '#ccc', '#eee']} position={[0, 0.01, 0]} />
+      {/* Grid */}
+      <gridHelper
+        args={[Math.max(sizeX, sizeZ) + 10, 20, '#ccc', '#eee']}
+        position={[centerX, 0, centerZ]}
+      />
     </>
   )
 }
@@ -150,31 +169,34 @@ interface ThreeViewerProps {
   className?: string
 }
 
-export function ThreeViewer({ 
-  sceneGraph, 
-  selectedWallId, 
+export function ThreeViewer({
+  sceneGraph,
+  selectedWallId,
   onWallSelect,
-  className 
+  className
 }: ThreeViewerProps) {
-  const { camera_bounds } = sceneGraph
+  const sg = sceneGraph as any
+  const bounds = sg.camera_bounds ?? {}
+  const centerX = ((bounds.center?.x ?? 400) / 60)
+  const centerZ = ((bounds.center?.z ?? 300) / 60)
+  const dist = Math.max(
+    ((bounds.max?.x ?? 800) - (bounds.min?.x ?? 0)) / 60,
+    ((bounds.max?.z ?? 600) - (bounds.min?.z ?? 0)) / 60
+  ) * 0.8
 
   return (
     <div className={className}>
       <Canvas shadows>
         <PerspectiveCamera
           makeDefault
-          position={[
-            camera_bounds.center.x + camera_bounds.recommended_distance,
-            camera_bounds.recommended_distance * 0.8,
-            -camera_bounds.center.y + camera_bounds.recommended_distance
-          ]}
+          position={[centerX, dist * 0.7, centerZ + dist]}
           fov={50}
         />
         <OrbitControls
-          target={[camera_bounds.center.x, 1.5, -camera_bounds.center.y]}
-          maxPolarAngle={Math.PI / 2 - 0.1}
-          minDistance={5}
-          maxDistance={100}
+          target={[centerX, 1.5, centerZ]}
+          maxPolarAngle={Math.PI / 2 - 0.05}
+          minDistance={3}
+          maxDistance={dist * 3}
         />
         <SceneContent
           sceneGraph={sceneGraph}
@@ -186,7 +208,6 @@ export function ThreeViewer({
   )
 }
 
-// Placeholder for when no scene is loaded
 export function ThreeViewerPlaceholder({ className }: { className?: string }) {
   return (
     <div className={`${className} flex items-center justify-center bg-muted/50 rounded-lg`}>

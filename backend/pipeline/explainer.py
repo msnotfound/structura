@@ -7,12 +7,12 @@ import os
 from typing import Optional, List
 from datetime import datetime
 
-from ..models.parsing import ParseResult
-from ..models.geometry import GeometryResult
-from ..models.structural import StructuralAnalysisResult
-from ..models.materials import MaterialsResult
-from ..models.cost import ProjectCost
-from ..models.report import ElementExplanation, OptimizationSuggestion, FullReport
+from models.parsing import ParseResult
+from models.geometry import GeometryResult
+from models.structural import StructuralAnalysisResult
+from models.materials import MaterialsResult
+from models.cost import ProjectCost
+from models.report import ElementExplanation, OptimizationSuggestion, FullReport
 
 # Mock mode flag
 MOCK_MODE = os.getenv("MOCK_MODE", "true").lower() == "true"

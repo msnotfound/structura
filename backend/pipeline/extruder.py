@@ -6,10 +6,10 @@ import os
 from typing import Optional, List
 import numpy as np
 
-from ..models.parsing import ParseResult, Point2D
-from ..models.geometry import GeometryResult, ClassifiedWall
-from ..models.structural import StructuralAnalysisResult
-from ..models.three_d import (
+from models.parsing import ParseResult, Point2D
+from models.geometry import GeometryResult, ClassifiedWall
+from models.structural import StructuralAnalysisResult
+from models.three_d import (
     ExtrudedWall,
     Slab,
     RoomLabel3D,

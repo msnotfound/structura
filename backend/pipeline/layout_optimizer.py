@@ -5,10 +5,10 @@ Layout optimizer - suggests improvements to floor plan layout.
 import os
 from typing import Optional, List
 
-from ..models.parsing import ParseResult
-from ..models.geometry import GeometryResult
-from ..models.structural import StructuralAnalysisResult
-from ..models.report import OptimizationSuggestion
+from models.parsing import ParseResult
+from models.geometry import GeometryResult
+from models.structural import StructuralAnalysisResult
+from models.report import OptimizationSuggestion
 
 
 class LayoutOptimizer:

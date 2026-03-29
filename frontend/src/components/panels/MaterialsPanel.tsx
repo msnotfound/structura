@@ -8,7 +8,10 @@ interface MaterialsPanelProps {
 }
 
 export function MaterialsPanel({ result }: MaterialsPanelProps) {
-  const { recommendations, total_estimated_cost, cost_breakdown } = result
+  const recommendations = result.recommendations ?? []
+  // API returns total_material_cost, fallback to total_estimated_cost
+  const totalCost = (result as any).total_material_cost ?? result.total_estimated_cost ?? 0
+  const costBreakdown = result.cost_breakdown ?? []
 
   return (
     <Card>
@@ -24,7 +27,7 @@ export function MaterialsPanel({ result }: MaterialsPanelProps) {
           <div className="flex items-center justify-between">
             <span className="text-sm text-muted-foreground">Estimated Total</span>
             <span className="text-2xl font-bold text-primary">
-              ₹{total_estimated_cost.toLocaleString()}
+              ₹{totalCost.toLocaleString()}
             </span>
           </div>
         </div>
@@ -33,7 +36,7 @@ export function MaterialsPanel({ result }: MaterialsPanelProps) {
         <div>
           <h4 className="text-sm font-medium text-muted-foreground mb-3">Cost Breakdown</h4>
           <div className="space-y-2">
-            {cost_breakdown.map(item => (
+            {costBreakdown.map((item: any) => (
               <div key={item.category} className="flex items-center justify-between">
                 <span className="text-sm">{item.category}</span>
                 <div className="flex items-center gap-2">
@@ -49,8 +52,8 @@ export function MaterialsPanel({ result }: MaterialsPanelProps) {
         <div>
           <h4 className="text-sm font-medium text-muted-foreground mb-3">Top Recommendations</h4>
           <div className="space-y-3">
-            {recommendations.slice(0, 4).map(rec => (
-              <MaterialCard key={rec.element_id} recommendation={rec} />
+            {recommendations.slice(0, 4).map((rec: any, idx: number) => (
+              <MaterialCard key={rec.element_id ?? idx} recommendation={rec} />
             ))}
           </div>
         </div>
@@ -59,41 +62,39 @@ export function MaterialsPanel({ result }: MaterialsPanelProps) {
   )
 }
 
-function MaterialCard({ recommendation }: { recommendation: MaterialRecommendation }) {
-  const topMaterial = recommendation.recommended_materials[0]
-  if (!topMaterial) return null
+function MaterialCard({ recommendation }: { recommendation: any }) {
+  // API returns options[] not recommended_materials[]
+  const options = recommendation.options ?? recommendation.recommended_materials ?? []
+  const topOption = options[0]
+  if (!topOption) return null
 
-  const { material, suitability_score, cost_estimate } = topMaterial
+  const material = topOption.material ?? {}
+  const score = topOption.score ?? topOption.suitability_score ?? 0
+  const costEstimate = material.cost_per_unit ?? topOption.cost_estimate ?? 0
 
   return (
     <div className="p-3 border rounded-lg">
       <div className="flex items-start justify-between mb-2">
         <div>
           <p className="text-sm font-medium">{recommendation.element_type}</p>
-          <p className="text-xs text-muted-foreground">{recommendation.element_id}</p>
+          <p className="text-xs text-muted-foreground">{recommendation.element_description ?? recommendation.element_id}</p>
         </div>
-        <Badge variant="success">{(suitability_score * 100).toFixed(0)}% match</Badge>
+        <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">{(score * 100).toFixed(0)}% match</span>
       </div>
       
       <div className="flex items-center gap-4 mt-2">
         <div className="flex-1">
-          <p className="text-sm font-medium text-primary">{material.name}</p>
+          <p className="text-sm font-medium text-primary">{material.name ?? 'Unknown'}</p>
           <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <DollarSign className="w-3 h-3" />
-              ₹{cost_estimate.toLocaleString()}
-            </span>
-            <span className="flex items-center gap-1">
-              <Star className="w-3 h-3" />
-              {material.durability_rating}/10
-            </span>
-            <span className="flex items-center gap-1">
-              <Leaf className="w-3 h-3" />
-              {material.environmental_score}/10
-            </span>
+            <span>₹{costEstimate.toLocaleString()}/{material.unit ?? 'unit'}</span>
+            <span>Durability: {material.durability_rating ?? '—'}/10</span>
+            <span>Eco: {material.environmental_score ?? '—'}/10</span>
           </div>
         </div>
       </div>
+      {topOption.meets_requirements === false && (
+        <p className="text-xs text-red-500 mt-1">{topOption.disqualification_reason}</p>
+      )}
     </div>
   )
 }

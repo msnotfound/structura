@@ -9,7 +9,7 @@ import base64
 from typing import Optional
 import numpy as np
 
-from ..models.parsing import VLMParseResult, Room, Point2D
+from models.parsing import VLMParseResult, Room, Point2D
 
 # Mock mode flag
 MOCK_MODE = os.getenv("MOCK_MODE", "true").lower() == "true"

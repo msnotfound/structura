@@ -7,9 +7,9 @@ import json
 from typing import Optional, List, Dict
 from pathlib import Path
 
-from ..models.geometry import GeometryResult, ClassifiedWall
-from ..models.parsing import ParseResult, Room
-from ..models.materials import (
+from models.geometry import GeometryResult, ClassifiedWall
+from models.parsing import ParseResult, Room
+from models.materials import (
     Material,
     WeightProfile,
     MaterialOption,

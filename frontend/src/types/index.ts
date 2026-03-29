@@ -77,9 +77,17 @@ export interface ClassifiedWall {
 export interface GeometryResult {
   classified_walls: ClassifiedWall[]
   junctions: Junction[]
-  rooms: Room[]
-  structural_spine_ids: string[]
-  load_paths: string[][]
+  rooms: Room[] | null
+  room_polygons?: any[]
+  structural_spines?: string[]
+  structural_spine_ids?: string[]
+  load_paths?: string[][]
+  load_bearing_wall_count?: number
+  partition_wall_count?: number
+  total_wall_length_m?: number
+  exterior_wall_length_m?: number
+  interior_wall_length_m?: number
+  building_footprint?: any
 }
 
 // Structural types
@@ -104,9 +112,15 @@ export interface StructuralWarning {
 export interface StructuralAnalysisResult {
   span_analyses: SpanAnalysis[]
   warnings: StructuralWarning[]
-  overall_integrity_score: number
-  load_path_valid: boolean
-  thickness_adequate: boolean
+  overall_integrity_score?: number
+  overall_structural_score?: number
+  load_path_valid?: boolean
+  thickness_adequate?: boolean
+  critical_count?: number
+  warning_count?: number
+  info_count?: number
+  max_span_in_plan?: number
+  requires_engineer_review?: boolean
 }
 
 // 3D Scene types
@@ -151,9 +165,13 @@ export interface SceneGraph {
   walls: ExtrudedWall[]
   slabs: Slab[]
   room_labels: RoomLabel3D[]
-  openings: Opening[]
+  openings?: Opening[]
   camera_bounds: CameraBounds
-  metadata: {
+  floor_height_m?: number
+  num_floors?: number
+  total_height_m?: number
+  warnings?: string[]
+  metadata?: {
     total_floor_area: number
     wall_count: number
     room_count: number

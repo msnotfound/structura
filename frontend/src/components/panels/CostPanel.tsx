@@ -21,28 +21,28 @@ interface CostPanelProps {
 const COLORS = ['#3b82f6', '#22c55e', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899']
 
 export function CostPanel({ cost }: CostPanelProps) {
-  const { 
-    category_costs, 
-    room_costs,
-    subtotal, 
-    contingency_amount, 
-    tax_amount, 
-    grand_total,
-    cost_per_sqft,
-    currency 
-  } = cost
+  const api = cost as any
+  const grand_total = api.grand_total ?? 0
+  const currency = api.currency ?? '₹'
+  // API has cost_per_sqm not cost_per_sqft
+  const cost_per_unit = api.cost_per_sqm ?? api.cost_per_sqft ?? 0
+  const unit_label = api.cost_per_sqm !== undefined ? 'per sq.m' : 'per sq.ft'
+  // API has category_totals not category_costs  
+  const category_costs: any[] = api.category_totals ?? api.category_costs ?? []
+  // API has line_items not room_costs
+  const room_costs: any[] = api.room_totals ?? api.room_costs ?? []
 
   // Prepare pie chart data
   const pieData = category_costs.map(cat => ({
     name: cat.category,
-    value: cat.subtotal,
+    value: cat.subtotal ?? cat.total ?? 0,
   }))
 
   // Prepare bar chart data for rooms
   const barData = room_costs.slice(0, 6).map(room => ({
-    name: room.room_name,
-    cost: room.subtotal,
-    area: room.area,
+    name: room.room_name ?? room.category ?? 'Room',
+    cost: room.subtotal ?? room.total ?? 0,
+    area: room.area ?? 0,
   }))
 
   return (
@@ -62,7 +62,7 @@ export function CostPanel({ cost }: CostPanelProps) {
               {currency} {grand_total.toLocaleString()}
             </p>
             <p className="text-sm text-muted-foreground mt-1">
-              {currency} {cost_per_sqft.toFixed(0)} per sq.ft
+              {currency} {cost_per_unit.toFixed(0)} {unit_label}
             </p>
           </div>
         </div>
@@ -70,16 +70,16 @@ export function CostPanel({ cost }: CostPanelProps) {
         {/* Cost Breakdown */}
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
-            <p className="text-xs text-muted-foreground">Subtotal</p>
-            <p className="text-sm font-medium">{currency} {subtotal.toLocaleString()}</p>
+            <p className="text-xs text-muted-foreground">Budget</p>
+            <p className="text-sm font-medium">{currency} {(api.budget_total ?? 0).toLocaleString()}</p>
           </div>
           <div>
-            <p className="text-xs text-muted-foreground">Contingency</p>
-            <p className="text-sm font-medium">{currency} {contingency_amount.toLocaleString()}</p>
+            <p className="text-xs text-muted-foreground">Premium</p>
+            <p className="text-sm font-medium">{currency} {(api.premium_total ?? 0).toLocaleString()}</p>
           </div>
           <div>
-            <p className="text-xs text-muted-foreground">Tax</p>
-            <p className="text-sm font-medium">{currency} {tax_amount.toLocaleString()}</p>
+            <p className="text-xs text-muted-foreground">Savings vs Premium</p>
+            <p className="text-sm font-medium">{currency} {(api.savings_vs_premium ?? 0).toLocaleString()}</p>
           </div>
         </div>
 
@@ -103,7 +103,7 @@ export function CostPanel({ cost }: CostPanelProps) {
                   ))}
                 </Pie>
                 <Tooltip 
-                  formatter={(value: number) => [`${currency} ${value.toLocaleString()}`, 'Cost']}
+                  formatter={(value: any) => [`${currency} ${Number(value).toLocaleString()}`, 'Cost']}
                 />
                 <Legend />
               </PieChart>
@@ -121,7 +121,7 @@ export function CostPanel({ cost }: CostPanelProps) {
                   <XAxis type="number" tickFormatter={(v) => `₹${(v/1000).toFixed(0)}k`} />
                   <YAxis type="category" dataKey="name" width={80} tick={{ fontSize: 12 }} />
                   <Tooltip 
-                    formatter={(value: number) => [`${currency} ${value.toLocaleString()}`, 'Cost']}
+                    formatter={(value: any) => [`${currency} ${Number(value).toLocaleString()}`, 'Cost']}
                   />
                   <Bar dataKey="cost" fill="#3b82f6" radius={[0, 4, 4, 0]} />
                 </BarChart>

@@ -6,7 +6,7 @@ import os
 from typing import Optional, List
 import numpy as np
 
-from ..models.parsing import (
+from models.parsing import (
     ParseResult,
     VLMParseResult,
     CVParseResult,
