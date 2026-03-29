@@ -11,13 +11,22 @@ class Material(BaseModel):
 
     name: str = Field(..., description="Material name")
     cost_per_sqm: float = Field(..., description="Cost per square meter in INR")
+    min_cost_per_sqm: Optional[float] = Field(
+        default=None, description="Minimum cost per sqm (market range)"
+    )
+    max_cost_per_sqm: Optional[float] = Field(
+        default=None, description="Maximum cost per sqm (market range)"
+    )
+    source: Optional[str] = Field(
+        default=None, description="Data source (e.g., CPWD DSR 2024)"
+    )
     cost_level: Literal["budget", "standard", "premium"] = Field(
         ..., description="Cost tier"
     )
     compressive_strength_mpa: float = Field(
         ..., description="Compressive strength in MPa"
     )
-    strength_level: Literal["low", "medium", "high", "very_high"] = Field(
+    strength_level: Literal["very_low", "low", "medium", "high", "very_high"] = Field(
         ..., description="Strength tier"
     )
     durability_rating: float = Field(

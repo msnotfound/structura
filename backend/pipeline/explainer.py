@@ -225,17 +225,32 @@ Write professionally, focusing on key findings and recommendations."""
         sample_recs = materials_result.recommendations[:5]
 
         for rec in sample_recs:
-            prompt = f"""Explain this material recommendation in 2-3 sentences:
+            # Get material properties for comparison
+            selected_mat = rec.selected.material
+            alt_mat = rec.options[1].material if len(rec.options) > 1 else None
 
-Element: {rec.element_description}
+            prompt = f"""Explain this material recommendation in 2-3 sentences with SPECIFIC numbers:
+
+Wall/Element: {rec.element_description}
 Element Type: {rec.element_type}
-Selected Material: {rec.selected.material.name}
-Score: {rec.selected.score:.2f}
-Context: {", ".join(rec.context_factors)}
 
-Alternative considered: {rec.options[1].material.name if len(rec.options) > 1 else "N/A"} (score: {rec.options[1].score:.2f if len(rec.options) > 1 else 0})
+SELECTED MATERIAL:
+- Name: {selected_mat.name}
+- Compressive Strength: {selected_mat.compressive_strength_mpa} MPa
+- Cost: ₹{selected_mat.cost_per_sqm}/sqm
+- Durability: {selected_mat.durability_rating:.0%}
+- Score: {rec.selected.score:.2f}
 
-Explain why this material was chosen and what tradeoffs were considered."""
+ALTERNATIVE CONSIDERED:
+- Name: {alt_mat.name if alt_mat else "N/A"}
+- Compressive Strength: {alt_mat.compressive_strength_mpa if alt_mat else 0} MPa
+- Cost: ₹{alt_mat.cost_per_sqm if alt_mat else 0}/sqm
+- Score: {rec.options[1].score:.2f if len(rec.options) > 1 else 0}
+
+Context Factors: {", ".join(rec.context_factors)}
+
+REQUIREMENTS: Your explanation MUST cite specific MPa values and cost differences. Example: "Selected AAC blocks (3.5 MPa, ₹180/sqm) over clay bricks (7.5 MPa, ₹220/sqm) because partition walls don't need high compressive strength, saving ₹40/sqm."
+"""
 
             try:
                 response = self.client.chat.completions.create(
@@ -325,17 +340,36 @@ The overall structural integrity score is {structural_result.overall_structural_
 
 The estimated construction cost is ₹{cost_result.grand_total:,.0f} (₹{cost_result.cost_per_sqm:,.0f}/sqm), representing a potential savings of ₹{cost_result.savings_vs_premium:,.0f} compared to premium material options."""
 
-        # Generate mock explanations
+        # Generate mock explanations with specific data points
         explanations = []
         for rec in materials_result.recommendations[:3]:
+            selected_mat = rec.selected.material
+            alt_mat = rec.options[1].material if len(rec.options) > 1 else None
+
+            # Build comparison text with specific MPa and cost values
+            if alt_mat:
+                cost_diff = alt_mat.cost_per_sqm - selected_mat.cost_per_sqm
+                comparison = (
+                    f" Selected over {alt_mat.name} ({alt_mat.compressive_strength_mpa} MPa, ₹{alt_mat.cost_per_sqm}/sqm), saving ₹{cost_diff:.0f}/sqm."
+                    if cost_diff > 0
+                    else f" Chosen over {alt_mat.name} ({alt_mat.compressive_strength_mpa} MPa) for better structural performance."
+                )
+            else:
+                comparison = ""
+
+            recommendation_text = f"{selected_mat.name} ({selected_mat.compressive_strength_mpa} MPa compressive strength, ₹{selected_mat.cost_per_sqm}/sqm) is recommended for this {rec.element_type}.{comparison}"
+
             explanations.append(
                 ElementExplanation(
                     element_id=rec.element_id,
                     element_description=rec.element_description,
-                    recommendation_text=f"{rec.selected.material.name} is recommended for this {rec.element_type} due to its optimal balance of cost (₹{rec.selected.material.cost_per_sqm}/sqm) and structural properties ({rec.selected.material.compressive_strength_mpa} MPa strength).",
-                    tradeoff_summary=f"Score: {rec.selected.score:.2f}. Key factors: {', '.join(rec.context_factors[:2])}",
+                    recommendation_text=recommendation_text,
+                    tradeoff_summary=f"Score: {rec.selected.score:.2f}. Key factors: {', '.join(rec.context_factors[:2]) if rec.context_factors else 'balanced optimization'}.",
                     structural_notes=None,
-                    measurements_cited=[],
+                    measurements_cited=[
+                        f"Material strength: {selected_mat.compressive_strength_mpa} MPa",
+                        f"Cost: ₹{selected_mat.cost_per_sqm}/sqm",
+                    ],
                     confidence=rec.selected.score,
                 )
             )

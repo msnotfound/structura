@@ -19,6 +19,61 @@ Upload any architectural floor plan image → get a full AI-powered structural a
 
 ---
 
+## Architecture
+
+```mermaid
+flowchart TD
+    subgraph Input
+        A[Image Upload]
+    end
+
+    subgraph Preprocessing
+        B[1. Preprocessing<br/>contrast, denoise]
+    end
+
+    subgraph Parsing["Parsing Layer"]
+        C[2. VLM Parsing<br/>Gemini Vision]
+        D[3. CV Parsing<br/>OpenCV geometric]
+        E[4. Parser Fusion<br/>merge VLM + CV]
+    end
+
+    subgraph Analysis["Analysis Layer"]
+        F[5. Geometry Analysis<br/>junctions, wall classification]
+        G[6. Structural Validation<br/>spans, load paths]
+    end
+
+    subgraph Generation["Generation Layer"]
+        H[7. 3D Extrusion]
+        I[8. Material Recommendation]
+        J[9. Cost Estimation]
+        K[10. Layout Optimization]
+    end
+
+    subgraph Output
+        L[11. Report Generation<br/>LLM explanations]
+        M[Final Report]
+    end
+
+    A --> B
+    B --> C
+    B --> D
+    C --> E
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    G --> I
+    G --> J
+    G --> K
+    H --> L
+    I --> L
+    J --> L
+    K --> L
+    L --> M
+```
+
+---
+
 ## Prerequisites
 
 | Tool | Version | Install |
