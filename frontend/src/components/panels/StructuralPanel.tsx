@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
-import { Badge, SeverityBadge } from '@/components/ui/Badge'
+import { SeverityBadge } from '@/components/ui/Badge'
 import { ScoreBar } from '@/components/ui/Progress'
 import type { StructuralAnalysisResult } from '@/types'
 import { CheckCircle, XCircle, AlertTriangle } from 'lucide-react'
@@ -101,11 +101,11 @@ export function StructuralPanel({ result }: StructuralPanelProps) {
           <h4 className="text-sm font-medium text-muted-foreground mb-2">Span Analysis</h4>
           <div className="space-y-1">
             {span_analyses.slice(0, 5).map(span => (
-              <div key={span.wall_id} className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground truncate">{span.wall_id}</span>
+              <div key={span.room_id || span.room_label} className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground truncate">{span.room_label}</span>
                 <div className="flex items-center gap-2">
-                  <span>{span.span_length.toFixed(1)}m</span>
-                  {span.is_within_limit ? (
+                  <span>{(span.max_span_m ?? 0).toFixed(1)}m</span>
+                  {!span.requires_intermediate_support ? (
                     <CheckCircle className="w-4 h-4 text-green-500" />
                   ) : (
                     <XCircle className="w-4 h-4 text-red-500" />

@@ -92,11 +92,13 @@ export interface GeometryResult {
 
 // Structural types
 export interface SpanAnalysis {
-  wall_id: string
-  span_length: number
-  max_recommended_span: number
-  is_within_limit: boolean
-  support_count: number
+  room_id: string
+  room_label: string
+  max_span_m?: number
+  span_direction?: string
+  requires_intermediate_support?: boolean
+  recommended_support?: string
+  supporting_walls?: string[]
 }
 
 export type WarningSeverity = 'info' | 'warning' | 'critical'
