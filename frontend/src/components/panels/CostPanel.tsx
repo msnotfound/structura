@@ -12,7 +12,7 @@ import {
   Tooltip,
   Legend 
 } from 'recharts'
-import { Calculator, TrendingUp, Home } from 'lucide-react'
+import { Calculator } from 'lucide-react'
 
 interface CostPanelProps {
   cost: ProjectCost
@@ -35,14 +35,14 @@ export function CostPanel({ cost }: CostPanelProps) {
   // Prepare pie chart data
   const pieData = category_costs.map(cat => ({
     name: cat.category,
-    value: cat.subtotal ?? cat.total ?? 0,
+    value: cat.total_cost ?? cat.total ?? cat.subtotal ?? 0,
   }))
 
   // Prepare bar chart data for rooms
   const barData = room_costs.slice(0, 6).map(room => ({
-    name: room.room_name ?? room.category ?? 'Room',
-    cost: room.subtotal ?? room.total ?? 0,
-    area: room.area ?? 0,
+    name: room.room_label ?? room.room_name ?? room.category ?? 'Room',
+    cost: room.total_cost ?? room.total ?? room.subtotal ?? 0,
+    area: room.area_m2 ?? room.area ?? 0,
   }))
 
   return (
@@ -144,8 +144,8 @@ export function CostPanel({ cost }: CostPanelProps) {
                   <span>{cat.category}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="font-medium">{currency} {cat.subtotal.toLocaleString()}</span>
-                  <span className="text-muted-foreground">({cat.percentage_of_total.toFixed(1)}%)</span>
+                  <span className="font-medium">{currency} {(cat.total_cost ?? cat.total ?? cat.subtotal ?? 0).toLocaleString()}</span>
+                  <span className="text-muted-foreground">({(cat.percentage ?? cat.percentage_of_total ?? 0).toFixed(1)}%)</span>
                 </div>
               </div>
             ))}
