@@ -1,0 +1,244 @@
+{
+  "materials": [
+    {
+      "name": "AAC Blocks",
+      "cost_per_sqm": 450,
+      "cost_level": "budget",
+      "compressive_strength_mpa": 4,
+      "strength_level": "low",
+      "durability_rating": 0.85,
+      "durability_level": "high",
+      "moisture_resistance": 0.7,
+      "thermal_insulation": 0.85,
+      "weight_kg_per_sqm": 55,
+      "best_use": [
+        "interior_partition",
+        "non_load_bearing",
+        "thermal_insulation_priority"
+      ],
+      "constraints": [
+        "not_for_load_bearing_over_2_floors",
+        "requires_plastering",
+        "not_for_wet_areas_without_treatment"
+      ],
+      "max_span_m": 4.0
+    },
+    {
+      "name": "Red Brick",
+      "cost_per_sqm": 550,
+      "cost_level": "standard",
+      "compressive_strength_mpa": 12,
+      "strength_level": "medium",
+      "durability_rating": 0.65,
+      "durability_level": "medium",
+      "moisture_resistance": 0.4,
+      "thermal_insulation": 0.5,
+      "weight_kg_per_sqm": 180,
+      "best_use": [
+        "load_bearing_walls",
+        "exterior_walls",
+        "traditional_construction"
+      ],
+      "constraints": [
+        "heavy_weight",
+        "poor_moisture_resistance",
+        "requires_curing_time"
+      ],
+      "max_span_m": 5.0
+    },
+    {
+      "name": "RCC",
+      "cost_per_sqm": 1800,
+      "cost_level": "premium",
+      "compressive_strength_mpa": 30,
+      "strength_level": "high",
+      "durability_rating": 0.95,
+      "durability_level": "high",
+      "moisture_resistance": 0.8,
+      "thermal_insulation": 0.3,
+      "weight_kg_per_sqm": 250,
+      "best_use": [
+        "structural_spine",
+        "load_bearing",
+        "long_spans",
+        "multi_story",
+        "foundations"
+      ],
+      "constraints": [
+        "high_cost",
+        "requires_skilled_labor",
+        "curing_time_28_days",
+        "poor_thermal_insulation"
+      ],
+      "max_span_m": 12.0
+    },
+    {
+      "name": "Steel Frame",
+      "cost_per_sqm": 2200,
+      "cost_level": "premium",
+      "compressive_strength_mpa": 250,
+      "strength_level": "very_high",
+      "durability_rating": 0.9,
+      "durability_level": "high",
+      "moisture_resistance": 0.3,
+      "thermal_insulation": 0.1,
+      "weight_kg_per_sqm": 30,
+      "best_use": [
+        "very_long_spans",
+        "industrial",
+        "high_rise",
+        "seismic_zones"
+      ],
+      "constraints": [
+        "very_high_cost",
+        "requires_fire_protection",
+        "corrosion_prone",
+        "requires_specialized_labor"
+      ],
+      "max_span_m": 30.0
+    },
+    {
+      "name": "Hollow Concrete Block",
+      "cost_per_sqm": 400,
+      "cost_level": "budget",
+      "compressive_strength_mpa": 5,
+      "strength_level": "low",
+      "durability_rating": 0.6,
+      "durability_level": "medium",
+      "moisture_resistance": 0.5,
+      "thermal_insulation": 0.6,
+      "weight_kg_per_sqm": 110,
+      "best_use": [
+        "partition_walls",
+        "boundary_walls",
+        "non_structural"
+      ],
+      "constraints": [
+        "not_for_load_bearing",
+        "limited_strength",
+        "requires_reinforcement_for_height"
+      ],
+      "max_span_m": 3.5
+    },
+    {
+      "name": "Fly Ash Brick",
+      "cost_per_sqm": 380,
+      "cost_level": "budget",
+      "compressive_strength_mpa": 9,
+      "strength_level": "medium",
+      "durability_rating": 0.8,
+      "durability_level": "high",
+      "moisture_resistance": 0.75,
+      "thermal_insulation": 0.65,
+      "weight_kg_per_sqm": 85,
+      "best_use": [
+        "load_bearing_low_rise",
+        "exterior_walls",
+        "eco_friendly_construction",
+        "wet_areas"
+      ],
+      "constraints": [
+        "limited_availability_in_some_regions",
+        "not_for_heavy_loads"
+      ],
+      "max_span_m": 4.5
+    },
+    {
+      "name": "Precast Concrete Panel",
+      "cost_per_sqm": 1400,
+      "cost_level": "standard",
+      "compressive_strength_mpa": 25,
+      "strength_level": "high",
+      "durability_rating": 0.9,
+      "durability_level": "high",
+      "moisture_resistance": 0.85,
+      "thermal_insulation": 0.4,
+      "weight_kg_per_sqm": 200,
+      "best_use": [
+        "exterior_walls",
+        "fast_construction",
+        "uniform_quality",
+        "medium_spans"
+      ],
+      "constraints": [
+        "requires_crane_for_installation",
+        "transportation_limitations",
+        "joint_waterproofing_critical"
+      ],
+      "max_span_m": 8.0
+    }
+  ],
+  "weight_profiles": {
+    "exterior_load_bearing": {
+      "cost_weight": 0.2,
+      "strength_weight": 0.4,
+      "durability_weight": 0.25,
+      "moisture_weight": 0.15,
+      "rationale": "Exterior load-bearing walls prioritize strength and durability for structural integrity and weather exposure"
+    },
+    "interior_load_bearing": {
+      "cost_weight": 0.25,
+      "strength_weight": 0.45,
+      "durability_weight": 0.2,
+      "moisture_weight": 0.1,
+      "rationale": "Interior load-bearing walls focus primarily on strength with moderate cost consideration"
+    },
+    "partition": {
+      "cost_weight": 0.45,
+      "strength_weight": 0.15,
+      "durability_weight": 0.25,
+      "moisture_weight": 0.15,
+      "rationale": "Partitions prioritize cost efficiency as they do not bear structural loads"
+    },
+    "wet_area": {
+      "cost_weight": 0.2,
+      "strength_weight": 0.2,
+      "durability_weight": 0.2,
+      "moisture_weight": 0.4,
+      "rationale": "Wet areas (bathroom, kitchen, laundry) prioritize moisture resistance"
+    },
+    "foundation": {
+      "cost_weight": 0.15,
+      "strength_weight": 0.45,
+      "durability_weight": 0.25,
+      "moisture_weight": 0.15,
+      "rationale": "Foundations require maximum strength and durability, cost is secondary"
+    },
+    "slab": {
+      "cost_weight": 0.2,
+      "strength_weight": 0.4,
+      "durability_weight": 0.25,
+      "moisture_weight": 0.15,
+      "rationale": "Slabs need to support loads and span distances safely"
+    }
+  },
+  "room_type_to_element_type": {
+    "bathroom": "wet_area",
+    "kitchen": "wet_area",
+    "laundry": "wet_area",
+    "bedroom": "standard",
+    "living": "standard",
+    "dining": "standard",
+    "great_room": "standard",
+    "foyer": "standard",
+    "hallway": "standard",
+    "closet": "standard",
+    "other": "standard"
+  },
+  "default_dimensions": {
+    "wall_height_m": 2.8,
+    "floor_thickness_m": 0.15,
+    "exterior_wall_thickness_m": 0.23,
+    "interior_wall_thickness_m": 0.15,
+    "door_width_m": 0.9,
+    "door_height_m": 2.1,
+    "window_width_m": 1.2,
+    "window_height_m": 1.2,
+    "window_sill_height_m": 0.9
+  },
+  "span_limits": {
+    "residential_max_span_without_support_m": 6.0,
+    "beam_required_above_m": 4.5,
+    "column_spacing_max_m": 5.0
+  }
+}
