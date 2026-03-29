@@ -87,9 +87,9 @@ class ScaleReference(BaseModel):
     confidence: float = Field(
         default=0.5, ge=0.0, le=1.0, description="Confidence in scale accuracy"
     )
-    method: Literal["scale_bar", "door_width", "vlm_estimate", "default"] = Field(
-        default="default", description="Method used to determine scale"
-    )
+    method: Literal[
+        "scale_bar", "door_width", "vlm_estimate", "vlm_cv_fusion", "default"
+    ] = Field(default="default", description="Method used to determine scale")
 
 
 class VLMParseResult(BaseModel):
