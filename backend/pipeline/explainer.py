@@ -41,7 +41,7 @@ class Explainer:
                     api_key=self.cerebras_api_key, base_url="https://api.cerebras.ai/v1"
                 )
                 self.provider = "cerebras"
-                self.model = "qwen-3-32b"
+                self.model = "qwen-3-235b-a22b-instruct-2507"
                 print("Explainer initialized with Cerebras (Qwen 3)")
             # Fallback to Groq
             elif self.groq_api_key:

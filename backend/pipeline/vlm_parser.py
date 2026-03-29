@@ -26,15 +26,19 @@ class VLMParser:
             self._init_model()
 
     def _init_model(self):
-        """Initialize the Gemini model."""
+        """Initialize the Gemini client."""
         try:
-            import google.generativeai as genai
-
-            genai.configure(api_key=self.api_key)
-            self.model = genai.GenerativeModel("gemini-2.5-flash-preview-05-20")
+            import google.genai as genai
+            self._genai_client = genai.Client(api_key=self.api_key)
+            self._model_name = "gemini-2.5-flash"
+            # Quick connectivity test
+            self._genai_client.models.generate_content(
+                model=self._model_name, contents="ping"
+            )
+            print(f"VLM: Gemini {self._model_name} initialized successfully")
         except Exception as e:
             print(f"Warning: Failed to initialize Gemini model: {e}")
-            self.model = None
+            self._genai_client = None
 
     def _encode_image(self, image: np.ndarray) -> str:
         """Encode image to base64 for API."""
@@ -84,7 +88,7 @@ Focus on accuracy over completeness."""
         Returns:
             VLMParseResult with extracted information
         """
-        if MOCK_MODE or self.model is None:
+        if MOCK_MODE or not hasattr(self, '_genai_client') or self._genai_client is None:
             return self._mock_parse()
 
         try:
@@ -96,18 +100,27 @@ Focus on accuracy over completeness."""
     def _real_parse(
         self, image: np.ndarray, debug_dir: Optional[str] = None
     ) -> VLMParseResult:
-        """Actual Gemini API call."""
+        """Actual Gemini API call using new google-genai SDK."""
         import cv2
-
-        # Convert to PIL Image for Gemini
         from PIL import Image
+        import io
 
         rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         pil_image = Image.fromarray(rgb_image)
 
-        # Call Gemini
-        response = self.model.generate_content([self._get_prompt(), pil_image])
+        # Convert PIL to bytes for new SDK
+        img_bytes = io.BytesIO()
+        pil_image.save(img_bytes, format='PNG')
+        img_bytes.seek(0)
 
+        import google.genai.types as types
+        response = self._genai_client.models.generate_content(
+            model=self._model_name,
+            contents=[
+                types.Part.from_bytes(data=img_bytes.read(), mime_type='image/png'),
+                self._get_prompt()
+            ]
+        )
         raw_response = response.text
 
         # Save raw response for debugging

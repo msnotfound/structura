@@ -124,7 +124,7 @@ function SceneContent({ sceneGraph, selectedWallId, onWallSelect }: SceneContent
     <>
       {/* Lighting */}
       <ambientLight intensity={0.6} />
-      <directionalLight position={[centerX + 20, 30, centerZ + 10]} intensity={0.8} castShadow />
+      <directionalLight position={[centerX + 20, 30, centerZ + 10]} intensity={0.8} />
       <directionalLight position={[centerX - 10, 20, centerZ - 10]} intensity={0.4} />
 
       {/* Floor */}
