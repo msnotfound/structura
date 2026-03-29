@@ -2,14 +2,14 @@
 
 > Last Updated: 2026-03-29
 
-## Current Stage: v0.1-scaffold
+## Current Stage: v0.3-pipeline-integration
 
 ### Completed Stages
 - [x] **v0.1-scaffold** - Project structure, Pydantic models, material DB, FastAPI skeleton
+- [x] **v0.2-frontend** - React + Vite + Tailwind + Three.js setup
+- [x] **v0.3-pipeline-integration** - Wire up all pipeline modules to FastAPI
 
 ### Pending Stages
-- [ ] **v0.2-frontend** - React + Vite + shadcn/ui + Three.js setup
-- [ ] **v0.3-pipeline-integration** - Wire up all pipeline modules to FastAPI
 - [ ] **v0.4-testing** - Integration tests with sample floor plans
 - [ ] **v0.5-polish** - UI polish, error handling, documentation
 
@@ -26,6 +26,24 @@
 | `materials.py` | Material, WeightProfile, MaterialOption, MaterialRecommendation, MaterialsResult | `backend/models/materials.py` |
 | `cost.py` | CostLineItem, RoomCost, CategoryCost, ProjectCost, CostComparison | `backend/models/cost.py` |
 | `report.py` | ElementExplanation, OptimizationSuggestion, FullReport | `backend/models/report.py` |
+
+---
+
+## Frontend Components
+
+| Component | Location | Description |
+|-----------|----------|-------------|
+| `FileUpload` | `frontend/src/components/ui/FileUpload.tsx` | Drag-and-drop image upload |
+| `Button` | `frontend/src/components/ui/Button.tsx` | Styled button with variants |
+| `Card` | `frontend/src/components/ui/Card.tsx` | Card container components |
+| `Badge` | `frontend/src/components/ui/Badge.tsx` | Status badges (severity, wall type) |
+| `Progress` | `frontend/src/components/ui/Progress.tsx` | Progress bars and score displays |
+| `ThreeViewer` | `frontend/src/components/three/ThreeViewer.tsx` | 3D floor plan visualization |
+| `WallsPanel` | `frontend/src/components/panels/WallsPanel.tsx` | Wall classification display |
+| `StructuralPanel` | `frontend/src/components/panels/StructuralPanel.tsx` | Structural analysis results |
+| `MaterialsPanel` | `frontend/src/components/panels/MaterialsPanel.tsx` | Material recommendations |
+| `CostPanel` | `frontend/src/components/panels/CostPanel.tsx` | Cost estimation with charts |
+| `ReportPanel` | `frontend/src/components/panels/ReportPanel.tsx` | Full analysis report |
 
 ---
 
@@ -107,12 +125,13 @@
 
 | Endpoint | Method | Input | Output | Status |
 |----------|--------|-------|--------|--------|
-| `/health` | GET | - | `{"status": "healthy"}` | ✅ Stub |
-| `/api/upload` | POST | `multipart/form-data` (image) | `{"file_id": str}` | ✅ Stub |
-| `/api/analyze/{file_id}` | POST | file_id | Full analysis result | ✅ Stub |
-| `/api/materials` | GET | - | Materials database | ✅ Stub |
-| `/api/scene/{file_id}` | GET | file_id | SceneGraph (Three.js) | ✅ Stub |
-| `/api/report/{file_id}` | GET | file_id | FullReport | ✅ Stub |
+| `/health` | GET | - | `{"status": "healthy"}` | ✅ Implemented |
+| `/api/upload` | POST | `multipart/form-data` (image) | `{"file_id": str}` | ✅ Implemented |
+| `/api/analyze/{file_id}` | POST | file_id | Full analysis result | ✅ Implemented |
+| `/api/analysis/{file_id}` | GET | file_id | Cached analysis result | ✅ Implemented |
+| `/api/materials` | GET | - | Materials database | ✅ Implemented |
+| `/api/scene/{file_id}` | GET | file_id | SceneGraph (Three.js) | ✅ Implemented |
+| `/api/report/{file_id}` | GET | file_id | FullReport | ✅ Implemented |
 
 ---
 
@@ -136,13 +155,14 @@
 
 ## Known Issues
 
-1. **None currently** - Initial scaffold complete
+1. **Cerebras model**: Uses `qwen-3-32b` (not 235B as originally specified)
+2. **Upload/cache dirs**: Created on-demand at `backend/uploads/` and `backend/cache/`
 
 ---
 
 ## Test Results
 
-No tests run yet.
+- **v0.3-pipeline-integration**: Pending manual testing
 
 ---
 
@@ -186,10 +206,31 @@ structura/
 │   │   └── report.py
 │   ├── data/
 │   │   └── materials_db.json
+│   ├── uploads/           # Uploaded images (created on-demand)
+│   ├── cache/             # Analysis result cache (created on-demand)
 │   ├── debug/              # Debug images output
-│   ├── main.py             # FastAPI app
+│   ├── main.py             # FastAPI app (fully wired pipeline)
 │   └── requirements.txt
-├── frontend/               # React app (empty)
+├── frontend/
+│   ├── src/
+│   │   ├── api/            # API client
+│   │   │   └── client.ts
+│   │   ├── components/
+│   │   │   ├── ui/         # Base UI components
+│   │   │   ├── three/      # Three.js components
+│   │   │   └── panels/     # Analysis panels
+│   │   ├── hooks/          # React hooks
+│   │   │   └── useAnalysis.ts
+│   │   ├── lib/            # Utilities
+│   │   │   └── utils.ts
+│   │   ├── types/          # TypeScript types
+│   │   │   └── index.ts
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   └── index.css
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── tsconfig.json
 ├── sample_plans/           # Test floor plans (empty)
 ├── STATE.md                # This file
 ├── README.md
