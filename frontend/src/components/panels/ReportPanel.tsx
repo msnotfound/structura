@@ -1,5 +1,4 @@
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
 import type { FullReport } from '@/types'
 import { FileText, Lightbulb, AlertTriangle, CheckCircle } from 'lucide-react'
 

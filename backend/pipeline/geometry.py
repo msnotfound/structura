@@ -14,9 +14,12 @@ class GeometryAnalyzer:
     """Analyzes wall geometry to build graph and classify structural roles."""
 
     def __init__(self):
-        self.junction_threshold = 0.3  # meters - distance to consider walls connected
+        # NOTE: junction_threshold is in PIXEL units (not meters),
+        # because junction detection runs before scale conversion.
+        # 15px ~= 0.25m at typical 60px/m scale.
+        self.junction_threshold = 15.0  # pixels
         self.exterior_wall_min_thickness = 0.2  # meters
-        self.load_bearing_min_length = 2.0  # meters
+        self.load_bearing_min_length = 1.5  # meters
 
     def analyze(
         self, parse_result: ParseResult, debug_dir: Optional[str] = None
@@ -237,7 +240,7 @@ class GeometryAnalyzer:
             reasons.append("supports large room")
 
         # Classify based on score
-        if score >= 4:
+        if score >= 3:
             classification = "load_bearing"
             load_path = True
         elif score >= 2:
@@ -248,7 +251,7 @@ class GeometryAnalyzer:
             load_path = False
 
         # Check for structural spine (continuous load path through building)
-        if wall.is_exterior and wall.length_m > 5.0:
+        if wall.is_exterior and wall.length_m > 3.0:
             classification = "structural_spine"
             load_path = True
             reasons.append("potential spine")

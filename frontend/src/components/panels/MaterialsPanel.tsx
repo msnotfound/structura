@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
-import type { MaterialsResult, MaterialRecommendation } from '@/types'
-import { Package, DollarSign, Star, Leaf } from 'lucide-react'
+import type { MaterialsResult } from '@/types'
+import { Package } from 'lucide-react'
 
 interface MaterialsPanelProps {
   result: MaterialsResult

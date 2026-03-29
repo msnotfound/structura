@@ -102,9 +102,9 @@ class CVParser:
             binary,
             rho=1,
             theta=np.pi / 180,
-            threshold=50,
+            threshold=70,
             minLineLength=self.min_wall_length_px,
-            maxLineGap=10,
+            maxLineGap=20,
         )
 
         if lines is None:
@@ -197,14 +197,96 @@ class CVParser:
         return max(thickness, 5.0)
 
     def _merge_collinear_walls(self, walls: List[WallSegment]) -> List[WallSegment]:
-        """Merge collinear wall segments that are close together."""
+        """Merge parallel/collinear wall segments that are close together into single walls."""
         if len(walls) < 2:
             return walls
 
-        # Simple implementation - could be improved
-        # For now, just return as-is
-        # TODO: Implement proper collinear merging
-        return walls
+        def wall_angle(w: WallSegment) -> float:
+            dx = w.end.x - w.start.x
+            dy = w.end.y - w.start.y
+            return np.arctan2(dy, dx)  # in radians
+
+        def perp_dist(w: WallSegment, ref: WallSegment) -> float:
+            """Perpendicular distance from ref wall's midpoint to this wall's line."""
+            x1, y1 = ref.start.x, ref.start.y
+            x2, y2 = ref.end.x, ref.end.y
+            dx, dy = x2 - x1, y2 - y1
+            length = np.sqrt(dx*dx + dy*dy)
+            if length < 1e-9:
+                return 999
+            mx = (w.start.x + w.end.x) / 2
+            my = (w.start.y + w.end.y) / 2
+            return abs(dy * mx - dx * my + x2 * y1 - y2 * x1) / length
+
+        def overlap_1d(a1, a2, b1, b2) -> bool:
+            """Check if two 1D intervals overlap."""
+            lo_a, hi_a = min(a1, a2), max(a1, a2)
+            lo_b, hi_b = min(b1, b2), max(b1, b2)
+            return lo_a <= hi_b + 20 and lo_b <= hi_a + 20  # 20px gap tolerance
+
+        def walls_collinear(w1: WallSegment, w2: WallSegment) -> bool:
+            a1 = wall_angle(w1) % np.pi
+            a2 = wall_angle(w2) % np.pi
+            angle_diff = min(abs(a1 - a2), np.pi - abs(a1 - a2))
+            if angle_diff > np.radians(8):  # more than 8° apart → not collinear
+                return False
+            if perp_dist(w2, w1) > 15:  # more than 15px perpendicular offset
+                return False
+            # Check longitudinal overlap
+            is_horizontal = abs(np.cos(a1)) > abs(np.sin(a1))
+            if is_horizontal:
+                return overlap_1d(w1.start.x, w1.end.x, w2.start.x, w2.end.x)
+            else:
+                return overlap_1d(w1.start.y, w1.end.y, w2.start.y, w2.end.y)
+
+        def merge_group(group: List[WallSegment]) -> WallSegment:
+            """Merge a group of collinear walls into one representative wall."""
+            # Use thickest/longest wall as template
+            template = max(group, key=lambda w: w.thickness_px)
+            # Find outermost endpoints along the wall direction
+            angle = wall_angle(template)
+            is_horiz = abs(np.cos(angle)) > abs(np.sin(angle))
+            if is_horiz:
+                xs = [p for w in group for p in [w.start.x, w.end.x]]
+                ys = [p for w in group for p in [w.start.y, w.end.y]]
+                new_start = Point2D(x=min(xs), y=np.mean(ys))
+                new_end   = Point2D(x=max(xs), y=np.mean(ys))
+            else:
+                xs = [p for w in group for p in [w.start.x, w.end.x]]
+                ys = [p for w in group for p in [w.start.y, w.end.y]]
+                new_start = Point2D(x=np.mean(xs), y=min(ys))
+                new_end   = Point2D(x=np.mean(xs), y=max(ys))
+            length_px = np.sqrt((new_end.x - new_start.x)**2 + (new_end.y - new_start.y)**2)
+            return WallSegment(
+                id=template.id,
+                start=new_start,
+                end=new_end,
+                thickness_px=max(w.thickness_px for w in group),
+                thickness_m=template.thickness_m,
+                length_m=length_px,  # Will be scaled later
+                is_exterior=any(w.is_exterior for w in group),
+                source="cv",
+            )
+
+        # Union-find style grouping
+        used = [False] * len(walls)
+        merged: List[WallSegment] = []
+
+        for i, w1 in enumerate(walls):
+            if used[i]:
+                continue
+            group = [w1]
+            used[i] = True
+            for j, w2 in enumerate(walls):
+                if used[j] or i == j:
+                    continue
+                if walls_collinear(w1, w2):
+                    group.append(w2)
+                    used[j] = True
+            merged.append(merge_group(group))
+
+        print(f"Collinear merge: {len(walls)} → {len(merged)} walls")
+        return merged
 
     def _detect_rooms(
         self, binary: np.ndarray, debug_dir: Optional[str] = None
@@ -360,16 +442,24 @@ class CVParser:
                 method="door_width",
             )
 
-        # Fallback: use image size heuristic
-        # Assume typical room is ~4m wide
-        h, w = binary.shape[:2]
-        estimated_ppm = min(w, h) / 10.0  # Assume 10m across smallest dimension
+        # Fallback: estimate using the longest detected wall as reference
+        # Assume the longest wall spans about 8m (typical residential)
+        if walls:
+            longest_px = max(
+                np.sqrt((w.end.x - w.start.x)**2 + (w.end.y - w.start.y)**2)
+                for w in walls
+            )
+            estimated_ppm = longest_px / 8.0
+        else:
+            # Last resort: use image size heuristic
+            h, w = binary.shape[:2]
+            estimated_ppm = min(w, h) / 10.0
 
         return ScaleReference(
             pixels_per_meter=estimated_ppm,
-            reference_dimension_m=10.0,
-            confidence=0.3,
-            method="default",
+            reference_dimension_m=8.0,
+            confidence=0.25,
+            method="longest_wall",
         )
 
     def _apply_scale(

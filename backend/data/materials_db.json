@@ -1,8 +1,11 @@
 {
   "materials": [
     {
-      "name": "AAC Blocks",
-      "cost_per_sqm": 450,
+      "name": "AAC Block (Autoclaved)",
+      "cost_per_sqm": 550,
+      "min_cost_per_sqm": 520,
+      "max_cost_per_sqm": 580,
+      "source": "CPWD DSR 2024",
       "cost_level": "budget",
       "compressive_strength_mpa": 4,
       "strength_level": "low",
@@ -24,8 +27,11 @@
       "max_span_m": 4.0
     },
     {
-      "name": "Red Brick",
-      "cost_per_sqm": 550,
+      "name": "Red Brick (Modular)",
+      "cost_per_sqm": 715,
+      "min_cost_per_sqm": 680,
+      "max_cost_per_sqm": 750,
+      "source": "NBO 2024",
       "cost_level": "standard",
       "compressive_strength_mpa": 12,
       "strength_level": "medium",
@@ -47,34 +53,92 @@
       "max_span_m": 5.0
     },
     {
-      "name": "RCC",
-      "cost_per_sqm": 1800,
+      "name": "Red Brick (Traditional)",
+      "cost_per_sqm": 610,
+      "min_cost_per_sqm": 580,
+      "max_cost_per_sqm": 640,
+      "source": "NBO 2024",
+      "cost_level": "budget",
+      "compressive_strength_mpa": 10,
+      "strength_level": "medium",
+      "durability_rating": 0.6,
+      "durability_level": "medium",
+      "moisture_resistance": 0.35,
+      "thermal_insulation": 0.5,
+      "weight_kg_per_sqm": 175,
+      "best_use": [
+        "load_bearing_low_rise",
+        "exterior_walls",
+        "rural_construction"
+      ],
+      "constraints": [
+        "heavy_weight",
+        "poor_moisture_resistance",
+        "inconsistent_quality"
+      ],
+      "max_span_m": 4.5
+    },
+    {
+      "name": "RCC M20",
+      "cost_per_sqm": 2400,
+      "min_cost_per_sqm": 2200,
+      "max_cost_per_sqm": 2600,
+      "source": "CPWD DSR 2024",
       "cost_level": "premium",
-      "compressive_strength_mpa": 30,
+      "compressive_strength_mpa": 20,
       "strength_level": "high",
-      "durability_rating": 0.95,
+      "durability_rating": 0.92,
       "durability_level": "high",
       "moisture_resistance": 0.8,
       "thermal_insulation": 0.3,
-      "weight_kg_per_sqm": 250,
+      "weight_kg_per_sqm": 240,
       "best_use": [
-        "structural_spine",
         "load_bearing",
-        "long_spans",
-        "multi_story",
-        "foundations"
+        "residential_slabs",
+        "foundations",
+        "multi_story"
       ],
       "constraints": [
         "high_cost",
         "requires_skilled_labor",
-        "curing_time_28_days",
+        "curing_28_days",
         "poor_thermal_insulation"
+      ],
+      "max_span_m": 10.0
+    },
+    {
+      "name": "RCC M25 (Commercial)",
+      "cost_per_sqm": 3000,
+      "min_cost_per_sqm": 2800,
+      "max_cost_per_sqm": 3200,
+      "source": "CPWD DSR 2024",
+      "cost_level": "premium",
+      "compressive_strength_mpa": 25,
+      "strength_level": "high",
+      "durability_rating": 0.95,
+      "durability_level": "high",
+      "moisture_resistance": 0.82,
+      "thermal_insulation": 0.3,
+      "weight_kg_per_sqm": 250,
+      "best_use": [
+        "structural_spine",
+        "long_spans",
+        "multi_story",
+        "commercial"
+      ],
+      "constraints": [
+        "very_high_cost",
+        "requires_structural_engineer",
+        "curing_28_days"
       ],
       "max_span_m": 12.0
     },
     {
       "name": "Steel Frame",
-      "cost_per_sqm": 2200,
+      "cost_per_sqm": 4000,
+      "min_cost_per_sqm": 3500,
+      "max_cost_per_sqm": 4500,
+      "source": "Steel Authority India 2024",
       "cost_level": "premium",
       "compressive_strength_mpa": 250,
       "strength_level": "very_high",
@@ -98,8 +162,11 @@
       "max_span_m": 30.0
     },
     {
-      "name": "Hollow Concrete Block",
-      "cost_per_sqm": 400,
+      "name": "Hollow Concrete Block (100mm)",
+      "cost_per_sqm": 500,
+      "min_cost_per_sqm": 480,
+      "max_cost_per_sqm": 520,
+      "source": "NBO 2024",
       "cost_level": "budget",
       "compressive_strength_mpa": 5,
       "strength_level": "low",
@@ -107,22 +174,50 @@
       "durability_level": "medium",
       "moisture_resistance": 0.5,
       "thermal_insulation": 0.6,
-      "weight_kg_per_sqm": 110,
+      "weight_kg_per_sqm": 100,
       "best_use": [
         "partition_walls",
-        "boundary_walls",
-        "non_structural"
+        "non_structural",
+        "boundary_walls"
       ],
       "constraints": [
         "not_for_load_bearing",
         "limited_strength",
-        "requires_reinforcement_for_height"
+        "requires_column_support_for_height"
       ],
       "max_span_m": 3.5
     },
     {
+      "name": "Hollow Concrete Block (150mm)",
+      "cost_per_sqm": 610,
+      "min_cost_per_sqm": 580,
+      "max_cost_per_sqm": 640,
+      "source": "NBO 2024",
+      "cost_level": "budget",
+      "compressive_strength_mpa": 7,
+      "strength_level": "low",
+      "durability_rating": 0.65,
+      "durability_level": "medium",
+      "moisture_resistance": 0.5,
+      "thermal_insulation": 0.55,
+      "weight_kg_per_sqm": 120,
+      "best_use": [
+        "partition_walls",
+        "boundary_walls",
+        "semi_structural"
+      ],
+      "constraints": [
+        "not_for_heavy_loads",
+        "needs_column_support"
+      ],
+      "max_span_m": 4.0
+    },
+    {
       "name": "Fly Ash Brick",
-      "cost_per_sqm": 380,
+      "cost_per_sqm": 440,
+      "min_cost_per_sqm": 420,
+      "max_cost_per_sqm": 460,
+      "source": "BIS/NBO 2024",
       "cost_level": "budget",
       "compressive_strength_mpa": 9,
       "strength_level": "medium",
@@ -144,8 +239,11 @@
       "max_span_m": 4.5
     },
     {
-      "name": "Precast Concrete Panel",
-      "cost_per_sqm": 1400,
+      "name": "Precast Concrete Panel (Residential)",
+      "cost_per_sqm": 1700,
+      "min_cost_per_sqm": 1600,
+      "max_cost_per_sqm": 1800,
+      "source": "CPWD 2024",
       "cost_level": "standard",
       "compressive_strength_mpa": 25,
       "strength_level": "high",
@@ -166,6 +264,115 @@
         "joint_waterproofing_critical"
       ],
       "max_span_m": 8.0
+    },
+    {
+      "name": "Precast Concrete Panel (Commercial)",
+      "cost_per_sqm": 2400,
+      "min_cost_per_sqm": 2200,
+      "max_cost_per_sqm": 2600,
+      "source": "CPWD 2024",
+      "cost_level": "premium",
+      "compressive_strength_mpa": 30,
+      "strength_level": "high",
+      "durability_rating": 0.93,
+      "durability_level": "high",
+      "moisture_resistance": 0.88,
+      "thermal_insulation": 0.4,
+      "weight_kg_per_sqm": 220,
+      "best_use": [
+        "commercial_exterior",
+        "curtain_walls",
+        "large_spans",
+        "fast_construction"
+      ],
+      "constraints": [
+        "expensive_jointing",
+        "specialist_installation"
+      ],
+      "max_span_m": 12.0
+    },
+    {
+      "name": "Gypsum Board Partition",
+      "cost_per_sqm": 315,
+      "min_cost_per_sqm": 280,
+      "max_cost_per_sqm": 350,
+      "source": "Market Survey 2024",
+      "cost_level": "budget",
+      "compressive_strength_mpa": 1,
+      "strength_level": "very_low",
+      "durability_rating": 0.4,
+      "durability_level": "low",
+      "moisture_resistance": 0.25,
+      "thermal_insulation": 0.75,
+      "weight_kg_per_sqm": 12,
+      "best_use": [
+        "interior_non_structural_partition",
+        "office_spaces",
+        "false_walls",
+        "acoustic_separation"
+      ],
+      "constraints": [
+        "not_structural",
+        "not_for_wet_areas",
+        "fragile",
+        "requires_framing"
+      ],
+      "max_span_m": 2.5
+    },
+    {
+      "name": "Porotherm Clay Block",
+      "cost_per_sqm": 800,
+      "min_cost_per_sqm": 750,
+      "max_cost_per_sqm": 850,
+      "source": "Wienerberger India 2024",
+      "cost_level": "standard",
+      "compressive_strength_mpa": 10,
+      "strength_level": "medium",
+      "durability_rating": 0.82,
+      "durability_level": "high",
+      "moisture_resistance": 0.65,
+      "thermal_insulation": 0.9,
+      "weight_kg_per_sqm": 70,
+      "best_use": [
+        "exterior_walls",
+        "thermal_comfort_priority",
+        "low_rise_residential",
+        "green_buildings"
+      ],
+      "constraints": [
+        "higher_cost_than_brick",
+        "requires_specialized_mortar",
+        "limited_suppliers"
+      ],
+      "max_span_m": 5.0
+    },
+    {
+      "name": "Stabilised Mud Block (CEB)",
+      "cost_per_sqm": 280,
+      "min_cost_per_sqm": 250,
+      "max_cost_per_sqm": 310,
+      "source": "ASTRA/CBRI 2024",
+      "cost_level": "budget",
+      "compressive_strength_mpa": 3,
+      "strength_level": "low",
+      "durability_rating": 0.55,
+      "durability_level": "medium",
+      "moisture_resistance": 0.2,
+      "thermal_insulation": 0.95,
+      "weight_kg_per_sqm": 180,
+      "best_use": [
+        "eco_construction",
+        "rural_areas",
+        "tropical_climates",
+        "sustainable_projects"
+      ],
+      "constraints": [
+        "poor_moisture_resistance",
+        "not_for_wet_zones",
+        "requires_plaster_protection",
+        "niche_application"
+      ],
+      "max_span_m": 3.0
     }
   ],
   "weight_profiles": {

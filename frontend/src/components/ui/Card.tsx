@@ -1,13 +1,15 @@
 import { cn } from '@/lib/utils'
+import React from 'react'
 
 interface CardProps {
   className?: string
   children: React.ReactNode
+  style?: React.CSSProperties
 }
 
-export function Card({ className, children }: CardProps) {
+export function Card({ className, children, style }: CardProps) {
   return (
-    <div className={cn('card p-6', className)}>
+    <div className={cn('card p-6', className)} style={style}>
       {children}
     </div>
   )
@@ -16,11 +18,12 @@ export function Card({ className, children }: CardProps) {
 interface CardHeaderProps {
   className?: string
   children: React.ReactNode
+  style?: React.CSSProperties
 }
 
-export function CardHeader({ className, children }: CardHeaderProps) {
+export function CardHeader({ className, children, style }: CardHeaderProps) {
   return (
-    <div className={cn('mb-4', className)}>
+    <div className={cn('mb-4', className)} style={style}>
       {children}
     </div>
   )
@@ -29,11 +32,12 @@ export function CardHeader({ className, children }: CardHeaderProps) {
 interface CardTitleProps {
   className?: string
   children: React.ReactNode
+  style?: React.CSSProperties
 }
 
-export function CardTitle({ className, children }: CardTitleProps) {
+export function CardTitle({ className, children, style }: CardTitleProps) {
   return (
-    <h3 className={cn('text-lg font-semibold text-foreground', className)}>
+    <h3 className={cn('text-lg font-semibold text-foreground', className)} style={style}>
       {children}
     </h3>
   )
@@ -42,11 +46,12 @@ export function CardTitle({ className, children }: CardTitleProps) {
 interface CardDescriptionProps {
   className?: string
   children: React.ReactNode
+  style?: React.CSSProperties
 }
 
-export function CardDescription({ className, children }: CardDescriptionProps) {
+export function CardDescription({ className, children, style }: CardDescriptionProps) {
   return (
-    <p className={cn('text-sm text-muted-foreground mt-1', className)}>
+    <p className={cn('text-sm text-muted-foreground mt-1', className)} style={style}>
       {children}
     </p>
   )
@@ -55,11 +60,12 @@ export function CardDescription({ className, children }: CardDescriptionProps) {
 interface CardContentProps {
   className?: string
   children: React.ReactNode
+  style?: React.CSSProperties
 }
 
-export function CardContent({ className, children }: CardContentProps) {
+export function CardContent({ className, children, style }: CardContentProps) {
   return (
-    <div className={cn('', className)}>
+    <div className={cn('', className)} style={style}>
       {children}
     </div>
   )
