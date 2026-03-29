@@ -12,7 +12,8 @@ export function ReportPanel({ report }: ReportPanelProps) {
   const summary = api.project_summary ?? api.summary ?? ''
   const structural_assessment = api.overall_assessment ?? api.structural_assessment ?? ''
   const optimization_suggestions: any[] = api.optimization_suggestions ?? []
-  const warnings_summary = api.cost_summary ?? api.warnings_summary ?? null
+  // warnings_summary should be a string, NOT cost_summary (which is an object)
+  const warnings_summary = typeof api.warnings_summary === 'string' ? api.warnings_summary : null
   // No recommendations array in API, show limitations instead
   const recommendations: string[] = api.limitations ?? api.recommendations ?? []
 
