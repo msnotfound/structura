@@ -60,18 +60,22 @@ class Extruder:
         """
         height = floor_height or self.default_floor_height
 
+        # Wall/room pixel coordinates must be converted to meters for the 3D scene.
+        # Wall length_m and thickness_m are already in meters; start/end are still pixels.
+        ppm = parse_result.scale.pixels_per_meter if parse_result.scale.pixels_per_meter else 1.0
+
         # Extrude walls
         walls_3d = []
         for cw in geometry_result.classified_walls:
             for floor in range(num_floors):
-                extruded = self._extrude_wall(cw, floor, height)
+                extruded = self._extrude_wall(cw, floor, height, ppm)
                 walls_3d.append(extruded)
 
         # Create floor slabs
         slabs = []
         for room in parse_result.rooms:
             for floor in range(num_floors):
-                slab = self._create_slab(room, floor, height)
+                slab = self._create_slab(room, floor, height, ppm)
                 slabs.append(slab)
 
         # Create 3D room labels
@@ -82,9 +86,9 @@ class Extruder:
                     room_id=room.id,
                     label=room.label,
                     position=Point3D(
-                        x=room.centroid.x,
+                        x=room.centroid.x / ppm,
                         y=height / 2,  # Mid-height
-                        z=room.centroid.y,
+                        z=room.centroid.y / ppm,
                     ),
                     area_m2=room.area_m2,
                     room_type=room.room_type,
@@ -92,7 +96,7 @@ class Extruder:
                 labels.append(label)
 
         # Calculate camera bounds
-        bounds = self._calculate_bounds(geometry_result, num_floors, height)
+        bounds = self._calculate_bounds(geometry_result, num_floors, height, ppm)
 
         scene = SceneGraph(
             walls=walls_3d,
@@ -115,7 +119,7 @@ class Extruder:
         return scene
 
     def _extrude_wall(
-        self, classified_wall: ClassifiedWall, floor: int, floor_height: float
+        self, classified_wall: ClassifiedWall, floor: int, floor_height: float, ppm: float = 1.0
     ) -> ExtrudedWall:
         """Extrude a single wall to 3D."""
 
@@ -123,9 +127,15 @@ class Extruder:
         base_z = floor * floor_height
         top_z = base_z + floor_height
 
-        # Get wall direction and perpendicular
-        dx = wall.end.x - wall.start.x
-        dy = wall.end.y - wall.start.y
+        # Convert pixel coords to meters
+        sx = wall.start.x / ppm
+        sy = wall.start.y / ppm
+        ex = wall.end.x / ppm
+        ey = wall.end.y / ppm
+
+        # Get wall direction and perpendicular (now in meters)
+        dx = ex - sx
+        dy = ey - sy
         length = np.sqrt(dx * dx + dy * dy)
 
         if length == 0:
@@ -139,15 +149,15 @@ class Extruder:
         # In Three.js coordinate system: Y is up, X is right, Z is forward
         vertices = [
             # Bottom face (y = base_z)
-            Point3D(x=wall.start.x - perp_x, y=base_z, z=wall.start.y - perp_y),  # 0
-            Point3D(x=wall.start.x + perp_x, y=base_z, z=wall.start.y + perp_y),  # 1
-            Point3D(x=wall.end.x + perp_x, y=base_z, z=wall.end.y + perp_y),  # 2
-            Point3D(x=wall.end.x - perp_x, y=base_z, z=wall.end.y - perp_y),  # 3
+            Point3D(x=sx - perp_x, y=base_z, z=sy - perp_y),  # 0
+            Point3D(x=sx + perp_x, y=base_z, z=sy + perp_y),  # 1
+            Point3D(x=ex + perp_x, y=base_z, z=ey + perp_y),  # 2
+            Point3D(x=ex - perp_x, y=base_z, z=ey - perp_y),  # 3
             # Top face (y = top_z)
-            Point3D(x=wall.start.x - perp_x, y=top_z, z=wall.start.y - perp_y),  # 4
-            Point3D(x=wall.start.x + perp_x, y=top_z, z=wall.start.y + perp_y),  # 5
-            Point3D(x=wall.end.x + perp_x, y=top_z, z=wall.end.y + perp_y),  # 6
-            Point3D(x=wall.end.x - perp_x, y=top_z, z=wall.end.y - perp_y),  # 7
+            Point3D(x=sx - perp_x, y=top_z, z=sy - perp_y),  # 4
+            Point3D(x=sx + perp_x, y=top_z, z=sy + perp_y),  # 5
+            Point3D(x=ex + perp_x, y=top_z, z=ey + perp_y),  # 6
+            Point3D(x=ex - perp_x, y=top_z, z=ey - perp_y),  # 7
         ]
 
         # 6 faces (2 triangles each)
@@ -192,12 +202,12 @@ class Extruder:
             is_exterior=wall.is_exterior,
         )
 
-    def _create_slab(self, room, floor: int, floor_height: float) -> Slab:
+    def _create_slab(self, room, floor: int, floor_height: float, ppm: float = 1.0) -> Slab:
         """Create a floor slab for a room."""
 
         elevation = floor * floor_height
 
-        vertices = [Point3D(x=v.x, y=elevation, z=v.y) for v in room.vertices]
+        vertices = [Point3D(x=v.x / ppm, y=elevation, z=v.y / ppm) for v in room.vertices]
 
         return Slab(
             id=f"slab_{room.id}_f{floor}",
@@ -209,17 +219,17 @@ class Extruder:
         )
 
     def _calculate_bounds(
-        self, geometry_result: GeometryResult, num_floors: int, floor_height: float
+        self, geometry_result: GeometryResult, num_floors: int, floor_height: float, ppm: float = 1.0
     ) -> CameraBounds:
         """Calculate camera bounds for the scene."""
 
-        # Get all wall endpoints
+        # Get all wall endpoints (converted to meters)
         all_x = []
         all_z = []
 
         for cw in geometry_result.classified_walls:
-            all_x.extend([cw.wall.start.x, cw.wall.end.x])
-            all_z.extend([cw.wall.start.y, cw.wall.end.y])
+            all_x.extend([cw.wall.start.x / ppm, cw.wall.end.x / ppm])
+            all_z.extend([cw.wall.start.y / ppm, cw.wall.end.y / ppm])
 
         if not all_x:
             # Fallback

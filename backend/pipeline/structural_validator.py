@@ -47,9 +47,12 @@ class StructuralValidator:
         warnings = []
         span_analyses = []
 
+        # pixels_per_meter needed to convert room vertex coords (still in px) to meters
+        ppm = parse_result.scale.pixels_per_meter if parse_result.scale.pixels_per_meter else 1.0
+
         # Analyze spans for each room
         for room in parse_result.rooms:
-            span = self._analyze_room_span(room, geometry_result)
+            span = self._analyze_room_span(room, geometry_result, ppm)
             span_analyses.append(span)
 
             # Generate warnings for excessive spans
@@ -115,7 +118,7 @@ class StructuralValidator:
         return result
 
     def _analyze_room_span(
-        self, room: Room, geometry_result: GeometryResult
+        self, room: Room, geometry_result: GeometryResult, ppm: float = 1.0
     ) -> SpanAnalysis:
         """Analyze the maximum span in a room."""
 
@@ -130,12 +133,12 @@ class StructuralValidator:
                 supporting_walls=[],
             )
 
-        # Calculate bounding box
+        # Calculate bounding box — vertices are in pixel coords, convert to meters
         xs = [v.x for v in room.vertices]
         ys = [v.y for v in room.vertices]
 
-        width = max(xs) - min(xs)
-        height = max(ys) - min(ys)
+        width = (max(xs) - min(xs)) / ppm
+        height = (max(ys) - min(ys)) / ppm
 
         # Assume scale is already applied
         # Find the longer dimension

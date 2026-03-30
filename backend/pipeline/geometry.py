@@ -40,6 +40,9 @@ class GeometryAnalyzer:
         # Build wall graph and find junctions
         junctions = self._find_junctions(walls)
 
+        # Snap wall endpoints to junction centroids so 3D corners are gap-free
+        self._snap_walls_to_junctions(walls, junctions)
+
         # Classify walls based on position, thickness, and connectivity
         classified_walls = self._classify_walls(
             walls, junctions, rooms, parse_result.building_outline
@@ -337,6 +340,18 @@ class GeometryAnalyzer:
                 spines.append(spine)
 
         return spines
+
+    def _snap_walls_to_junctions(
+        self, walls: List[WallSegment], junctions: List[Junction]
+    ) -> None:
+        """Snap wall endpoints to their junction centroid so 3D corners are gap-free."""
+        for junction in junctions:
+            jx, jy = junction.position.x, junction.position.y
+            for wall in walls:
+                if self._point_distance(wall.start, junction.position) < self.junction_threshold:
+                    wall.start = Point2D(x=jx, y=jy)
+                if self._point_distance(wall.end, junction.position) < self.junction_threshold:
+                    wall.end = Point2D(x=jx, y=jy)
 
     def _save_debug(self, result: GeometryResult, debug_dir: str):
         """Save geometry debug information."""

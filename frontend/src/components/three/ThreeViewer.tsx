@@ -45,8 +45,8 @@ function WallMesh({ wall, selected, onSelect }: WallMeshProps) {
       const geo = new THREE.BufferGeometry()
       const positions: number[] = []
       verts.forEach(v => {
-        // Scale pixel → meters (~60px/m)
-        positions.push(v.x / 60, v.y, v.z / 60)
+        // Coordinates already in meters from backend
+        positions.push(v.x, v.y, v.z)
       })
       const indices: number[] = []
       faces.forEach(face => {
@@ -73,7 +73,7 @@ function WallMesh({ wall, selected, onSelect }: WallMeshProps) {
     const avgX = verts.reduce((s, v) => s + v.x, 0) / verts.length
     const avgY = verts.reduce((s, v) => s + v.y, 0) / verts.length
     const avgZ = verts.reduce((s, v) => s + v.z, 0) / verts.length
-    return [avgX / 60, avgY + 0.5, avgZ / 60] as [number, number, number]
+    return [avgX, avgY + 0.5, avgZ] as [number, number, number]
   }, [wall.wall_id])
 
   return (
@@ -140,7 +140,7 @@ interface RoomLabelProps {
 
 function RoomLabel({ label, position, area }: RoomLabelProps) {
   return (
-    <Html position={[position.x / 60, (position.y ?? 0) + 0.3, position.z / 60]} center>
+    <Html position={[position.x, (position.y ?? 0) + 0.3, position.z]} center>
       <div style={{
         background: 'rgba(5,13,26,0.75)',
         backdropFilter: 'blur(8px)',
@@ -169,10 +169,10 @@ function SceneContent({ sceneGraph, selectedWallId, onWallSelect }: SceneContent
   const walls: ApiWall[] = sg.walls ?? []
   const roomLabels: any[] = sg.room_labels ?? []
   const bounds = sg.camera_bounds ?? {}
-  const minX = (bounds.min?.x ?? 0) / 60
-  const maxX = (bounds.max?.x ?? 100) / 60
-  const minZ = (bounds.min?.z ?? 0) / 60
-  const maxZ = (bounds.max?.z ?? 100) / 60
+  const minX = bounds.min?.x ?? 0
+  const maxX = bounds.max?.x ?? 10
+  const minZ = bounds.min?.z ?? 0
+  const maxZ = bounds.max?.z ?? 10
   const sizeX = maxX - minX
   const sizeZ = maxZ - minZ
   const centerX = (minX + maxX) / 2
@@ -231,11 +231,11 @@ interface ThreeViewerProps {
 export function ThreeViewer({ sceneGraph, selectedWallId, onWallSelect, className }: ThreeViewerProps) {
   const sg = sceneGraph as any
   const bounds = sg.camera_bounds ?? {}
-  const centerX = ((bounds.center?.x ?? 400) / 60)
-  const centerZ = ((bounds.center?.z ?? 300) / 60)
+  const centerX = bounds.center?.x ?? 5
+  const centerZ = bounds.center?.z ?? 5
   const dist = Math.max(
-    ((bounds.max?.x ?? 800) - (bounds.min?.x ?? 0)) / 60,
-    ((bounds.max?.z ?? 600) - (bounds.min?.z ?? 0)) / 60
+    (bounds.max?.x ?? 10) - (bounds.min?.x ?? 0),
+    (bounds.max?.z ?? 10) - (bounds.min?.z ?? 0)
   ) * 0.85
 
   return (
