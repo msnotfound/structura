@@ -4,11 +4,11 @@
 
 ## 🏗️ Team TylerDurden
 
-| Name | Role |
-|------|------|
-| **Mayank Sahu** | Full Stack Developer |
-| **Abhinav Shrivastava** | ML & Backend Engineer |
-| **Rishikant Kushwaha** | Frontend & 3D Visualization |
+| Name | 
+|------|
+| **Mayank Sahu** | 
+| **Abhinav Shrivastava** | 
+| **Rishikant Kushwaha** | 
 
 **College:** IIIT Naya Raipur
 
