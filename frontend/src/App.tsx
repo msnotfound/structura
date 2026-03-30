@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import {
   FileUpload,
   ThreeViewer,
@@ -10,6 +10,7 @@ import {
   WallsPanel,
 } from '@/components'
 import { DimensionsPanel } from '@/components/panels/DimensionsPanel'
+import { LoginPage } from '@/components/LoginPage'
 import { useAnalysis } from '@/hooks/useAnalysis'
 import {
   Building2,
@@ -22,6 +23,10 @@ import {
   FileText,
   Ruler,
   Zap,
+  Clock,
+  LogOut,
+  Trash2,
+  ChevronRight,
 } from 'lucide-react'
 
 type TabId = 'walls' | 'structural' | 'materials' | 'cost' | 'report' | 'dimensions'
@@ -43,19 +48,100 @@ const STAGE_LABELS: Record<string, string> = {
   error: 'Error',
 }
 
+interface AnalysisHistoryItem {
+  file_id: string
+  analyzed_at: string
+  room_count: number
+  room_names: string[]
+  wall_count: number
+  structural_score: number
+  total_cost: number
+  beam_count: number
+  column_count: number
+}
+
+interface AuthUser {
+  name: string
+  email: string
+}
+
 function App() {
-  const { result, stage, progress, error, analyze, reset } = useAnalysis()
+  const { result, stage, progress, error, analyze, reset, loadFromData } = useAnalysis()
   const [activeTab, setActiveTab] = useState<TabId>('walls')
   const [selectedWallId, setSelectedWallId] = useState<string | undefined>()
+  const [showHistory, setShowHistory] = useState(false)
+  const [history, setHistory] = useState<AnalysisHistoryItem[]>([])
+
+  // Auth state
+  const [authToken, setAuthToken] = useState<string | null>(
+    localStorage.getItem('auth_token')
+  )
+  const [authUser, setAuthUser] = useState<AuthUser | null>(() => {
+    const stored = localStorage.getItem('auth_user')
+    return stored ? JSON.parse(stored) : null
+  })
 
   useEffect(() => {
     if (result) setActiveTab('walls')
   }, [result])
 
+  useEffect(() => {
+    if (authToken) fetchHistory()
+  }, [authToken])
+
+  const fetchHistory = useCallback(async () => {
+    try {
+      const res = await fetch('/api/analyses')
+      if (res.ok) {
+        const data = await res.json()
+        setHistory(data.analyses ?? [])
+      }
+    } catch { /* ignore */ }
+  }, [])
+
+  const handleLogin = useCallback((token: string, user: AuthUser) => {
+    setAuthToken(token)
+    setAuthUser(user)
+  }, [])
+
+  const handleLogout = useCallback(() => {
+    localStorage.removeItem('auth_token')
+    localStorage.removeItem('auth_user')
+    setAuthToken(null)
+    setAuthUser(null)
+  }, [])
+
+  const handleDeleteAnalysis = useCallback(async (fileId: string) => {
+    try {
+      await fetch(`/api/analysis/${fileId}`, { method: 'DELETE' })
+      setHistory(h => h.filter(a => a.file_id !== fileId))
+    } catch { /* ignore */ }
+  }, [])
+
+  const handleLoadAnalysis = useCallback(async (fileId: string) => {
+    try {
+      const res = await fetch(`/api/analysis/${fileId}`)
+      if (res.ok) {
+        const data = await res.json()
+        loadFromData(data)
+        setShowHistory(false)
+      }
+    } catch(e) {
+      console.error('Failed to load analysis:', e)
+    }
+  }, [loadFromData])
+
   const isLoading = stage === 'uploading' || stage === 'analyzing'
   const hasResult = result !== null
 
-  const handleFileSelect = (file: File) => { analyze(file) }
+  const handleFileSelect = (file: File) => {
+    analyze(file).then(() => fetchHistory())
+  }
+
+  // Show login page if not authenticated
+  if (!authToken) {
+    return <LoginPage onLogin={handleLogin} />
+  }
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--color-background)' }}>
@@ -86,14 +172,30 @@ function App() {
           </div>
 
           <div className="flex items-center gap-2">
+            {/* History button */}
+            <button
+              onClick={() => setShowHistory(!showHistory)}
+              style={{
+                display: 'flex', alignItems: 'center', gap: '5px',
+                background: showHistory ? 'rgba(59,130,246,0.15)' : 'rgba(255,255,255,0.04)',
+                border: showHistory ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(255,255,255,0.08)',
+                borderRadius: '8px', padding: '5px 10px',
+                color: showHistory ? '#60a5fa' : 'var(--color-muted-foreground)',
+                fontSize: '0.72rem', fontWeight: 600, cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+            >
+              <Clock className="w-3.5 h-3.5" />
+              History{history.length > 0 && ` (${history.length})`}
+            </button>
+
             {hasResult && (
-              <button
-                onClick={reset}
-                className="btn btn-outline flex items-center gap-2 text-xs h-8 px-3"
-              >
+              <button onClick={() => { reset(); fetchHistory() }}
+                className="btn btn-outline flex items-center gap-2 text-xs h-8 px-3">
                 <RotateCcw className="w-3 h-3" /> New Analysis
               </button>
             )}
+
             <div style={{
               display: 'flex', alignItems: 'center', gap: '6px',
               background: 'rgba(255,255,255,0.04)',
@@ -106,12 +208,117 @@ function App() {
               <Zap className="w-3 h-3" style={{ color: '#22d3ee' }} />
               Gemini + Cerebras
             </div>
+
+            {/* User menu */}
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: '8px',
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(255,255,255,0.08)',
+              borderRadius: '20px',
+              padding: '4px 10px 4px 12px',
+            }}>
+              <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>
+                {authUser?.name}
+              </span>
+              <button
+                onClick={handleLogout}
+                style={{
+                  background: 'none', border: 'none', cursor: 'pointer',
+                  color: 'rgba(255,255,255,0.3)', display: 'flex',
+                }}
+                title="Logout"
+              >
+                <LogOut style={{ width: '14px', height: '14px' }} />
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
       {/* ── Main Content ── */}
       <main className="container mx-auto px-4 py-6">
+        {/* History Drawer */}
+        {showHistory && (
+          <div className="animate-slide-up" style={{
+            marginBottom: '16px',
+            background: 'rgba(255,255,255,0.03)',
+            border: '1px solid rgba(255,255,255,0.07)',
+            borderRadius: '14px',
+            padding: '16px',
+            maxHeight: '300px',
+            overflowY: 'auto',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'white' }}>
+                Analysis History
+              </h3>
+              <span style={{ fontSize: '0.72rem', color: 'var(--color-muted-foreground)' }}>
+                {history.length} saved
+              </span>
+            </div>
+
+            {history.length === 0 ? (
+              <p style={{ fontSize: '0.82rem', color: 'var(--color-muted-foreground)', textAlign: 'center', padding: '20px' }}>
+                No saved analyses yet. Upload a floor plan to get started.
+              </p>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {history.map(item => (
+                  <div key={item.file_id} style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                    background: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(255,255,255,0.06)',
+                    borderRadius: '10px',
+                    padding: '10px 14px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                  }}
+                    onClick={() => handleLoadAnalysis(item.file_id)}
+                    onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(59,130,246,0.3)')}
+                    onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)')}
+                  >
+                    <div style={{ flex: 1 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                        <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'white' }}>
+                          {item.room_names?.join(', ') || `${item.room_count} rooms`}
+                        </span>
+                      </div>
+                      <div style={{ display: 'flex', gap: '12px', fontSize: '0.7rem', color: 'var(--color-muted-foreground)' }}>
+                        <span>{item.wall_count} walls</span>
+                        <span>{item.beam_count} beams</span>
+                        <span>{((item.structural_score || 0) * 100).toFixed(0)}% integrity</span>
+                        <span>₹{((item.total_cost || 0) / 100000).toFixed(1)}L</span>
+                        <span>{new Date(item.analyzed_at).toLocaleDateString()}</span>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <button
+                        onClick={e => {
+                          e.stopPropagation()
+                          handleDeleteAnalysis(item.file_id)
+                        }}
+                        style={{
+                          background: 'rgba(239,68,68,0.1)',
+                          border: '1px solid rgba(239,68,68,0.2)',
+                          borderRadius: '6px',
+                          padding: '4px 6px',
+                          cursor: 'pointer',
+                          color: '#f87171',
+                          display: 'flex',
+                        }}
+                        title="Delete analysis"
+                      >
+                        <Trash2 style={{ width: '12px', height: '12px' }} />
+                      </button>
+                      <ChevronRight style={{ width: '14px', height: '14px', color: 'rgba(255,255,255,0.3)' }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
         {!hasResult ? (
           /* ── Upload View ── */
           <div className="max-w-2xl mx-auto animate-slide-up">
@@ -137,7 +344,7 @@ function App() {
                 <span className="gradient-text">Analyze</span> your<br />floor plan instantly
               </h2>
               <p style={{ color: 'var(--color-muted-foreground)', fontSize: '1rem', maxWidth: '460px', margin: '0 auto' }}>
-                Upload an architectural drawing and get full structural analysis, 3D visualization, material recommendations, and cost estimates in seconds.
+                Upload an architectural drawing and get full structural analysis, 3D visualization with IS 456 beam/column design, material recommendations, and cost estimates.
               </p>
             </div>
 
@@ -161,9 +368,8 @@ function App() {
                       </span>
                     </div>
                     <p style={{ fontSize: '0.8rem', color: 'var(--color-muted-foreground)' }}>{progress}</p>
-                    {/* Progress dots */}
                     <div className="flex justify-center gap-2 mt-3">
-                      {['CV Parsing','Geometry','3D Extrusion','AI Report'].map((s, i) => (
+                      {['CV Parsing','Geometry','3D + Beams','AI Report'].map((s, i) => (
                         <div key={s} style={{
                           height: '4px', width: '40px', borderRadius: '4px',
                           background: stage === 'analyzing' && i < 2 ? '#3b82f6' : 'rgba(255,255,255,0.1)',
@@ -194,9 +400,9 @@ function App() {
             }}>
               {[
                 { icon: <Layers className="w-5 h-5" />, label: 'Wall Classification', color: '#ef4444', bg: 'rgba(239,68,68,0.1)' },
-                { icon: <AlertTriangle className="w-5 h-5" />, label: 'Structural Analysis', color: '#f59e0b', bg: 'rgba(245,158,11,0.1)' },
+                { icon: <AlertTriangle className="w-5 h-5" />, label: 'IS 456 Beam Design', color: '#f59e0b', bg: 'rgba(245,158,11,0.1)' },
                 { icon: <Package className="w-5 h-5" />, label: 'Material AI', color: '#22d3ee', bg: 'rgba(34,211,238,0.1)' },
-                { icon: <Calculator className="w-5 h-5" />, label: 'Cost Estimate', color: '#a78bfa', bg: 'rgba(167,139,250,0.1)' },
+                { icon: <Calculator className="w-5 h-5" />, label: 'CPWD Cost DB', color: '#a78bfa', bg: 'rgba(167,139,250,0.1)' },
               ].map((f) => (
                 <div key={f.label} style={{
                   padding: '16px 12px',
@@ -236,7 +442,6 @@ function App() {
                 ) : (
                   <ThreeViewerPlaceholder className="w-full h-full" />
                 )}
-                {/* Corner badge */}
                 <div style={{
                   position: 'absolute', top: '12px', left: '12px',
                   background: 'rgba(5,13,26,0.8)',
@@ -247,18 +452,23 @@ function App() {
                   fontSize: '0.7rem',
                   color: 'var(--color-muted-foreground)',
                 }}>
-                  3D View — Click wall to inspect
+                  3D View — Click wall/beam/column to inspect
                 </div>
               </div>
 
               {/* Quick Stats */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '10px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '10px', marginTop: '12px' }}>
                 <StatCard label="Walls" value={result.geometry_result?.classified_walls?.length ?? 0} color="#3b82f6" />
                 <StatCard label="Rooms" value={result.geometry_result?.rooms?.length ?? (result.geometry_result as any)?.room_polygons?.length ?? 0} color="#22d3ee" />
                 <StatCard
                   label="Integrity"
                   value={`${(((result.structural_result as any)?.overall_structural_score ?? (result.structural_result as any)?.overall_integrity_score ?? 0) * 100).toFixed(0)}%`}
                   color="#a78bfa"
+                />
+                <StatCard
+                  label="Beams"
+                  value={(result.scene_graph as any)?.beams?.length ?? 0}
+                  color="#3b82f6"
                 />
                 <StatCard
                   label="Est. Cost"
@@ -270,7 +480,6 @@ function App() {
 
             {/* Right — Tabs Panel */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {/* Tab bar */}
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: `repeat(${TABS.length}, 1fr)`,
@@ -298,6 +507,7 @@ function App() {
                       color: activeTab === tab.id ? '#60a5fa' : 'var(--color-muted-foreground)',
                       border: activeTab === tab.id ? '1px solid rgba(59,130,246,0.25)' : '1px solid transparent',
                       boxShadow: activeTab === tab.id ? '0 2px 8px rgba(59,130,246,0.15)' : 'none',
+                      cursor: 'pointer',
                     }}
                   >
                     {tab.icon}
@@ -306,7 +516,6 @@ function App() {
                 ))}
               </div>
 
-              {/* Tab Content */}
               <div style={{ maxHeight: '580px', overflowY: 'auto', overflowX: 'hidden' }}>
                 {activeTab === 'walls' && (
                   <WallsPanel
@@ -351,7 +560,7 @@ function App() {
         fontSize: '0.75rem',
         color: 'var(--color-muted-foreground)',
       }}>
-        Structura · AI Hackathon PS2 Submission · Gemini 2.5 Flash + Cerebras Qwen 3 235B
+        Structura · AI Hackathon PS2 · Gemini 2.5 Flash + Cerebras Qwen 3 235B · IS 456:2000 Compliant
       </footer>
     </div>
   )

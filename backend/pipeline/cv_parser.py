@@ -33,8 +33,8 @@ class CVParser:
     """Parser using OpenCV for geometric floor plan extraction."""
 
     def __init__(self):
-        self.min_wall_length_px = 20
-        self.wall_thickness_range = (3, 30)  # pixels
+        self.min_wall_length_px = 30
+        self.wall_thickness_range = (5, 40)  # pixels — reject thin lines (dim arrows)
 
     def parse(
         self, image: np.ndarray, binary: np.ndarray, debug_dir: Optional[str] = None
@@ -97,14 +97,14 @@ class CVParser:
 
         walls = []
 
-        # Use probabilistic Hough transform
+        # Use probabilistic Hough transform with tighter threshold
         lines = cv2.HoughLinesP(
             binary,
             rho=1,
             theta=np.pi / 180,
-            threshold=70,
+            threshold=80,
             minLineLength=self.min_wall_length_px,
-            maxLineGap=20,
+            maxLineGap=15,
         )
 
         if lines is None:
@@ -119,6 +119,13 @@ class CVParser:
 
             # Skip very short segments
             if length_px < self.min_wall_length_px:
+                continue
+
+            # Only keep roughly horizontal or vertical walls (±15°)
+            angle = abs(np.degrees(np.arctan2(y2 - y1, x2 - x1))) % 180
+            is_horizontal = angle < 15 or angle > 165
+            is_vertical = 75 < angle < 105
+            if not (is_horizontal or is_vertical):
                 continue
 
             # Estimate thickness by checking perpendicular profile
@@ -150,6 +157,20 @@ class CVParser:
 
         # Merge collinear walls
         walls = self._merge_collinear_walls(walls)
+
+        # Filter: reject very thin lines (dimension lines, text, arrows)
+        walls = [w for w in walls if w.thickness_px >= self.wall_thickness_range[0]]
+
+        # Cap wall count (professional plans can detect hundreds of lines)
+        if len(walls) > 60:
+            # Keep longest + thickest walls — real walls are both long and thick
+            walls.sort(key=lambda w: w.thickness_px * np.sqrt(
+                (w.end.x - w.start.x)**2 + (w.end.y - w.start.y)**2
+            ), reverse=True)
+            walls = walls[:60]
+            # Re-number IDs
+            for i, w in enumerate(walls):
+                w.id = f"wall_{i:03d}"
 
         return walls
 
@@ -291,32 +312,62 @@ class CVParser:
     def _detect_rooms(
         self, binary: np.ndarray, debug_dir: Optional[str] = None
     ) -> List[Room]:
-        """Detect rooms using contour analysis."""
+        """Detect rooms using contour analysis with improved gap-closing."""
         cv2 = _get_cv2()
 
         rooms = []
+        h, w = binary.shape[:2]
 
-        # Invert binary (rooms are white spaces)
-        inverted = cv2.bitwise_not(binary)
+        # Apply morphological closing to bridge gaps in walls (doorways)
+        # This is the key fix: doors create gaps that break room contours
+        close_kernel = np.ones((15, 15), np.uint8)
+        closed = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, close_kernel, iterations=2)
 
-        # Find contours
+        # Additional dilation to ensure walls connect
+        dilate_kernel = np.ones((5, 5), np.uint8)
+        closed = cv2.dilate(closed, dilate_kernel, iterations=1)
+
+        # Invert binary (rooms are white spaces between walls)
+        inverted = cv2.bitwise_not(closed)
+
+        # Remove border-touching region (exterior)
+        # Flood fill from corners to remove exterior
+        flood_mask = np.zeros((h + 2, w + 2), np.uint8)
+        cv2.floodFill(inverted, flood_mask, (0, 0), 0)
+        cv2.floodFill(inverted, flood_mask, (w - 1, 0), 0)
+        cv2.floodFill(inverted, flood_mask, (0, h - 1), 0)
+        cv2.floodFill(inverted, flood_mask, (w - 1, h - 1), 0)
+
+        # Find contours in the cleaned interior
         contours, hierarchy = cv2.findContours(
-            inverted, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE
+            inverted, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
         )
+
+        if not contours:
+            # Fallback: try without flood fill
+            inverted2 = cv2.bitwise_not(closed)
+            contours, hierarchy = cv2.findContours(
+                inverted2, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE
+            )
 
         if not contours:
             return rooms
 
-        # Filter contours by area and shape
-        min_room_area = 1000  # pixels
-        h, w = binary.shape[:2]
-        max_room_area = h * w * 0.8  # Room shouldn't be more than 80% of image
+        # Filter contours by area
+        min_room_area = 1500  # Reject tiny fragments (dimension text boxes, annotations)
+        max_room_area = h * w * 0.6  # Room shouldn't be more than 60% of image
 
         room_id = 0
         for i, contour in enumerate(contours):
             area = cv2.contourArea(contour)
 
             if area < min_room_area or area > max_room_area:
+                continue
+
+            # Check aspect ratio - rooms should be somewhat rectangular
+            x, y, rw, rh = cv2.boundingRect(contour)
+            aspect = max(rw, rh) / max(min(rw, rh), 1)
+            if aspect > 5:  # Too elongated to be a room (likely corridor or annotation)
                 continue
 
             # Simplify contour to polygon
@@ -345,6 +396,20 @@ class CVParser:
                 )
             )
             room_id += 1
+
+        # Cap room count — professional plans may have too many tiny contours
+        if len(rooms) > 15:
+            rooms.sort(key=lambda r: r.area_m2, reverse=True)
+            rooms = rooms[:15]
+            for i, r in enumerate(rooms):
+                r.id = f"room_{i:03d}"
+                r.label = f"Room {i + 1}"
+
+        # Save debug image of closed binary
+        if debug_dir:
+            os.makedirs(debug_dir, exist_ok=True)
+            cv2.imwrite(os.path.join(debug_dir, "cv_closed_binary.png"), closed)
+            cv2.imwrite(os.path.join(debug_dir, "cv_room_mask.png"), inverted)
 
         return rooms
 

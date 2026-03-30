@@ -67,6 +67,13 @@ class Room(BaseModel):
         "hallway",
         "dining",
         "great_room",
+        "hall",
+        "pooja",
+        "toilet",
+        "balcony",
+        "staircase",
+        "utility",
+        "garage",
         "other",
     ] = Field(default="other", description="Classified room type")
     centroid: Optional[Point2D] = Field(

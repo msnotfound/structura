@@ -6,7 +6,7 @@ import os
 from typing import Optional, List
 import numpy as np
 
-from models.parsing import ParseResult, Room, Point2D
+from models.parsing import ParseResult, WallSegment, Room, Point2D
 from models.geometry import GeometryResult, ClassifiedWall
 from models.structural import (
     SpanAnalysis,
@@ -257,6 +257,36 @@ class StructuralValidator:
 
         return warnings
 
+    def _find_adjacent_rooms(self, wall: WallSegment, rooms: List[Room]) -> List[Room]:
+        """Find rooms adjacent to a wall."""
+
+        adjacent = []
+
+        # Get wall midpoint (pixel coordinates)
+        mid_x = (wall.start.x + wall.end.x) / 2
+        mid_y = (wall.start.y + wall.end.y) / 2
+
+        # Calculate wall length in pixels for scaling threshold
+        wall_len_px = np.sqrt(
+            (wall.end.x - wall.start.x) ** 2 + (wall.end.y - wall.start.y) ** 2
+        )
+
+        for room in rooms:
+            if room.centroid is None:
+                continue
+
+            dist = np.sqrt(
+                (room.centroid.x - mid_x) ** 2 + (room.centroid.y - mid_y) ** 2
+            )
+
+            # Scale-aware threshold: use pixel-based distance
+            # A room centroid should be within 1.5x the wall's pixel length
+            threshold = max(wall_len_px * 1.5, 150)
+            if dist < threshold:
+                adjacent.append(room)
+
+        return adjacent[:2]  # A wall has at most 2 adjacent rooms
+
     def _check_openings(
         self, parse_result: ParseResult, geometry_result: GeometryResult
     ) -> List[StructuralWarning]:
@@ -292,27 +322,33 @@ class StructuralValidator:
     def _calculate_structural_score(
         self, warnings: List[StructuralWarning], max_span: float
     ) -> float:
-        """Calculate overall structural integrity score (0-1)."""
+        """Calculate overall structural integrity score (0-1).
+        
+        Uses sigmoid-based penalty instead of linear deduction.
+        This prevents the score from hitting 0% with many walls
+        generating informational warnings.
+        """
+        critical_count = sum(1 for w in warnings if w.severity == "critical")
+        warning_count = sum(1 for w in warnings if w.severity == "warning")
+        info_count = sum(1 for w in warnings if w.severity == "info")
 
-        # Start with perfect score
-        score = 1.0
+        # Weighted penalty (critical matters much more)
+        penalty = critical_count * 0.35 + warning_count * 0.12 + info_count * 0.02
 
-        # Deduct for warnings
-        for w in warnings:
-            if w.severity == "critical":
-                score -= 0.2
-            elif w.severity == "warning":
-                score -= 0.1
-            elif w.severity == "info":
-                score -= 0.02
-
-        # Deduct for excessive spans
+        # Span penalty
         if max_span > self.max_residential_span:
-            score -= 0.2
+            penalty += 0.25
         elif max_span > self.beam_required_span:
-            score -= 0.1
+            penalty += 0.10
 
-        return max(0.0, min(1.0, score))
+        # Sigmoid-based score: 1 / (1 + penalty)
+        # This gives: 0 warnings -> 1.0, 2 warnings -> ~0.8, 5 warnings -> ~0.6
+        score = 1.0 / (1.0 + penalty)
+
+        # Boost floor: even a problematic plan gets at least 0.15
+        score = max(0.15, score)
+
+        return min(1.0, score)
 
     def _save_debug(self, result: StructuralAnalysisResult, debug_dir: str):
         """Save structural validation debug info."""

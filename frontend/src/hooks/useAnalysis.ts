@@ -18,6 +18,7 @@ interface UseAnalysisReturn {
   error: string | null
   analyze: (file: File) => Promise<void>
   reset: () => void
+  loadFromData: (data: any) => void
 }
 
 export function useAnalysis(): UseAnalysisReturn {
@@ -56,6 +57,24 @@ export function useAnalysis(): UseAnalysisReturn {
     setError(null)
   }, [])
 
+  const loadFromData = useCallback((data: any) => {
+    // Load analysis from saved history data
+    const loaded: AnalysisResult = {
+      file_id: data.file_id ?? '',
+      parse_result: data.parse_result,
+      geometry_result: data.geometry_result,
+      structural_result: data.structural_result,
+      materials_result: data.materials_result,
+      cost_result: data.cost_result,
+      report: data.report,
+      scene_graph: data.scene_graph,
+    }
+    setResult(loaded)
+    setStage('complete')
+    setProgress('Loaded from history')
+    setError(null)
+  }, [])
+
   return {
     result,
     stage,
@@ -63,5 +82,6 @@ export function useAnalysis(): UseAnalysisReturn {
     error,
     analyze,
     reset,
+    loadFromData,
   }
 }

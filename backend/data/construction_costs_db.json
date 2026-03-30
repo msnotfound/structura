@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "version": "2.0",
+    "currency": "INR",
+    "region": "India",
+    "last_updated": "2026-03",
+    "source": "CPWD Schedule of Rates 2024-25 + Market Survey"
+  },
+  "labor_rates": {
+    "mason": {"rate_per_day": 1000, "unit": "INR/day"},
+    "helper": {"rate_per_day": 600, "unit": "INR/day"},
+    "carpenter": {"rate_per_day": 900, "unit": "INR/day"},
+    "plumber": {"rate_per_day": 850, "unit": "INR/day"},
+    "electrician": {"rate_per_day": 900, "unit": "INR/day"},
+    "painter": {"rate_per_day": 750, "unit": "INR/day"},
+    "bar_bender": {"rate_per_day": 900, "unit": "INR/day"}
+  },
+  "material_rates": {
+    "cement_opc_43": {"rate": 380, "unit": "per bag (50kg)", "description": "OPC 43 Grade Cement"},
+    "cement_opc_53": {"rate": 420, "unit": "per bag (50kg)", "description": "OPC 53 Grade Cement"},
+    "cement_ppc": {"rate": 360, "unit": "per bag (50kg)", "description": "PPC Cement"},
+    "sand_river": {"rate": 65, "unit": "per cft", "description": "River Sand (Zone II)"},
+    "sand_m": {"rate": 55, "unit": "per cft", "description": "M-Sand (Manufactured)"},
+    "aggregate_20mm": {"rate": 50, "unit": "per cft", "description": "20mm Coarse Aggregate"},
+    "aggregate_10mm": {"rate": 55, "unit": "per cft", "description": "10mm Coarse Aggregate"},
+    "steel_fe500": {"rate": 65, "unit": "per kg", "description": "Fe500 TMT Bars"},
+    "steel_fe500d": {"rate": 68, "unit": "per kg", "description": "Fe500D TMT Bars"},
+    "bricks_first_class": {"rate": 9, "unit": "per brick", "description": "First Class Clay Bricks"},
+    "bricks_fly_ash": {"rate": 7, "unit": "per brick", "description": "Fly Ash Bricks"},
+    "aac_blocks_4inch": {"rate": 55, "unit": "per block", "description": "AAC Blocks (100mm)"},
+    "aac_blocks_6inch": {"rate": 70, "unit": "per block", "description": "AAC Blocks (150mm)"},
+    "aac_blocks_8inch": {"rate": 85, "unit": "per block", "description": "AAC Blocks (200mm)"},
+    "concrete_m20_rmc": {"rate": 5200, "unit": "per cum", "description": "M20 Ready Mix Concrete"},
+    "concrete_m25_rmc": {"rate": 5500, "unit": "per cum", "description": "M25 Ready Mix Concrete"},
+    "concrete_m30_rmc": {"rate": 5900, "unit": "per cum", "description": "M30 Ready Mix Concrete"}
+  },
+  "construction_rates": {
+    "excavation": {
+      "earth_soft": {"rate": 250, "unit": "per cum", "description": "Soft soil excavation"},
+      "earth_hard": {"rate": 450, "unit": "per cum", "description": "Hard soil excavation"},
+      "rock": {"rate": 900, "unit": "per cum", "description": "Rock excavation"}
+    },
+    "foundation": {
+      "pcc_1_4_8": {"rate": 4500, "unit": "per cum", "description": "PCC 1:4:8 in foundation"},
+      "rcc_footing": {"rate": 7500, "unit": "per cum", "description": "RCC isolated footing"},
+      "rcc_raft": {"rate": 8500, "unit": "per cum", "description": "RCC raft foundation"}
+    },
+    "rcc_work": {
+      "beam_m25": {"rate": 8200, "unit": "per cum", "description": "RCC Beam (M25 concrete + formwork)"},
+      "column_m25": {"rate": 8500, "unit": "per cum", "description": "RCC Column (M25 + formwork)"},
+      "slab_m25": {"rate": 7800, "unit": "per cum", "description": "RCC Slab (M25 + formwork)"},
+      "lintel_m20": {"rate": 7000, "unit": "per cum", "description": "RCC Lintel (M20)"},
+      "steel_work": {"rate": 75, "unit": "per kg", "description": "Steel cutting, bending, placing"}
+    },
+    "masonry": {
+      "brick_9inch": {"rate": 6800, "unit": "per cum", "description": "9-inch brick wall in CM 1:4"},
+      "brick_4.5inch": {"rate": 4500, "unit": "per cum", "description": "4.5-inch brick wall in CM 1:4"},
+      "aac_block_8inch": {"rate": 4200, "unit": "per cum", "description": "AAC block wall 200mm"},
+      "aac_block_6inch": {"rate": 3800, "unit": "per cum", "description": "AAC block wall 150mm"},
+      "aac_block_4inch": {"rate": 3200, "unit": "per cum", "description": "AAC block wall 100mm"}
+    },
+    "plastering": {
+      "internal_12mm": {"rate": 30, "unit": "per sqft", "description": "12mm cement plaster (1:4) internal"},
+      "external_20mm": {"rate": 42, "unit": "per sqft", "description": "20mm cement plaster (1:4) external"},
+      "pop_punning": {"rate": 22, "unit": "per sqft", "description": "POP punning over plaster"}
+    },
+    "flooring": {
+      "vitrified_tiles": {"rate": 85, "unit": "per sqft", "description": "Vitrified tiles 2x2 with laying"},
+      "ceramic_tiles": {"rate": 60, "unit": "per sqft", "description": "Ceramic tiles with laying"},
+      "granite": {"rate": 150, "unit": "per sqft", "description": "Granite flooring with polishing"},
+      "marble": {"rate": 180, "unit": "per sqft", "description": "Marble flooring with polishing"},
+      "wooden_laminate": {"rate": 100, "unit": "per sqft", "description": "Wooden laminate flooring"}
+    },
+    "painting": {
+      "primer_putty": {"rate": 12, "unit": "per sqft", "description": "Wall primer + putty (2 coats)"},
+      "emulsion_interior": {"rate": 18, "unit": "per sqft", "description": "Interior emulsion paint (2 coats)"},
+      "exterior_paint": {"rate": 25, "unit": "per sqft", "description": "Exterior weather-proof paint"},
+      "enamel_paint": {"rate": 28, "unit": "per sqft", "description": "Enamel paint for doors/windows"}
+    },
+    "electrical": {
+      "wiring_point": {"rate": 1800, "unit": "per point", "description": "Complete wiring per point"},
+      "mcb_distribution": {"rate": 8000, "unit": "per unit", "description": "MCB DB + wiring"}
+    },
+    "plumbing": {
+      "water_supply_point": {"rate": 3500, "unit": "per point", "description": "Water supply point (CPVC)"},
+      "drainage_point": {"rate": 4000, "unit": "per point", "description": "Drainage connection point"},
+      "bathroom_set": {"rate": 25000, "unit": "per set", "description": "Complete bathroom fitting set (budget)"}
+    },
+    "doors_windows": {
+      "main_door_teak": {"rate": 35000, "unit": "per unit", "description": "Teak wood main door 7x3.5 ft"},
+      "internal_door_flush": {"rate": 8000, "unit": "per unit", "description": "Flush door with frame 7x3 ft"},
+      "window_aluminium": {"rate": 450, "unit": "per sqft", "description": "Aluminium sliding window"},
+      "window_upvc": {"rate": 550, "unit": "per sqft", "description": "UPVC window with glass"}
+    }
+  },
+  "per_sqft_estimates": {
+    "budget": {
+      "total_per_sqft": 1400,
+      "description": "Budget construction (basic finishes, local materials)",
+      "breakdown": {
+        "structure": 550,
+        "masonry_plastering": 250,
+        "flooring": 120,
+        "electrical_plumbing": 180,
+        "doors_windows": 100,
+        "painting_finishing": 100,
+        "contingency": 100
+      }
+    },
+    "standard": {
+      "total_per_sqft": 1900,
+      "description": "Standard construction (good finishes, branded materials)",
+      "breakdown": {
+        "structure": 650,
+        "masonry_plastering": 300,
+        "flooring": 200,
+        "electrical_plumbing": 280,
+        "doors_windows": 170,
+        "painting_finishing": 150,
+        "contingency": 150
+      }
+    },
+    "premium": {
+      "total_per_sqft": 2800,
+      "description": "Premium construction (luxury finishes, designer fittings)",
+      "breakdown": {
+        "structure": 750,
+        "masonry_plastering": 400,
+        "flooring": 450,
+        "electrical_plumbing": 400,
+        "doors_windows": 350,
+        "painting_finishing": 250,
+        "contingency": 200
+      }
+    }
+  }
+}

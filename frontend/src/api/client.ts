@@ -10,7 +10,16 @@ import type {
 
 const api = axios.create({
   baseURL: '/api',
-  timeout: 120000, // 2 minutes for analysis
+  timeout: 180000, // 3 minutes for analysis
+})
+
+// Add auth token to requests
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('auth_token')
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+  return config
 })
 
 export async function checkHealth(): Promise<HealthResponse> {
@@ -47,6 +56,21 @@ export async function getSceneGraph(fileId: string): Promise<SceneGraph> {
 
 export async function getReport(fileId: string): Promise<FullReport> {
   const response = await api.get<FullReport>(`/report/${fileId}`)
+  return response.data
+}
+
+export async function getAnalysesList() {
+  const response = await api.get('/analyses')
+  return response.data
+}
+
+export async function getAnalysis(fileId: string) {
+  const response = await api.get(`/analysis/${fileId}`)
+  return response.data
+}
+
+export async function deleteAnalysis(fileId: string) {
+  const response = await api.delete(`/analysis/${fileId}`)
   return response.data
 }
 
