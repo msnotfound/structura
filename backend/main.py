@@ -357,16 +357,30 @@ async def analyze_floor_plan(
         )
         stages_completed.append("cost_estimation")
 
-        # Stage 10: Layout Optimization
-        print(f"\n[{file_id}] Stage 10: Layout Optimization...")
+        # Stage 10: Vastu Compliance
+        print(f"\n[{file_id}] Stage 10: Vastu Compliance Check...")
+        from pipeline.vastu_checker import VastuChecker
+        vastu_result = VastuChecker().check(parse_result)
+        stages_completed.append("vastu_check")
+
+        # Stage 11: Foundation Design (IS 1904)
+        print(f"\n[{file_id}] Stage 11: Foundation Design...")
+        from pipeline.foundation_designer import FoundationDesigner
+        fd = FoundationDesigner()
+        foundation_result = fd.design_foundations(parse_result, geometry_result, structural_result)
+        plinth_result = fd.calculate_plinth_area(parse_result, num_floors=num_floors)
+        stages_completed.append("foundation_design")
+
+        # Stage 12: Layout Optimization
+        print(f"\n[{file_id}] Stage 12: Layout Optimization...")
         layout_optimizer = LayoutOptimizer()
         optimization_suggestions = layout_optimizer.optimize(
             parse_result, geometry_result, structural_result, debug_dir=analysis_debug_dir,
         )
         stages_completed.append("layout_optimization")
 
-        # Stage 11: Report Generation
-        print(f"\n[{file_id}] Stage 11: Report Generation...")
+        # Stage 13: Report Generation
+        print(f"\n[{file_id}] Stage 13: Report Generation...")
         explainer = Explainer()
         report = explainer.generate_report(
             parse_result, geometry_result, structural_result,
@@ -377,7 +391,6 @@ async def analyze_floor_plan(
 
         print(f"\n[{file_id}] Analysis complete! {len(stages_completed)} stages completed.")
 
-        # Build summary for history
         room_count = len(parse_result.rooms)
         room_names = [r.label for r in parse_result.rooms]
 
@@ -389,6 +402,9 @@ async def analyze_floor_plan(
             "scene_graph": serialize_pydantic(scene_graph),
             "materials_result": serialize_pydantic(materials_result),
             "cost_result": serialize_pydantic(cost_result),
+            "vastu_result": vastu_result,
+            "foundation_result": foundation_result,
+            "plinth_result": plinth_result,
             "report": serialize_pydantic(report),
             "analyzed_at": datetime.now().isoformat(),
             "summary": {
@@ -399,6 +415,7 @@ async def analyze_floor_plan(
                 "total_cost": cost_result.grand_total,
                 "beam_count": len(scene_graph.beams),
                 "column_count": len(scene_graph.columns),
+                "vastu_score": vastu_result.get("overall_score", 0),
             }
         }
 

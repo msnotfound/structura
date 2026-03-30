@@ -25,8 +25,8 @@
           "y": 39.375
         },
         "thickness_px": 6.0,
-        "thickness_m": 0.333,
-        "length_m": 18.22,
+        "thickness_m": 0.235,
+        "length_m": 12.86,
         "is_exterior": true,
         "source": "cv"
       },
@@ -41,8 +41,8 @@
           "y": 242.0
         },
         "thickness_px": 6.0,
-        "thickness_m": 0.333,
-        "length_m": 7.28,
+        "thickness_m": 0.235,
+        "length_m": 5.14,
         "is_exterior": true,
         "source": "cv"
       },
@@ -57,8 +57,8 @@
           "y": 143.375
         },
         "thickness_px": 6.0,
-        "thickness_m": 0.333,
-        "length_m": 6.83,
+        "thickness_m": 0.235,
+        "length_m": 4.82,
         "is_exterior": true,
         "source": "cv"
       },
@@ -73,8 +73,8 @@
           "y": 140.25
         },
         "thickness_px": 5.0,
-        "thickness_m": 0.278,
-        "length_m": 9.5,
+        "thickness_m": 0.196,
+        "length_m": 6.71,
         "is_exterior": true,
         "source": "cv"
       },
@@ -89,8 +89,8 @@
           "y": 242.5
         },
         "thickness_px": 7.0,
-        "thickness_m": 0.389,
-        "length_m": 7.83,
+        "thickness_m": 0.275,
+        "length_m": 5.53,
         "is_exterior": true,
         "source": "cv"
       },
@@ -105,8 +105,8 @@
           "y": 243.25
         },
         "thickness_px": 6.0,
-        "thickness_m": 0.333,
-        "length_m": 11.5,
+        "thickness_m": 0.235,
+        "length_m": 8.12,
         "is_exterior": true,
         "source": "cv"
       },
@@ -121,8 +121,8 @@
           "y": 242.0
         },
         "thickness_px": 6.0,
-        "thickness_m": 0.333,
-        "length_m": 11.39,
+        "thickness_m": 0.235,
+        "length_m": 8.04,
         "is_exterior": true,
         "source": "cv"
       },
@@ -137,8 +137,8 @@
           "y": 278.0
         },
         "thickness_px": 5.0,
-        "thickness_m": 0.278,
-        "length_m": 7.83,
+        "thickness_m": 0.196,
+        "length_m": 5.53,
         "is_exterior": true,
         "source": "cv"
       },
@@ -153,8 +153,8 @@
           "y": 103.0
         },
         "thickness_px": 6.0,
-        "thickness_m": 0.333,
-        "length_m": 3.33,
+        "thickness_m": 0.235,
+        "length_m": 2.35,
         "is_exterior": true,
         "source": "cv"
       },
@@ -169,8 +169,8 @@
           "y": 92.375
         },
         "thickness_px": 5.0,
-        "thickness_m": 0.278,
-        "length_m": 3.06,
+        "thickness_m": 0.196,
+        "length_m": 2.16,
         "is_exterior": false,
         "source": "cv"
       },
@@ -185,8 +185,8 @@
           "y": 22.0
         },
         "thickness_px": 6.0,
-        "thickness_m": 0.333,
-        "length_m": 9.33,
+        "thickness_m": 0.235,
+        "length_m": 6.59,
         "is_exterior": true,
         "source": "cv"
       },
@@ -201,8 +201,8 @@
           "y": 189.0
         },
         "thickness_px": 7.0,
-        "thickness_m": 0.389,
-        "length_m": 3.06,
+        "thickness_m": 0.275,
+        "length_m": 2.16,
         "is_exterior": false,
         "source": "cv"
       },
@@ -217,8 +217,8 @@
           "y": 192.33333333333334
         },
         "thickness_px": 5.0,
-        "thickness_m": 0.278,
-        "length_m": 2.22,
+        "thickness_m": 0.196,
+        "length_m": 1.57,
         "is_exterior": false,
         "source": "cv"
       }
@@ -229,27 +229,27 @@
         "label": "LIVING ROOM",
         "vertices": [
           {
-            "x": 26.0,
-            "y": 62.0
+            "x": 60.0,
+            "y": 89.0
           },
           {
-            "x": 191.0,
-            "y": 62.0
+            "x": 210.0,
+            "y": 89.0
           },
           {
-            "x": 191.0,
-            "y": 167.0
+            "x": 210.0,
+            "y": 219.0
           },
           {
-            "x": 26.0,
-            "y": 167.0
+            "x": 60.0,
+            "y": 219.0
           }
         ],
-        "area_m2": 53.46,
+        "area_m2": 29.99,
         "room_type": "living",
         "centroid": {
-          "x": 108.5,
-          "y": 114.5
+          "x": 135.0,
+          "y": 154.0
         }
       },
       {
@@ -257,27 +257,27 @@
         "label": "BEDROOM 1",
         "vertices": [
           {
-            "x": 213.0,
-            "y": 62.0
+            "x": 218.0,
+            "y": 89.0
           },
           {
-            "x": 367.0,
-            "y": 62.0
+            "x": 368.0,
+            "y": 89.0
           },
           {
-            "x": 367.0,
-            "y": 167.0
+            "x": 368.0,
+            "y": 219.0
           },
           {
-            "x": 213.0,
-            "y": 167.0
+            "x": 218.0,
+            "y": 219.0
           }
         ],
-        "area_m2": 49.9,
+        "area_m2": 29.99,
         "room_type": "bedroom",
         "centroid": {
-          "x": 290.0,
-          "y": 114.5
+          "x": 293.0,
+          "y": 154.0
         }
       },
       {
@@ -285,27 +285,27 @@
         "label": "BEDROOM 2",
         "vertices": [
           {
-            "x": 26.0,
-            "y": 190.0
+            "x": 60.0,
+            "y": 227.0
           },
           {
-            "x": 191.0,
-            "y": 190.0
+            "x": 210.0,
+            "y": 227.0
           },
           {
-            "x": 191.0,
-            "y": 264.0
+            "x": 210.0,
+            "y": 290.0
           },
           {
-            "x": 26.0,
-            "y": 264.0
+            "x": 60.0,
+            "y": 290.0
           }
         ],
-        "area_m2": 37.69,
+        "area_m2": 14.52,
         "room_type": "bedroom",
         "centroid": {
-          "x": 108.5,
-          "y": 227.0
+          "x": 135.0,
+          "y": 258.5
         }
       },
       {
@@ -313,27 +313,27 @@
         "label": "KITCHEN",
         "vertices": [
           {
-            "x": 213.0,
-            "y": 190.0
+            "x": 218.0,
+            "y": 227.0
           },
           {
-            "x": 283.0,
-            "y": 190.0
+            "x": 292.0,
+            "y": 227.0
           },
           {
-            "x": 283.0,
-            "y": 264.0
+            "x": 292.0,
+            "y": 290.0
           },
           {
-            "x": 213.0,
-            "y": 264.0
+            "x": 218.0,
+            "y": 290.0
           }
         ],
-        "area_m2": 15.99,
+        "area_m2": 7.16,
         "room_type": "kitchen",
         "centroid": {
-          "x": 248.0,
-          "y": 227.0
+          "x": 255.0,
+          "y": 258.5
         }
       },
       {
@@ -341,27 +341,27 @@
         "label": "BATH",
         "vertices": [
           {
-            "x": 305.0,
-            "y": 190.0
+            "x": 300.0,
+            "y": 227.0
           },
           {
-            "x": 367.0,
-            "y": 190.0
+            "x": 368.0,
+            "y": 227.0
           },
           {
-            "x": 367.0,
-            "y": 264.0
+            "x": 368.0,
+            "y": 290.0
           },
           {
-            "x": 305.0,
-            "y": 264.0
+            "x": 300.0,
+            "y": 290.0
           }
         ],
-        "area_m2": 14.14,
+        "area_m2": 6.59,
         "room_type": "bathroom",
         "centroid": {
-          "x": 336.0,
-          "y": 227.0
+          "x": 334.0,
+          "y": 258.5
         }
       },
       {
@@ -369,27 +369,55 @@
         "label": "ENTRY",
         "vertices": [
           {
-            "x": 246.0,
-            "y": 280.0
+            "x": 228.0,
+            "y": 290.0
           },
           {
-            "x": 271.0,
-            "y": 280.0
+            "x": 299.0,
+            "y": 290.0
           },
           {
-            "x": 271.0,
-            "y": 297.0
+            "x": 299.0,
+            "y": 310.0
           },
           {
-            "x": 246.0,
-            "y": 297.0
+            "x": 228.0,
+            "y": 310.0
           }
         ],
-        "area_m2": 1.31,
+        "area_m2": 2.17,
         "room_type": "foyer",
         "centroid": {
-          "x": 258.5,
-          "y": 288.5
+          "x": 263.5,
+          "y": 300.0
+        }
+      },
+      {
+        "id": "room_006",
+        "label": "HALLWAY",
+        "vertices": [
+          {
+            "x": 210.0,
+            "y": 219.0
+          },
+          {
+            "x": 292.0,
+            "y": 219.0
+          },
+          {
+            "x": 292.0,
+            "y": 290.0
+          },
+          {
+            "x": 210.0,
+            "y": 290.0
+          }
+        ],
+        "area_m2": 8.92,
+        "room_type": "hall",
+        "centroid": {
+          "x": 251.0,
+          "y": 254.5
         }
       }
     ],
@@ -400,7 +428,7 @@
           "x": 92.0,
           "y": 41.0
         },
-        "width_m": 9.02,
+        "width_m": 12.78,
         "height_m": 2.1,
         "type": "window",
         "parent_wall_id": "wall_012"
@@ -411,7 +439,7 @@
           "x": 264.0,
           "y": 41.0
         },
-        "width_m": 9.02,
+        "width_m": 12.78,
         "height_m": 2.1,
         "type": "window",
         "parent_wall_id": "wall_012"
@@ -422,7 +450,7 @@
           "x": 40.0,
           "y": 90.0
         },
-        "width_m": 7.35,
+        "width_m": 10.41,
         "height_m": 2.1,
         "type": "window",
         "parent_wall_id": "wall_042"
@@ -433,7 +461,7 @@
           "x": 40.0,
           "y": 187.5
         },
-        "width_m": 9.85,
+        "width_m": 13.96,
         "height_m": 2.1,
         "type": "window",
         "parent_wall_id": "wall_042"
@@ -444,7 +472,7 @@
           "x": 359.0,
           "y": 92.0
         },
-        "width_m": 16.7,
+        "width_m": 23.66,
         "height_m": 2.1,
         "type": "door",
         "parent_wall_id": "wall_014"
@@ -455,14 +483,14 @@
           "x": 359.0,
           "y": 193.0
         },
-        "width_m": 15.7,
+        "width_m": 22.24,
         "height_m": 2.1,
         "type": "door",
         "parent_wall_id": "wall_014"
       }
     ],
     "scale": {
-      "pixels_per_meter": 18.0,
+      "pixels_per_meter": 25.5,
       "reference_dimension_m": 1.0,
       "confidence": 0.9,
       "method": "vlm_estimate"
@@ -537,7 +565,7 @@
     "fallback_used": false,
     "parsing_method": "vlm_cv_fusion",
     "confidence": 0.9,
-    "vlm_cv_agreement": 1.0
+    "vlm_cv_agreement": 0.8571428571428571
   },
   "geometry_result": {
     "junctions": [
@@ -549,8 +577,8 @@
         },
         "type": "L",
         "connected_wall_ids": [
-          "wall_012",
-          "wall_042"
+          "wall_042",
+          "wall_012"
         ]
       },
       {
@@ -561,8 +589,8 @@
         },
         "type": "L",
         "connected_wall_ids": [
-          "wall_012",
-          "wall_014"
+          "wall_014",
+          "wall_012"
         ]
       },
       {
@@ -585,8 +613,8 @@
         },
         "type": "L",
         "connected_wall_ids": [
-          "wall_004",
-          "wall_017"
+          "wall_017",
+          "wall_004"
         ]
       },
       {
@@ -615,13 +643,13 @@
             "y": 39.375
           },
           "thickness_px": 6.0,
-          "thickness_m": 0.333,
-          "length_m": 18.22,
+          "thickness_m": 0.235,
+          "length_m": 12.86,
           "is_exterior": true,
           "source": "cv"
         },
         "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.33m); long (18.2m); supports large room; potential spine",
+        "reason": "exterior wall; thick (0.23m); long (12.9m); supports large room; potential spine",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -645,13 +673,13 @@
             "y": 242.0
           },
           "thickness_px": 6.0,
-          "thickness_m": 0.333,
-          "length_m": 7.28,
+          "thickness_m": 0.235,
+          "length_m": 5.14,
           "is_exterior": true,
           "source": "cv"
         },
         "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.33m); long (7.3m); supports large room; potential spine",
+        "reason": "exterior wall; thick (0.23m); long (5.1m); supports large room; potential spine",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -675,13 +703,13 @@
             "y": 143.375
           },
           "thickness_px": 6.0,
-          "thickness_m": 0.333,
-          "length_m": 6.83,
+          "thickness_m": 0.235,
+          "length_m": 4.82,
           "is_exterior": true,
           "source": "cv"
         },
         "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.33m); long (6.8m); supports large room; potential spine",
+        "reason": "exterior wall; thick (0.23m); long (4.8m); supports large room; potential spine",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -705,13 +733,13 @@
             "y": 140.25
           },
           "thickness_px": 5.0,
-          "thickness_m": 0.278,
-          "length_m": 9.5,
+          "thickness_m": 0.196,
+          "length_m": 6.71,
           "is_exterior": true,
           "source": "cv"
         },
         "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.28m); long (9.5m); supports large room; potential spine",
+        "reason": "exterior wall; long (6.7m); supports large room; potential spine",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -735,13 +763,13 @@
             "y": 242.5
           },
           "thickness_px": 7.0,
-          "thickness_m": 0.389,
-          "length_m": 7.83,
+          "thickness_m": 0.275,
+          "length_m": 5.53,
           "is_exterior": true,
           "source": "cv"
         },
         "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.39m); long (7.8m); supports large room; potential spine",
+        "reason": "exterior wall; thick (0.28m); long (5.5m); supports large room; potential spine",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -765,13 +793,13 @@
             "y": 243.25
           },
           "thickness_px": 6.0,
-          "thickness_m": 0.333,
-          "length_m": 11.5,
+          "thickness_m": 0.235,
+          "length_m": 8.12,
           "is_exterior": true,
           "source": "cv"
         },
         "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.33m); long (11.5m); supports large room; potential spine",
+        "reason": "exterior wall; thick (0.23m); long (8.1m); supports large room; potential spine",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -795,13 +823,13 @@
             "y": 242.0
           },
           "thickness_px": 6.0,
-          "thickness_m": 0.333,
-          "length_m": 11.39,
+          "thickness_m": 0.235,
+          "length_m": 8.04,
           "is_exterior": true,
           "source": "cv"
         },
         "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.33m); long (11.4m); supports large room; potential spine",
+        "reason": "exterior wall; thick (0.23m); long (8.0m); supports large room; potential spine",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -825,13 +853,13 @@
             "y": 278.0
           },
           "thickness_px": 5.0,
-          "thickness_m": 0.278,
-          "length_m": 7.83,
+          "thickness_m": 0.196,
+          "length_m": 5.53,
           "is_exterior": true,
           "source": "cv"
         },
         "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.28m); long (7.8m); supports large room; potential spine",
+        "reason": "exterior wall; long (5.5m); supports large room; potential spine",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -855,13 +883,13 @@
             "y": 103.0
           },
           "thickness_px": 6.0,
-          "thickness_m": 0.333,
-          "length_m": 3.33,
+          "thickness_m": 0.235,
+          "length_m": 2.35,
           "is_exterior": true,
           "source": "cv"
         },
-        "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.33m); long (3.3m); supports large room; potential spine",
+        "classification": "load_bearing",
+        "reason": "exterior wall; thick (0.23m); long (2.4m); supports large room",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -885,14 +913,14 @@
             "y": 92.375
           },
           "thickness_px": 5.0,
-          "thickness_m": 0.278,
-          "length_m": 3.06,
+          "thickness_m": 0.196,
+          "length_m": 2.16,
           "is_exterior": false,
           "source": "cv"
         },
         "classification": "load_bearing",
-        "reason": "thick (0.28m); long (3.1m); supports large room",
-        "load_path_continuous": true,
+        "reason": "long (2.2m); supports large room",
+        "load_path_continuous": false,
         "adjacent_rooms": [
           "room_000",
           "room_001"
@@ -915,13 +943,13 @@
             "y": 22.0
           },
           "thickness_px": 6.0,
-          "thickness_m": 0.333,
-          "length_m": 9.33,
+          "thickness_m": 0.235,
+          "length_m": 6.59,
           "is_exterior": true,
           "source": "cv"
         },
         "classification": "structural_spine",
-        "reason": "exterior wall; thick (0.33m); long (9.3m); supports large room; potential spine",
+        "reason": "exterior wall; thick (0.23m); long (6.6m); supports large room; potential spine",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -945,13 +973,13 @@
             "y": 189.0
           },
           "thickness_px": 7.0,
-          "thickness_m": 0.389,
-          "length_m": 3.06,
+          "thickness_m": 0.275,
+          "length_m": 2.16,
           "is_exterior": false,
           "source": "cv"
         },
         "classification": "load_bearing",
-        "reason": "thick (0.39m); long (3.1m); supports large room",
+        "reason": "thick (0.28m); long (2.2m); supports large room",
         "load_path_continuous": true,
         "adjacent_rooms": [
           "room_000",
@@ -975,14 +1003,14 @@
             "y": 192.33333333333334
           },
           "thickness_px": 5.0,
-          "thickness_m": 0.278,
-          "length_m": 2.22,
+          "thickness_m": 0.196,
+          "length_m": 1.57,
           "is_exterior": false,
           "source": "cv"
         },
         "classification": "load_bearing",
-        "reason": "thick (0.28m); long (2.2m); supports large room",
-        "load_path_continuous": true,
+        "reason": "long (1.6m); supports large room",
+        "load_path_continuous": false,
         "adjacent_rooms": [
           "room_000",
           "room_001"
@@ -1000,27 +1028,27 @@
         "label": "LIVING ROOM",
         "vertices": [
           {
-            "x": 26.0,
-            "y": 62.0
+            "x": 60.0,
+            "y": 89.0
           },
           {
-            "x": 191.0,
-            "y": 62.0
+            "x": 210.0,
+            "y": 89.0
           },
           {
-            "x": 191.0,
-            "y": 167.0
+            "x": 210.0,
+            "y": 219.0
           },
           {
-            "x": 26.0,
-            "y": 167.0
+            "x": 60.0,
+            "y": 219.0
           }
         ],
-        "area_m2": 53.46,
+        "area_m2": 29.99,
         "room_type": "living",
         "centroid": {
-          "x": 108.5,
-          "y": 114.5
+          "x": 135.0,
+          "y": 154.0
         }
       },
       {
@@ -1028,27 +1056,27 @@
         "label": "BEDROOM 1",
         "vertices": [
           {
-            "x": 213.0,
-            "y": 62.0
+            "x": 218.0,
+            "y": 89.0
           },
           {
-            "x": 367.0,
-            "y": 62.0
+            "x": 368.0,
+            "y": 89.0
           },
           {
-            "x": 367.0,
-            "y": 167.0
+            "x": 368.0,
+            "y": 219.0
           },
           {
-            "x": 213.0,
-            "y": 167.0
+            "x": 218.0,
+            "y": 219.0
           }
         ],
-        "area_m2": 49.9,
+        "area_m2": 29.99,
         "room_type": "bedroom",
         "centroid": {
-          "x": 290.0,
-          "y": 114.5
+          "x": 293.0,
+          "y": 154.0
         }
       },
       {
@@ -1056,27 +1084,27 @@
         "label": "BEDROOM 2",
         "vertices": [
           {
-            "x": 26.0,
-            "y": 190.0
+            "x": 60.0,
+            "y": 227.0
           },
           {
-            "x": 191.0,
-            "y": 190.0
+            "x": 210.0,
+            "y": 227.0
           },
           {
-            "x": 191.0,
-            "y": 264.0
+            "x": 210.0,
+            "y": 290.0
           },
           {
-            "x": 26.0,
-            "y": 264.0
+            "x": 60.0,
+            "y": 290.0
           }
         ],
-        "area_m2": 37.69,
+        "area_m2": 14.52,
         "room_type": "bedroom",
         "centroid": {
-          "x": 108.5,
-          "y": 227.0
+          "x": 135.0,
+          "y": 258.5
         }
       },
       {
@@ -1084,27 +1112,27 @@
         "label": "KITCHEN",
         "vertices": [
           {
-            "x": 213.0,
-            "y": 190.0
+            "x": 218.0,
+            "y": 227.0
           },
           {
-            "x": 283.0,
-            "y": 190.0
+            "x": 292.0,
+            "y": 227.0
           },
           {
-            "x": 283.0,
-            "y": 264.0
+            "x": 292.0,
+            "y": 290.0
           },
           {
-            "x": 213.0,
-            "y": 264.0
+            "x": 218.0,
+            "y": 290.0
           }
         ],
-        "area_m2": 15.99,
+        "area_m2": 7.16,
         "room_type": "kitchen",
         "centroid": {
-          "x": 248.0,
-          "y": 227.0
+          "x": 255.0,
+          "y": 258.5
         }
       },
       {
@@ -1112,27 +1140,27 @@
         "label": "BATH",
         "vertices": [
           {
-            "x": 305.0,
-            "y": 190.0
+            "x": 300.0,
+            "y": 227.0
           },
           {
-            "x": 367.0,
-            "y": 190.0
+            "x": 368.0,
+            "y": 227.0
           },
           {
-            "x": 367.0,
-            "y": 264.0
+            "x": 368.0,
+            "y": 290.0
           },
           {
-            "x": 305.0,
-            "y": 264.0
+            "x": 300.0,
+            "y": 290.0
           }
         ],
-        "area_m2": 14.14,
+        "area_m2": 6.59,
         "room_type": "bathroom",
         "centroid": {
-          "x": 336.0,
-          "y": 227.0
+          "x": 334.0,
+          "y": 258.5
         }
       },
       {
@@ -1140,41 +1168,69 @@
         "label": "ENTRY",
         "vertices": [
           {
-            "x": 246.0,
-            "y": 280.0
+            "x": 228.0,
+            "y": 290.0
           },
           {
-            "x": 271.0,
-            "y": 280.0
+            "x": 299.0,
+            "y": 290.0
           },
           {
-            "x": 271.0,
-            "y": 297.0
+            "x": 299.0,
+            "y": 310.0
           },
           {
-            "x": 246.0,
-            "y": 297.0
+            "x": 228.0,
+            "y": 310.0
           }
         ],
-        "area_m2": 1.31,
+        "area_m2": 2.17,
         "room_type": "foyer",
         "centroid": {
-          "x": 258.5,
-          "y": 288.5
+          "x": 263.5,
+          "y": 300.0
+        }
+      },
+      {
+        "id": "room_006",
+        "label": "HALLWAY",
+        "vertices": [
+          {
+            "x": 210.0,
+            "y": 219.0
+          },
+          {
+            "x": 292.0,
+            "y": 219.0
+          },
+          {
+            "x": 292.0,
+            "y": 290.0
+          },
+          {
+            "x": 210.0,
+            "y": 290.0
+          }
+        ],
+        "area_m2": 8.92,
+        "room_type": "hall",
+        "centroid": {
+          "x": 251.0,
+          "y": 254.5
         }
       }
     ],
     "structural_spines": [
       [
-        "wall_042",
-        "wall_012",
-        "wall_026",
-        "wall_014",
-        "wall_001"
+        "wall_017",
+        "wall_004"
       ],
       [
-        "wall_004",
-        "wall_017"
+        "wall_014",
+        "wall_001",
+        "wall_012",
+        "wall_042",
+        "wall_026"
       ]
     ],
     "building_footprint": [
@@ -1239,10 +1295,10 @@
         "y": 30.0
       }
     ],
-    "total_wall_length_m": 101.38,
-    "exterior_wall_length_m": 93.03999999999999,
-    "interior_wall_length_m": 8.340000000000003,
-    "load_bearing_wall_count": 3,
+    "total_wall_length_m": 71.58,
+    "exterior_wall_length_m": 65.69,
+    "interior_wall_length_m": 5.890000000000001,
+    "load_bearing_wall_count": 4,
     "partition_wall_count": 0
   },
   "structural_result": {
@@ -1250,10 +1306,10 @@
       {
         "room_id": "room_000",
         "room_label": "LIVING ROOM",
-        "max_span_m": 9.166666666666666,
+        "max_span_m": 5.882352941176471,
         "span_direction": "east_west",
         "requires_intermediate_support": true,
-        "recommended_support": "Steel beam or RCC beam required for 9.2m span",
+        "recommended_support": "Consider beam support for 5.9m span",
         "supporting_walls": [
           "wall_012",
           "wall_001",
@@ -1273,10 +1329,10 @@
       {
         "room_id": "room_001",
         "room_label": "BEDROOM 1",
-        "max_span_m": 8.555555555555555,
+        "max_span_m": 5.882352941176471,
         "span_direction": "east_west",
         "requires_intermediate_support": true,
-        "recommended_support": "Steel beam or RCC beam required for 8.6m span",
+        "recommended_support": "Consider beam support for 5.9m span",
         "supporting_walls": [
           "wall_012",
           "wall_001",
@@ -1296,17 +1352,17 @@
       {
         "room_id": "room_002",
         "room_label": "BEDROOM 2",
-        "max_span_m": 9.166666666666666,
+        "max_span_m": 5.882352941176471,
         "span_direction": "east_west",
         "requires_intermediate_support": true,
-        "recommended_support": "Steel beam or RCC beam required for 9.2m span",
+        "recommended_support": "Consider beam support for 5.9m span",
         "supporting_walls": []
       },
       {
         "room_id": "room_003",
         "room_label": "KITCHEN",
-        "max_span_m": 4.111111111111111,
-        "span_direction": "north_south",
+        "max_span_m": 2.9019607843137254,
+        "span_direction": "east_west",
         "requires_intermediate_support": false,
         "recommended_support": null,
         "supporting_walls": []
@@ -1314,8 +1370,8 @@
       {
         "room_id": "room_004",
         "room_label": "BATH",
-        "max_span_m": 4.111111111111111,
-        "span_direction": "north_south",
+        "max_span_m": 2.6666666666666665,
+        "span_direction": "east_west",
         "requires_intermediate_support": false,
         "recommended_support": null,
         "supporting_walls": []
@@ -1323,7 +1379,16 @@
       {
         "room_id": "room_005",
         "room_label": "ENTRY",
-        "max_span_m": 1.3888888888888888,
+        "max_span_m": 2.784313725490196,
+        "span_direction": "east_west",
+        "requires_intermediate_support": false,
+        "recommended_support": null,
+        "supporting_walls": []
+      },
+      {
+        "room_id": "room_006",
+        "room_label": "HALLWAY",
+        "max_span_m": 3.215686274509804,
         "span_direction": "east_west",
         "requires_intermediate_support": false,
         "recommended_support": null,
@@ -1333,14 +1398,14 @@
     "warnings": [
       {
         "id": "warn_span_room_000",
-        "severity": "critical",
+        "severity": "warning",
         "element_id": "room_000",
         "warning_type": "excessive_span",
-        "description": "LIVING ROOM has a span of 9.2m which may require intermediate support",
-        "recommendation": "Steel beam or RCC beam required for 9.2m span",
+        "description": "LIVING ROOM has a span of 5.9m which may require intermediate support",
+        "recommendation": "Consider beam support for 5.9m span",
         "position": {
-          "x": 108.5,
-          "y": 114.5
+          "x": 135.0,
+          "y": 154.0
         },
         "affected_rooms": [
           "room_000"
@@ -1349,14 +1414,14 @@
       },
       {
         "id": "warn_span_room_001",
-        "severity": "critical",
+        "severity": "warning",
         "element_id": "room_001",
         "warning_type": "excessive_span",
-        "description": "BEDROOM 1 has a span of 8.6m which may require intermediate support",
-        "recommendation": "Steel beam or RCC beam required for 8.6m span",
+        "description": "BEDROOM 1 has a span of 5.9m which may require intermediate support",
+        "recommendation": "Consider beam support for 5.9m span",
         "position": {
-          "x": 290.0,
-          "y": 114.5
+          "x": 293.0,
+          "y": 154.0
         },
         "affected_rooms": [
           "room_001"
@@ -1365,27 +1430,83 @@
       },
       {
         "id": "warn_span_room_002",
-        "severity": "critical",
+        "severity": "warning",
         "element_id": "room_002",
         "warning_type": "excessive_span",
-        "description": "BEDROOM 2 has a span of 9.2m which may require intermediate support",
-        "recommendation": "Steel beam or RCC beam required for 9.2m span",
+        "description": "BEDROOM 2 has a span of 5.9m which may require intermediate support",
+        "recommendation": "Consider beam support for 5.9m span",
         "position": {
-          "x": 108.5,
-          "y": 227.0
+          "x": 135.0,
+          "y": 258.5
         },
         "affected_rooms": [
           "room_002"
         ],
         "code_reference": null
+      },
+      {
+        "id": "warn_ext_wall_004",
+        "severity": "info",
+        "element_id": "wall_004",
+        "warning_type": "insufficient_thickness",
+        "description": "Exterior wall wall_004 has thickness 0.20m (recommended: 0.2m)",
+        "recommendation": "Consider increasing thickness for better insulation and weather resistance",
+        "position": {
+          "x": 37.0,
+          "y": 143.5
+        },
+        "affected_rooms": [],
+        "code_reference": null
+      },
+      {
+        "id": "warn_ext_wall_017",
+        "severity": "info",
+        "element_id": "wall_017",
+        "warning_type": "insufficient_thickness",
+        "description": "Exterior wall wall_017 has thickness 0.20m (recommended: 0.2m)",
+        "recommendation": "Consider increasing thickness for better insulation and weather resistance",
+        "position": {
+          "x": 204.25,
+          "y": 140.25
+        },
+        "affected_rooms": [],
+        "code_reference": null
+      },
+      {
+        "id": "warn_path_wall_031",
+        "severity": "warning",
+        "element_id": "wall_031",
+        "warning_type": "load_path_break",
+        "description": "Load-bearing wall wall_031 may not have continuous load path to foundation",
+        "recommendation": "Verify wall is supported below or add foundation support",
+        "position": {
+          "x": 254.0,
+          "y": 92.375
+        },
+        "affected_rooms": [],
+        "code_reference": null
+      },
+      {
+        "id": "warn_path_wall_050",
+        "severity": "warning",
+        "element_id": "wall_050",
+        "warning_type": "load_path_break",
+        "description": "Load-bearing wall wall_050 may not have continuous load path to foundation",
+        "recommendation": "Verify wall is supported below or add foundation support",
+        "position": {
+          "x": 223.0,
+          "y": 192.33333333333334
+        },
+        "affected_rooms": [],
+        "code_reference": null
       }
     ],
-    "critical_count": 3,
-    "warning_count": 0,
-    "info_count": 0,
-    "overall_structural_score": 0.4347826086956522,
-    "max_span_in_plan": 9.166666666666666,
-    "requires_engineer_review": true
+    "critical_count": 0,
+    "warning_count": 5,
+    "info_count": 2,
+    "overall_structural_score": 0.5747126436781609,
+    "max_span_in_plan": 5.882352941176471,
+    "requires_engineer_review": false
   },
   "scene_graph": {
     "walls": [
@@ -1393,44 +1514,44 @@
         "wall_id": "wall_012_f0",
         "vertices_3d": [
           {
-            "x": 2.1468253968253967,
+            "x": 1.515406162464986,
             "y": 0.0,
-            "z": 2.021
+            "z": 1.4266176470588237
           },
           {
-            "x": 2.1468253968253967,
+            "x": 1.515406162464986,
             "y": 0.0,
-            "z": 2.354
+            "z": 1.6616176470588235
           },
           {
-            "x": 20.123456790123456,
+            "x": 14.20479302832244,
             "y": 0.0,
-            "z": 2.354
+            "z": 1.6616176470588235
           },
           {
-            "x": 20.123456790123456,
+            "x": 14.20479302832244,
             "y": 0.0,
-            "z": 2.021
+            "z": 1.4266176470588237
           },
           {
-            "x": 2.1468253968253967,
+            "x": 1.515406162464986,
             "y": 2.8,
-            "z": 2.021
+            "z": 1.4266176470588237
           },
           {
-            "x": 2.1468253968253967,
+            "x": 1.515406162464986,
             "y": 2.8,
-            "z": 2.354
+            "z": 1.6616176470588235
           },
           {
-            "x": 20.123456790123456,
+            "x": 14.20479302832244,
             "y": 2.8,
-            "z": 2.354
+            "z": 1.6616176470588235
           },
           {
-            "x": 20.123456790123456,
+            "x": 14.20479302832244,
             "y": 2.8,
-            "z": 2.021
+            "z": 1.4266176470588237
           }
         ],
         "faces": [
@@ -1532,7 +1653,7 @@
           }
         ],
         "classification": "structural_spine",
-        "thickness_m": 0.333,
+        "thickness_m": 0.235,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -1542,44 +1663,44 @@
         "wall_id": "wall_001_f0",
         "vertices_3d": [
           {
-            "x": 13.0,
+            "x": 9.176470588235293,
             "y": 0.0,
-            "z": 13.277944444444445
+            "z": 9.372696078431373
           },
           {
-            "x": 13.0,
+            "x": 9.176470588235293,
             "y": 0.0,
-            "z": 13.610944444444444
+            "z": 9.607696078431372
           },
           {
-            "x": 20.123456790123456,
+            "x": 14.20479302832244,
             "y": 0.0,
-            "z": 13.610944444444444
+            "z": 9.607696078431372
           },
           {
-            "x": 20.123456790123456,
+            "x": 14.20479302832244,
             "y": 0.0,
-            "z": 13.277944444444445
+            "z": 9.372696078431373
           },
           {
-            "x": 13.0,
+            "x": 9.176470588235293,
             "y": 2.8,
-            "z": 13.277944444444445
+            "z": 9.372696078431373
           },
           {
-            "x": 13.0,
+            "x": 9.176470588235293,
             "y": 2.8,
-            "z": 13.610944444444444
+            "z": 9.607696078431372
           },
           {
-            "x": 20.123456790123456,
+            "x": 14.20479302832244,
             "y": 2.8,
-            "z": 13.610944444444444
+            "z": 9.607696078431372
           },
           {
-            "x": 20.123456790123456,
+            "x": 14.20479302832244,
             "y": 2.8,
-            "z": 13.277944444444445
+            "z": 9.372696078431373
           }
         ],
         "faces": [
@@ -1681,7 +1802,7 @@
           }
         ],
         "classification": "structural_spine",
-        "thickness_m": 0.333,
+        "thickness_m": 0.235,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -1691,44 +1812,44 @@
         "wall_id": "wall_040_f0",
         "vertices_3d": [
           {
-            "x": 13.444444444444445,
+            "x": 9.490196078431373,
             "y": 0.0,
-            "z": 7.798777777777778
+            "z": 5.505049019607843
           },
           {
-            "x": 13.444444444444445,
+            "x": 9.490196078431373,
             "y": 0.0,
-            "z": 8.131777777777778
+            "z": 5.740049019607842
           },
           {
-            "x": 20.27777777777778,
+            "x": 14.313725490196079,
             "y": 0.0,
-            "z": 8.131777777777778
+            "z": 5.740049019607842
           },
           {
-            "x": 20.27777777777778,
+            "x": 14.313725490196079,
             "y": 0.0,
-            "z": 7.798777777777778
+            "z": 5.505049019607843
           },
           {
-            "x": 13.444444444444445,
+            "x": 9.490196078431373,
             "y": 2.8,
-            "z": 7.798777777777778
+            "z": 5.505049019607843
           },
           {
-            "x": 13.444444444444445,
+            "x": 9.490196078431373,
             "y": 2.8,
-            "z": 8.131777777777778
+            "z": 5.740049019607842
           },
           {
-            "x": 20.27777777777778,
+            "x": 14.313725490196079,
             "y": 2.8,
-            "z": 8.131777777777778
+            "z": 5.740049019607842
           },
           {
-            "x": 20.27777777777778,
+            "x": 14.313725490196079,
             "y": 2.8,
-            "z": 7.798777777777778
+            "z": 5.505049019607843
           }
         ],
         "faces": [
@@ -1830,7 +1951,7 @@
           }
         ],
         "classification": "structural_spine",
-        "thickness_m": 0.333,
+        "thickness_m": 0.235,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -1840,44 +1961,44 @@
         "wall_id": "wall_004_f0",
         "vertices_3d": [
           {
-            "x": 2.052855019033826,
+            "x": 1.4490764167674421,
             "y": 0.0,
-            "z": 7.833248458142469
+            "z": 5.52946947765967
           },
           {
-            "x": 2.0582560920772845,
+            "x": 1.4528843675462833,
             "y": 0.0,
-            "z": 8.111195986301976
+            "z": 5.725432483124645
           },
           {
-            "x": 11.34992275874395,
+            "x": 8.011707896958049,
             "y": 0.0,
-            "z": 7.93064043074642
+            "z": 5.5979815027324875
           },
           {
-            "x": 11.344521685700492,
+            "x": 8.007899946179206,
             "y": 0.0,
-            "z": 7.652692902586914
+            "z": 5.4020184972675125
           },
           {
-            "x": 2.052855019033826,
+            "x": 1.4490764167674421,
             "y": 2.8,
-            "z": 7.833248458142469
+            "z": 5.52946947765967
           },
           {
-            "x": 2.0582560920772845,
+            "x": 1.4528843675462833,
             "y": 2.8,
-            "z": 8.111195986301976
+            "z": 5.725432483124645
           },
           {
-            "x": 11.34992275874395,
+            "x": 8.011707896958049,
             "y": 2.8,
-            "z": 7.93064043074642
+            "z": 5.5979815027324875
           },
           {
-            "x": 11.344521685700492,
+            "x": 8.007899946179206,
             "y": 2.8,
-            "z": 7.652692902586914
+            "z": 5.4020184972675125
           }
         ],
         "faces": [
@@ -1979,7 +2100,7 @@
           }
         ],
         "classification": "structural_spine",
-        "thickness_m": 0.278,
+        "thickness_m": 0.196,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -1989,44 +2110,44 @@
         "wall_id": "wall_026_f0",
         "vertices_3d": [
           {
-            "x": 2.145778641097871,
+            "x": 1.514666168056067,
             "y": 0.0,
-            "z": 13.319391705612507
+            "z": 9.401717677531565
           },
           {
-            "x": 2.1478721525529223,
+            "x": 1.516146156873905,
             "y": 0.0,
-            "z": 13.708386072165272
+            "z": 9.676713695017455
           },
           {
-            "x": 9.889935644616415,
+            "x": 6.981132151271664,
             "y": 0.0,
-            "z": 13.666719405498604
+            "z": 9.647301930311572
           },
           {
-            "x": 9.887842133161364,
+            "x": 6.979652162453826,
             "y": 0.0,
-            "z": 13.277725038945839
+            "z": 9.372305912825682
           },
           {
-            "x": 2.145778641097871,
+            "x": 1.514666168056067,
             "y": 2.8,
-            "z": 13.319391705612507
+            "z": 9.401717677531565
           },
           {
-            "x": 2.1478721525529223,
+            "x": 1.516146156873905,
             "y": 2.8,
-            "z": 13.708386072165272
+            "z": 9.676713695017455
           },
           {
-            "x": 9.889935644616415,
+            "x": 6.981132151271664,
             "y": 2.8,
-            "z": 13.666719405498604
+            "z": 9.647301930311572
           },
           {
-            "x": 9.887842133161364,
+            "x": 6.979652162453826,
             "y": 2.8,
-            "z": 13.277725038945839
+            "z": 9.372305912825682
           }
         ],
         "faces": [
@@ -2128,7 +2249,7 @@
           }
         ],
         "classification": "structural_spine",
-        "thickness_m": 0.389,
+        "thickness_m": 0.275,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -2138,44 +2259,44 @@
         "wall_id": "wall_042_f0",
         "vertices_3d": [
           {
-            "x": 2.313325396825397,
+            "x": 1.6329061624649859,
             "y": 0.0,
-            "z": 2.1875
+            "z": 1.5441176470588236
           },
           {
-            "x": 1.9803253968253967,
+            "x": 1.397906162464986,
             "y": 0.0,
-            "z": 2.1875
+            "z": 1.5441176470588236
           },
           {
-            "x": 1.9803253968253967,
+            "x": 1.397906162464986,
             "y": 0.0,
-            "z": 13.51388888888889
+            "z": 9.53921568627451
           },
           {
-            "x": 2.313325396825397,
+            "x": 1.6329061624649859,
             "y": 0.0,
-            "z": 13.51388888888889
+            "z": 9.53921568627451
           },
           {
-            "x": 2.313325396825397,
+            "x": 1.6329061624649859,
             "y": 2.8,
-            "z": 2.1875
+            "z": 1.5441176470588236
           },
           {
-            "x": 1.9803253968253967,
+            "x": 1.397906162464986,
             "y": 2.8,
-            "z": 2.1875
+            "z": 1.5441176470588236
           },
           {
-            "x": 1.9803253968253967,
+            "x": 1.397906162464986,
             "y": 2.8,
-            "z": 13.51388888888889
+            "z": 9.53921568627451
           },
           {
-            "x": 2.313325396825397,
+            "x": 1.6329061624649859,
             "y": 2.8,
-            "z": 13.51388888888889
+            "z": 9.53921568627451
           }
         ],
         "faces": [
@@ -2277,7 +2398,7 @@
           }
         ],
         "classification": "structural_spine",
-        "thickness_m": 0.333,
+        "thickness_m": 0.235,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -2287,44 +2408,44 @@
         "wall_id": "wall_014_f0",
         "vertices_3d": [
           {
-            "x": 20.289956790123455,
+            "x": 14.32229302832244,
             "y": 0.0,
-            "z": 2.1875
+            "z": 1.5441176470588236
           },
           {
-            "x": 19.956956790123456,
+            "x": 14.08729302832244,
             "y": 0.0,
-            "z": 2.1875
+            "z": 1.5441176470588236
           },
           {
-            "x": 19.956956790123456,
+            "x": 14.08729302832244,
             "y": 0.0,
-            "z": 13.444444444444445
+            "z": 9.490196078431373
           },
           {
-            "x": 20.289956790123455,
+            "x": 14.32229302832244,
             "y": 0.0,
-            "z": 13.444444444444445
+            "z": 9.490196078431373
           },
           {
-            "x": 20.289956790123455,
+            "x": 14.32229302832244,
             "y": 2.8,
-            "z": 2.1875
+            "z": 1.5441176470588236
           },
           {
-            "x": 19.956956790123456,
+            "x": 14.08729302832244,
             "y": 2.8,
-            "z": 2.1875
+            "z": 1.5441176470588236
           },
           {
-            "x": 19.956956790123456,
+            "x": 14.08729302832244,
             "y": 2.8,
-            "z": 13.444444444444445
+            "z": 9.490196078431373
           },
           {
-            "x": 20.289956790123455,
+            "x": 14.32229302832244,
             "y": 2.8,
-            "z": 13.444444444444445
+            "z": 9.490196078431373
           }
         ],
         "faces": [
@@ -2426,7 +2547,7 @@
           }
         ],
         "classification": "structural_spine",
-        "thickness_m": 0.333,
+        "thickness_m": 0.235,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -2436,44 +2557,44 @@
         "wall_id": "wall_017_f0",
         "vertices_3d": [
           {
-            "x": 11.486170744086113,
+            "x": 8.107767627630938,
             "y": 0.0,
-            "z": 7.795449294303615
+            "z": 5.502666888549791
           },
           {
-            "x": 11.20827370035833,
+            "x": 7.911840215506316,
             "y": 0.0,
-            "z": 7.787884039029719
+            "z": 5.497333111450209
           },
           {
-            "x": 10.999940367024998,
+            "x": 7.7647813919769035,
             "y": 0.0,
-            "z": 15.440661816807497
+            "z": 10.899293895763934
           },
           {
-            "x": 11.277837410752781,
+            "x": 7.960708804101527,
             "y": 0.0,
-            "z": 15.448227072081393
+            "z": 10.904627672863517
           },
           {
-            "x": 11.486170744086113,
+            "x": 8.107767627630938,
             "y": 2.8,
-            "z": 7.795449294303615
+            "z": 5.502666888549791
           },
           {
-            "x": 11.20827370035833,
+            "x": 7.911840215506316,
             "y": 2.8,
-            "z": 7.787884039029719
+            "z": 5.497333111450209
           },
           {
-            "x": 10.999940367024998,
+            "x": 7.7647813919769035,
             "y": 2.8,
-            "z": 15.440661816807497
+            "z": 10.899293895763934
           },
           {
-            "x": 11.277837410752781,
+            "x": 7.960708804101527,
             "y": 2.8,
-            "z": 15.448227072081393
+            "z": 10.904627672863517
           }
         ],
         "faces": [
@@ -2575,7 +2696,7 @@
           }
         ],
         "classification": "structural_spine",
-        "thickness_m": 0.278,
+        "thickness_m": 0.196,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -2585,44 +2706,44 @@
         "wall_id": "wall_049_f0",
         "vertices_3d": [
           {
-            "x": 11.319277777777778,
+            "x": 7.990049019607842,
             "y": 0.0,
-            "z": 2.388888888888889
+            "z": 1.6862745098039216
           },
           {
-            "x": 10.98627777777778,
+            "x": 7.755049019607843,
             "y": 0.0,
-            "z": 2.388888888888889
+            "z": 1.6862745098039216
           },
           {
-            "x": 10.98627777777778,
+            "x": 7.755049019607843,
             "y": 0.0,
-            "z": 5.722222222222222
+            "z": 4.03921568627451
           },
           {
-            "x": 11.319277777777778,
+            "x": 7.990049019607842,
             "y": 0.0,
-            "z": 5.722222222222222
+            "z": 4.03921568627451
           },
           {
-            "x": 11.319277777777778,
+            "x": 7.990049019607842,
             "y": 2.8,
-            "z": 2.388888888888889
+            "z": 1.6862745098039216
           },
           {
-            "x": 10.98627777777778,
+            "x": 7.755049019607843,
             "y": 2.8,
-            "z": 2.388888888888889
+            "z": 1.6862745098039216
           },
           {
-            "x": 10.98627777777778,
+            "x": 7.755049019607843,
             "y": 2.8,
-            "z": 5.722222222222222
+            "z": 4.03921568627451
           },
           {
-            "x": 11.319277777777778,
+            "x": 7.990049019607842,
             "y": 2.8,
-            "z": 5.722222222222222
+            "z": 4.03921568627451
           }
         ],
         "faces": [
@@ -2723,8 +2844,8 @@
             "normal": null
           }
         ],
-        "classification": "structural_spine",
-        "thickness_m": 0.333,
+        "classification": "load_bearing",
+        "thickness_m": 0.235,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -2734,44 +2855,44 @@
         "wall_id": "wall_031_f0",
         "vertices_3d": [
           {
-            "x": 14.11111111111111,
+            "x": 9.96078431372549,
             "y": 0.0,
-            "z": 4.992944444444444
+            "z": 3.5245490196078433
           },
           {
-            "x": 14.11111111111111,
+            "x": 9.96078431372549,
             "y": 0.0,
-            "z": 5.270944444444445
+            "z": 3.720549019607843
           },
           {
-            "x": 17.166666666666668,
+            "x": 12.117647058823529,
             "y": 0.0,
-            "z": 5.270944444444445
+            "z": 3.720549019607843
           },
           {
-            "x": 17.166666666666668,
+            "x": 12.117647058823529,
             "y": 0.0,
-            "z": 4.992944444444444
+            "z": 3.5245490196078433
           },
           {
-            "x": 14.11111111111111,
+            "x": 9.96078431372549,
             "y": 2.8,
-            "z": 4.992944444444444
+            "z": 3.5245490196078433
           },
           {
-            "x": 14.11111111111111,
+            "x": 9.96078431372549,
             "y": 2.8,
-            "z": 5.270944444444445
+            "z": 3.720549019607843
           },
           {
-            "x": 17.166666666666668,
+            "x": 12.117647058823529,
             "y": 2.8,
-            "z": 5.270944444444445
+            "z": 3.720549019607843
           },
           {
-            "x": 17.166666666666668,
+            "x": 12.117647058823529,
             "y": 2.8,
-            "z": 4.992944444444444
+            "z": 3.5245490196078433
           }
         ],
         "faces": [
@@ -2873,7 +2994,7 @@
           }
         ],
         "classification": "load_bearing",
-        "thickness_m": 0.278,
+        "thickness_m": 0.196,
         "height_m": 2.8,
         "openings": [],
         "color": "#4a5568",
@@ -2883,44 +3004,44 @@
         "wall_id": "wall_033_f0",
         "vertices_3d": [
           {
-            "x": 6.333333333333333,
+            "x": 4.470588235294118,
             "y": 0.0,
-            "z": 1.0557222222222222
+            "z": 0.7452450980392158
           },
           {
-            "x": 6.333333333333333,
+            "x": 4.470588235294118,
             "y": 0.0,
-            "z": 1.3887222222222224
+            "z": 0.9802450980392157
           },
           {
-            "x": 15.666666666666666,
+            "x": 11.058823529411764,
             "y": 0.0,
-            "z": 1.3887222222222224
+            "z": 0.9802450980392157
           },
           {
-            "x": 15.666666666666666,
+            "x": 11.058823529411764,
             "y": 0.0,
-            "z": 1.0557222222222222
+            "z": 0.7452450980392158
           },
           {
-            "x": 6.333333333333333,
+            "x": 4.470588235294118,
             "y": 2.8,
-            "z": 1.0557222222222222
+            "z": 0.7452450980392158
           },
           {
-            "x": 6.333333333333333,
+            "x": 4.470588235294118,
             "y": 2.8,
-            "z": 1.3887222222222224
+            "z": 0.9802450980392157
           },
           {
-            "x": 15.666666666666666,
+            "x": 11.058823529411764,
             "y": 2.8,
-            "z": 1.3887222222222224
+            "z": 0.9802450980392157
           },
           {
-            "x": 15.666666666666666,
+            "x": 11.058823529411764,
             "y": 2.8,
-            "z": 1.0557222222222222
+            "z": 0.7452450980392158
           }
         ],
         "faces": [
@@ -3022,7 +3143,7 @@
           }
         ],
         "classification": "structural_spine",
-        "thickness_m": 0.333,
+        "thickness_m": 0.235,
         "height_m": 2.8,
         "openings": [],
         "color": "#2b6cb0",
@@ -3032,44 +3153,44 @@
         "wall_id": "wall_041_f0",
         "vertices_3d": [
           {
-            "x": 5.111111111111111,
+            "x": 3.607843137254902,
             "y": 0.0,
-            "z": 10.3055
+            "z": 7.274264705882353
           },
           {
-            "x": 5.111111111111111,
+            "x": 3.607843137254902,
             "y": 0.0,
-            "z": 10.6945
+            "z": 7.549264705882353
           },
           {
-            "x": 8.166666666666666,
+            "x": 5.764705882352941,
             "y": 0.0,
-            "z": 10.6945
+            "z": 7.549264705882353
           },
           {
-            "x": 8.166666666666666,
+            "x": 5.764705882352941,
             "y": 0.0,
-            "z": 10.3055
+            "z": 7.274264705882353
           },
           {
-            "x": 5.111111111111111,
+            "x": 3.607843137254902,
             "y": 2.8,
-            "z": 10.3055
+            "z": 7.274264705882353
           },
           {
-            "x": 5.111111111111111,
+            "x": 3.607843137254902,
             "y": 2.8,
-            "z": 10.6945
+            "z": 7.549264705882353
           },
           {
-            "x": 8.166666666666666,
+            "x": 5.764705882352941,
             "y": 2.8,
-            "z": 10.6945
+            "z": 7.549264705882353
           },
           {
-            "x": 8.166666666666666,
+            "x": 5.764705882352941,
             "y": 2.8,
-            "z": 10.3055
+            "z": 7.274264705882353
           }
         ],
         "faces": [
@@ -3171,7 +3292,7 @@
           }
         ],
         "classification": "load_bearing",
-        "thickness_m": 0.389,
+        "thickness_m": 0.275,
         "height_m": 2.8,
         "openings": [],
         "color": "#4a5568",
@@ -3181,44 +3302,44 @@
         "wall_id": "wall_050_f0",
         "vertices_3d": [
           {
-            "x": 12.38888888888889,
+            "x": 8.745098039215685,
             "y": 0.0,
-            "z": 10.546185185185186
+            "z": 7.44448366013072
           },
           {
-            "x": 12.38888888888889,
+            "x": 8.745098039215685,
             "y": 0.0,
-            "z": 10.824185185185184
+            "z": 7.64048366013072
           },
           {
-            "x": 14.61111111111111,
+            "x": 10.313725490196079,
             "y": 0.0,
-            "z": 10.824185185185184
+            "z": 7.64048366013072
           },
           {
-            "x": 14.61111111111111,
+            "x": 10.313725490196079,
             "y": 0.0,
-            "z": 10.546185185185186
+            "z": 7.44448366013072
           },
           {
-            "x": 12.38888888888889,
+            "x": 8.745098039215685,
             "y": 2.8,
-            "z": 10.546185185185186
+            "z": 7.44448366013072
           },
           {
-            "x": 12.38888888888889,
+            "x": 8.745098039215685,
             "y": 2.8,
-            "z": 10.824185185185184
+            "z": 7.64048366013072
           },
           {
-            "x": 14.61111111111111,
+            "x": 10.313725490196079,
             "y": 2.8,
-            "z": 10.824185185185184
+            "z": 7.64048366013072
           },
           {
-            "x": 14.61111111111111,
+            "x": 10.313725490196079,
             "y": 2.8,
-            "z": 10.546185185185186
+            "z": 7.44448366013072
           }
         ],
         "faces": [
@@ -3320,7 +3441,7 @@
           }
         ],
         "classification": "load_bearing",
-        "thickness_m": 0.278,
+        "thickness_m": 0.196,
         "height_m": 2.8,
         "openings": [],
         "color": "#4a5568",
@@ -3331,27 +3452,27 @@
       {
         "beam_id": "beam_000",
         "start": {
-          "x": 1.4444444444444444,
+          "x": 2.3529411764705883,
           "y": 2.8,
-          "z": 6.361111111111112
+          "z": 6.03921568627451
         },
         "end": {
-          "x": 10.61111111111111,
+          "x": 8.235294117647058,
           "y": 2.8,
-          "z": 6.361111111111112
+          "z": 6.03921568627451
         },
-        "width_m": 0.4,
-        "depth_m": 0.775,
-        "span_m": 9.17,
-        "steel_area_mm2": 1562.0,
-        "tension_bars": "5-20mm \u03c6",
+        "width_m": 0.25,
+        "depth_m": 0.5,
+        "span_m": 5.88,
+        "steel_area_mm2": 790.7,
+        "tension_bars": "4-16mm \u03c6",
         "stirrup_spacing_mm": 150.0,
         "stirrup_description": "8mm \u03c6 @ 150mm c/c",
         "concrete_grade": "M25",
         "steel_grade": "Fe500",
-        "total_load_kn_per_m": 42.8,
-        "max_bending_moment_knm": 449.52,
-        "max_shear_force_kn": 196.15,
+        "total_load_kn_per_m": 31.93,
+        "max_bending_moment_knm": 138.11,
+        "max_shear_force_kn": 93.91,
         "deflection_ok": true,
         "color": "#3b82f6",
         "room_id": "room_000"
@@ -3359,27 +3480,27 @@
       {
         "beam_id": "beam_001",
         "start": {
-          "x": 11.833333333333334,
+          "x": 8.549019607843137,
           "y": 2.8,
-          "z": 6.361111111111112
+          "z": 6.03921568627451
         },
         "end": {
-          "x": 20.38888888888889,
+          "x": 14.431372549019608,
           "y": 2.8,
-          "z": 6.361111111111112
+          "z": 6.03921568627451
         },
-        "width_m": 0.375,
-        "depth_m": 0.725,
-        "span_m": 8.56,
-        "steel_area_mm2": 1416.8,
-        "tension_bars": "5-20mm \u03c6",
+        "width_m": 0.25,
+        "depth_m": 0.5,
+        "span_m": 5.88,
+        "steel_area_mm2": 790.7,
+        "tension_bars": "4-16mm \u03c6",
         "stirrup_spacing_mm": 150.0,
         "stirrup_description": "8mm \u03c6 @ 150mm c/c",
         "concrete_grade": "M25",
         "steel_grade": "Fe500",
-        "total_load_kn_per_m": 41.37,
-        "max_bending_moment_knm": 378.5,
-        "max_shear_force_kn": 176.96,
+        "total_load_kn_per_m": 31.93,
+        "max_bending_moment_knm": 138.11,
+        "max_shear_force_kn": 93.91,
         "deflection_ok": true,
         "color": "#3b82f6",
         "room_id": "room_001"
@@ -3387,27 +3508,27 @@
       {
         "beam_id": "beam_002",
         "start": {
-          "x": 1.4444444444444444,
+          "x": 2.3529411764705883,
           "y": 2.8,
-          "z": 12.61111111111111
+          "z": 10.137254901960784
         },
         "end": {
-          "x": 10.61111111111111,
+          "x": 8.235294117647058,
           "y": 2.8,
-          "z": 12.61111111111111
+          "z": 10.137254901960784
         },
-        "width_m": 0.4,
-        "depth_m": 0.775,
-        "span_m": 9.17,
-        "steel_area_mm2": 1192.8,
-        "tension_bars": "6-16mm \u03c6",
+        "width_m": 0.25,
+        "depth_m": 0.5,
+        "span_m": 5.88,
+        "steel_area_mm2": 411.9,
+        "tension_bars": "4-12mm \u03c6",
         "stirrup_spacing_mm": 300.0,
         "stirrup_description": "8mm \u03c6 @ 300mm c/c",
         "concrete_grade": "M25",
         "steel_grade": "Fe500",
-        "total_load_kn_per_m": 33.59,
-        "max_bending_moment_knm": 352.85,
-        "max_shear_force_kn": 153.97,
+        "total_load_kn_per_m": 17.89,
+        "max_bending_moment_knm": 77.38,
+        "max_shear_force_kn": 52.62,
         "deflection_ok": true,
         "color": "#3b82f6",
         "room_id": "room_002"
@@ -3415,27 +3536,27 @@
       {
         "beam_id": "beam_003",
         "start": {
-          "x": 13.777777777777779,
+          "x": 8.549019607843137,
           "y": 2.8,
-          "z": 10.555555555555555
+          "z": 10.137254901960784
         },
         "end": {
-          "x": 13.777777777777779,
+          "x": 11.450980392156863,
           "y": 2.8,
-          "z": 14.666666666666666
+          "z": 10.137254901960784
         },
         "width_m": 0.2,
-        "depth_m": 0.35,
-        "span_m": 4.11,
-        "steel_area_mm2": 416.0,
-        "tension_bars": "4-12mm \u03c6",
-        "stirrup_spacing_mm": 225.0,
-        "stirrup_description": "8mm \u03c6 @ 225mm c/c",
+        "depth_m": 0.25,
+        "span_m": 2.9,
+        "steel_area_mm2": 185.9,
+        "tension_bars": "2-12mm \u03c6",
+        "stirrup_spacing_mm": 150.0,
+        "stirrup_description": "8mm \u03c6 @ 150mm c/c",
         "concrete_grade": "M25",
         "steel_grade": "Fe500",
-        "total_load_kn_per_m": 23.41,
-        "max_bending_moment_knm": 49.45,
-        "max_shear_force_kn": 48.11,
+        "total_load_kn_per_m": 15.08,
+        "max_bending_moment_knm": 15.87,
+        "max_shear_force_kn": 21.88,
         "deflection_ok": true,
         "color": "#3b82f6",
         "room_id": "room_003"
@@ -3443,210 +3564,338 @@
       {
         "beam_id": "beam_004",
         "start": {
-          "x": 18.666666666666664,
+          "x": 11.764705882352942,
           "y": 2.8,
-          "z": 10.555555555555555
+          "z": 10.137254901960784
         },
         "end": {
-          "x": 18.666666666666664,
+          "x": 14.431372549019608,
           "y": 2.8,
-          "z": 14.666666666666666
+          "z": 10.137254901960784
         },
         "width_m": 0.2,
-        "depth_m": 0.35,
-        "span_m": 4.11,
-        "steel_area_mm2": 367.2,
-        "tension_bars": "4-12mm \u03c6",
-        "stirrup_spacing_mm": 225.0,
-        "stirrup_description": "8mm \u03c6 @ 225mm c/c",
+        "depth_m": 0.225,
+        "span_m": 2.67,
+        "steel_area_mm2": 176.6,
+        "tension_bars": "2-12mm \u03c6",
+        "stirrup_spacing_mm": 125.0,
+        "stirrup_description": "8mm \u03c6 @ 125mm c/c",
         "concrete_grade": "M25",
         "steel_grade": "Fe500",
-        "total_load_kn_per_m": 21.03,
-        "max_bending_moment_knm": 44.43,
-        "max_shear_force_kn": 43.23,
+        "total_load_kn_per_m": 14.89,
+        "max_bending_moment_knm": 13.24,
+        "max_shear_force_kn": 19.85,
         "deflection_ok": true,
         "color": "#3b82f6",
         "room_id": "room_004"
+      },
+      {
+        "beam_id": "beam_005",
+        "start": {
+          "x": 8.941176470588236,
+          "y": 2.8,
+          "z": 11.764705882352942
+        },
+        "end": {
+          "x": 11.72549019607843,
+          "y": 2.8,
+          "z": 11.764705882352942
+        },
+        "width_m": 0.2,
+        "depth_m": 0.25,
+        "span_m": 2.78,
+        "steel_area_mm2": 139.2,
+        "tension_bars": "2-12mm \u03c6",
+        "stirrup_spacing_mm": 150.0,
+        "stirrup_description": "8mm \u03c6 @ 150mm c/c",
+        "concrete_grade": "M25",
+        "steel_grade": "Fe500",
+        "total_load_kn_per_m": 12.56,
+        "max_bending_moment_knm": 12.17,
+        "max_shear_force_kn": 17.49,
+        "deflection_ok": true,
+        "color": "#3b82f6",
+        "room_id": "room_005"
+      },
+      {
+        "beam_id": "beam_006",
+        "start": {
+          "x": 8.235294117647058,
+          "y": 2.8,
+          "z": 9.980392156862745
+        },
+        "end": {
+          "x": 11.450980392156863,
+          "y": 2.8,
+          "z": 9.980392156862745
+        },
+        "width_m": 0.2,
+        "depth_m": 0.275,
+        "span_m": 3.22,
+        "steel_area_mm2": 232.3,
+        "tension_bars": "3-12mm \u03c6",
+        "stirrup_spacing_mm": 175.0,
+        "stirrup_description": "8mm \u03c6 @ 175mm c/c",
+        "concrete_grade": "M25",
+        "steel_grade": "Fe500",
+        "total_load_kn_per_m": 16.94,
+        "max_bending_moment_knm": 21.9,
+        "max_shear_force_kn": 27.24,
+        "deflection_ok": true,
+        "color": "#3b82f6",
+        "room_id": "room_006"
       }
     ],
     "columns": [
       {
         "column_id": "col_000",
         "position": {
-          "x": 1.4444444444444444,
+          "x": 2.3529411764705883,
           "y": 1.4,
-          "z": 6.361111111111112
+          "z": 6.03921568627451
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 196.2,
+        "axial_load_kn": 93.9,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.28,
+        "load_ratio": 0.13,
         "color": "#f59e0b",
         "junction_id": ""
       },
       {
         "column_id": "col_001",
         "position": {
-          "x": 10.61111111111111,
+          "x": 8.235294117647058,
           "y": 1.4,
-          "z": 6.361111111111112
+          "z": 6.03921568627451
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 196.2,
+        "axial_load_kn": 93.9,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.28,
+        "load_ratio": 0.13,
         "color": "#f59e0b",
         "junction_id": ""
       },
       {
         "column_id": "col_002",
         "position": {
-          "x": 11.833333333333334,
+          "x": 8.549019607843137,
           "y": 1.4,
-          "z": 6.361111111111112
+          "z": 6.03921568627451
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 177.1,
+        "axial_load_kn": 93.9,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.25,
+        "load_ratio": 0.13,
         "color": "#f59e0b",
         "junction_id": ""
       },
       {
         "column_id": "col_003",
         "position": {
-          "x": 20.38888888888889,
+          "x": 14.431372549019608,
           "y": 1.4,
-          "z": 6.361111111111112
+          "z": 6.03921568627451
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 177.1,
+        "axial_load_kn": 93.9,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.25,
+        "load_ratio": 0.13,
         "color": "#f59e0b",
         "junction_id": ""
       },
       {
         "column_id": "col_004",
         "position": {
-          "x": 1.4444444444444444,
+          "x": 2.3529411764705883,
           "y": 1.4,
-          "z": 12.61111111111111
+          "z": 10.137254901960784
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 154.0,
+        "axial_load_kn": 52.6,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.22,
+        "load_ratio": 0.08,
         "color": "#f59e0b",
         "junction_id": ""
       },
       {
         "column_id": "col_005",
         "position": {
-          "x": 10.61111111111111,
+          "x": 8.235294117647058,
           "y": 1.4,
-          "z": 12.61111111111111
+          "z": 10.137254901960784
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 154.0,
+        "axial_load_kn": 52.6,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.22,
+        "load_ratio": 0.08,
         "color": "#f59e0b",
         "junction_id": ""
       },
       {
         "column_id": "col_006",
         "position": {
-          "x": 13.777777777777779,
+          "x": 8.549019607843137,
           "y": 1.4,
-          "z": 10.555555555555555
+          "z": 10.137254901960784
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 48.1,
+        "axial_load_kn": 21.9,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.07,
+        "load_ratio": 0.03,
         "color": "#f59e0b",
         "junction_id": ""
       },
       {
         "column_id": "col_007",
         "position": {
-          "x": 13.777777777777779,
+          "x": 11.450980392156863,
           "y": 1.4,
-          "z": 14.666666666666666
+          "z": 10.137254901960784
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 48.1,
+        "axial_load_kn": 21.9,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.07,
+        "load_ratio": 0.03,
         "color": "#f59e0b",
         "junction_id": ""
       },
       {
         "column_id": "col_008",
         "position": {
-          "x": 18.666666666666664,
+          "x": 11.764705882352942,
           "y": 1.4,
-          "z": 10.555555555555555
+          "z": 10.137254901960784
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 43.2,
+        "axial_load_kn": 19.9,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.06,
+        "load_ratio": 0.03,
         "color": "#f59e0b",
         "junction_id": ""
       },
       {
         "column_id": "col_009",
         "position": {
-          "x": 18.666666666666664,
+          "x": 14.431372549019608,
           "y": 1.4,
-          "z": 14.666666666666666
+          "z": 10.137254901960784
         },
         "width_m": 0.23,
         "depth_m": 0.23,
         "height_m": 2.8,
-        "axial_load_kn": 43.2,
+        "axial_load_kn": 19.9,
         "steel_area_mm2": 423.2,
         "steel_bars": "4-12mm \u03c6",
         "tie_spacing_mm": 192.0,
-        "load_ratio": 0.06,
+        "load_ratio": 0.03,
+        "color": "#f59e0b",
+        "junction_id": ""
+      },
+      {
+        "column_id": "col_010",
+        "position": {
+          "x": 8.941176470588236,
+          "y": 1.4,
+          "z": 11.764705882352942
+        },
+        "width_m": 0.23,
+        "depth_m": 0.23,
+        "height_m": 2.8,
+        "axial_load_kn": 17.5,
+        "steel_area_mm2": 423.2,
+        "steel_bars": "4-12mm \u03c6",
+        "tie_spacing_mm": 192.0,
+        "load_ratio": 0.02,
+        "color": "#f59e0b",
+        "junction_id": ""
+      },
+      {
+        "column_id": "col_011",
+        "position": {
+          "x": 11.72549019607843,
+          "y": 1.4,
+          "z": 11.764705882352942
+        },
+        "width_m": 0.23,
+        "depth_m": 0.23,
+        "height_m": 2.8,
+        "axial_load_kn": 17.5,
+        "steel_area_mm2": 423.2,
+        "steel_bars": "4-12mm \u03c6",
+        "tie_spacing_mm": 192.0,
+        "load_ratio": 0.02,
+        "color": "#f59e0b",
+        "junction_id": ""
+      },
+      {
+        "column_id": "col_012",
+        "position": {
+          "x": 8.235294117647058,
+          "y": 1.4,
+          "z": 9.980392156862745
+        },
+        "width_m": 0.23,
+        "depth_m": 0.23,
+        "height_m": 2.8,
+        "axial_load_kn": 27.3,
+        "steel_area_mm2": 423.2,
+        "steel_bars": "4-12mm \u03c6",
+        "tie_spacing_mm": 192.0,
+        "load_ratio": 0.04,
+        "color": "#f59e0b",
+        "junction_id": ""
+      },
+      {
+        "column_id": "col_013",
+        "position": {
+          "x": 11.450980392156863,
+          "y": 1.4,
+          "z": 9.980392156862745
+        },
+        "width_m": 0.23,
+        "depth_m": 0.23,
+        "height_m": 2.8,
+        "axial_load_kn": 27.3,
+        "steel_area_mm2": 423.2,
+        "steel_bars": "4-12mm \u03c6",
+        "tie_spacing_mm": 192.0,
+        "load_ratio": 0.04,
         "color": "#f59e0b",
         "junction_id": ""
       }
@@ -3656,24 +3905,24 @@
         "id": "slab_room_000_f0",
         "vertices_3d": [
           {
-            "x": 1.4444444444444444,
+            "x": 2.3529411764705883,
             "y": 0.0,
-            "z": 3.4444444444444446
+            "z": 3.4901960784313726
           },
           {
-            "x": 10.61111111111111,
+            "x": 8.235294117647058,
             "y": 0.0,
-            "z": 3.4444444444444446
+            "z": 3.4901960784313726
           },
           {
-            "x": 10.61111111111111,
+            "x": 8.235294117647058,
             "y": 0.0,
-            "z": 9.277777777777779
+            "z": 8.588235294117647
           },
           {
-            "x": 1.4444444444444444,
+            "x": 2.3529411764705883,
             "y": 0.0,
-            "z": 9.277777777777779
+            "z": 8.588235294117647
           }
         ],
         "elevation": 0.0,
@@ -3685,24 +3934,24 @@
         "id": "slab_room_001_f0",
         "vertices_3d": [
           {
-            "x": 11.833333333333334,
+            "x": 8.549019607843137,
             "y": 0.0,
-            "z": 3.4444444444444446
+            "z": 3.4901960784313726
           },
           {
-            "x": 20.38888888888889,
+            "x": 14.431372549019608,
             "y": 0.0,
-            "z": 3.4444444444444446
+            "z": 3.4901960784313726
           },
           {
-            "x": 20.38888888888889,
+            "x": 14.431372549019608,
             "y": 0.0,
-            "z": 9.277777777777779
+            "z": 8.588235294117647
           },
           {
-            "x": 11.833333333333334,
+            "x": 8.549019607843137,
             "y": 0.0,
-            "z": 9.277777777777779
+            "z": 8.588235294117647
           }
         ],
         "elevation": 0.0,
@@ -3714,24 +3963,24 @@
         "id": "slab_room_002_f0",
         "vertices_3d": [
           {
-            "x": 1.4444444444444444,
+            "x": 2.3529411764705883,
             "y": 0.0,
-            "z": 10.555555555555555
+            "z": 8.901960784313726
           },
           {
-            "x": 10.61111111111111,
+            "x": 8.235294117647058,
             "y": 0.0,
-            "z": 10.555555555555555
+            "z": 8.901960784313726
           },
           {
-            "x": 10.61111111111111,
+            "x": 8.235294117647058,
             "y": 0.0,
-            "z": 14.666666666666666
+            "z": 11.372549019607844
           },
           {
-            "x": 1.4444444444444444,
+            "x": 2.3529411764705883,
             "y": 0.0,
-            "z": 14.666666666666666
+            "z": 11.372549019607844
           }
         ],
         "elevation": 0.0,
@@ -3743,24 +3992,24 @@
         "id": "slab_room_003_f0",
         "vertices_3d": [
           {
-            "x": 11.833333333333334,
+            "x": 8.549019607843137,
             "y": 0.0,
-            "z": 10.555555555555555
+            "z": 8.901960784313726
           },
           {
-            "x": 15.722222222222221,
+            "x": 11.450980392156863,
             "y": 0.0,
-            "z": 10.555555555555555
+            "z": 8.901960784313726
           },
           {
-            "x": 15.722222222222221,
+            "x": 11.450980392156863,
             "y": 0.0,
-            "z": 14.666666666666666
+            "z": 11.372549019607844
           },
           {
-            "x": 11.833333333333334,
+            "x": 8.549019607843137,
             "y": 0.0,
-            "z": 14.666666666666666
+            "z": 11.372549019607844
           }
         ],
         "elevation": 0.0,
@@ -3772,24 +4021,24 @@
         "id": "slab_room_004_f0",
         "vertices_3d": [
           {
-            "x": 16.944444444444443,
+            "x": 11.764705882352942,
             "y": 0.0,
-            "z": 10.555555555555555
+            "z": 8.901960784313726
           },
           {
-            "x": 20.38888888888889,
+            "x": 14.431372549019608,
             "y": 0.0,
-            "z": 10.555555555555555
+            "z": 8.901960784313726
           },
           {
-            "x": 20.38888888888889,
+            "x": 14.431372549019608,
             "y": 0.0,
-            "z": 14.666666666666666
+            "z": 11.372549019607844
           },
           {
-            "x": 16.944444444444443,
+            "x": 11.764705882352942,
             "y": 0.0,
-            "z": 14.666666666666666
+            "z": 11.372549019607844
           }
         ],
         "elevation": 0.0,
@@ -3801,30 +4050,59 @@
         "id": "slab_room_005_f0",
         "vertices_3d": [
           {
-            "x": 13.666666666666666,
+            "x": 8.941176470588236,
             "y": 0.0,
-            "z": 15.555555555555555
+            "z": 11.372549019607844
           },
           {
-            "x": 15.055555555555555,
+            "x": 11.72549019607843,
             "y": 0.0,
-            "z": 15.555555555555555
+            "z": 11.372549019607844
           },
           {
-            "x": 15.055555555555555,
+            "x": 11.72549019607843,
             "y": 0.0,
-            "z": 16.5
+            "z": 12.156862745098039
           },
           {
-            "x": 13.666666666666666,
+            "x": 8.941176470588236,
             "y": 0.0,
-            "z": 16.5
+            "z": 12.156862745098039
           }
         ],
         "elevation": 0.0,
         "type": "floor",
         "thickness_m": 0.15,
         "room_id": "room_005"
+      },
+      {
+        "id": "slab_room_006_f0",
+        "vertices_3d": [
+          {
+            "x": 8.235294117647058,
+            "y": 0.0,
+            "z": 8.588235294117647
+          },
+          {
+            "x": 11.450980392156863,
+            "y": 0.0,
+            "z": 8.588235294117647
+          },
+          {
+            "x": 11.450980392156863,
+            "y": 0.0,
+            "z": 11.372549019607844
+          },
+          {
+            "x": 8.235294117647058,
+            "y": 0.0,
+            "z": 11.372549019607844
+          }
+        ],
+        "elevation": 0.0,
+        "type": "floor",
+        "thickness_m": 0.15,
+        "room_id": "room_006"
       }
     ],
     "room_labels": [
@@ -3832,80 +4110,91 @@
         "room_id": "room_000",
         "label": "LIVING ROOM",
         "position": {
-          "x": 6.027777777777778,
+          "x": 5.294117647058823,
           "y": 1.4,
-          "z": 6.361111111111111
+          "z": 6.03921568627451
         },
-        "area_m2": 53.46,
+        "area_m2": 29.99,
         "room_type": "living"
       },
       {
         "room_id": "room_001",
         "label": "BEDROOM 1",
         "position": {
-          "x": 16.11111111111111,
+          "x": 11.490196078431373,
           "y": 1.4,
-          "z": 6.361111111111111
+          "z": 6.03921568627451
         },
-        "area_m2": 49.9,
+        "area_m2": 29.99,
         "room_type": "bedroom"
       },
       {
         "room_id": "room_002",
         "label": "BEDROOM 2",
         "position": {
-          "x": 6.027777777777778,
+          "x": 5.294117647058823,
           "y": 1.4,
-          "z": 12.61111111111111
+          "z": 10.137254901960784
         },
-        "area_m2": 37.69,
+        "area_m2": 14.52,
         "room_type": "bedroom"
       },
       {
         "room_id": "room_003",
         "label": "KITCHEN",
         "position": {
-          "x": 13.777777777777779,
+          "x": 10.0,
           "y": 1.4,
-          "z": 12.61111111111111
+          "z": 10.137254901960784
         },
-        "area_m2": 15.99,
+        "area_m2": 7.16,
         "room_type": "kitchen"
       },
       {
         "room_id": "room_004",
         "label": "BATH",
         "position": {
-          "x": 18.666666666666668,
+          "x": 13.098039215686274,
           "y": 1.4,
-          "z": 12.61111111111111
+          "z": 10.137254901960784
         },
-        "area_m2": 14.14,
+        "area_m2": 6.59,
         "room_type": "bathroom"
       },
       {
         "room_id": "room_005",
         "label": "ENTRY",
         "position": {
-          "x": 14.36111111111111,
+          "x": 10.333333333333334,
           "y": 1.4,
-          "z": 16.02777777777778
+          "z": 11.764705882352942
         },
-        "area_m2": 1.31,
+        "area_m2": 2.17,
         "room_type": "foyer"
+      },
+      {
+        "room_id": "room_006",
+        "label": "HALLWAY",
+        "position": {
+          "x": 9.843137254901961,
+          "y": 1.4,
+          "z": 9.980392156862745
+        },
+        "area_m2": 8.92,
+        "room_type": "hall"
       }
     ],
     "warnings": [
       {
         "id": "warn_span_room_000",
-        "severity": "critical",
+        "severity": "warning",
         "element_id": "room_000",
         "warning_type": "excessive_span",
-        "description": "LIVING ROOM has a span of 9.2m which may require intermediate support",
-        "recommendation": "Steel beam or RCC beam required for 9.2m span",
+        "description": "LIVING ROOM has a span of 5.9m which may require intermediate support",
+        "recommendation": "Consider beam support for 5.9m span",
         "position": {
-          "x": 108.5,
-          "y": 114.5
+          "x": 135.0,
+          "y": 154.0
         },
         "affected_rooms": [
           "room_000"
@@ -3914,14 +4203,14 @@
       },
       {
         "id": "warn_span_room_001",
-        "severity": "critical",
+        "severity": "warning",
         "element_id": "room_001",
         "warning_type": "excessive_span",
-        "description": "BEDROOM 1 has a span of 8.6m which may require intermediate support",
-        "recommendation": "Steel beam or RCC beam required for 8.6m span",
+        "description": "BEDROOM 1 has a span of 5.9m which may require intermediate support",
+        "recommendation": "Consider beam support for 5.9m span",
         "position": {
-          "x": 290.0,
-          "y": 114.5
+          "x": 293.0,
+          "y": 154.0
         },
         "affected_rooms": [
           "room_001"
@@ -3930,38 +4219,94 @@
       },
       {
         "id": "warn_span_room_002",
-        "severity": "critical",
+        "severity": "warning",
         "element_id": "room_002",
         "warning_type": "excessive_span",
-        "description": "BEDROOM 2 has a span of 9.2m which may require intermediate support",
-        "recommendation": "Steel beam or RCC beam required for 9.2m span",
+        "description": "BEDROOM 2 has a span of 5.9m which may require intermediate support",
+        "recommendation": "Consider beam support for 5.9m span",
         "position": {
-          "x": 108.5,
-          "y": 227.0
+          "x": 135.0,
+          "y": 258.5
         },
         "affected_rooms": [
           "room_002"
         ],
         "code_reference": null
+      },
+      {
+        "id": "warn_ext_wall_004",
+        "severity": "info",
+        "element_id": "wall_004",
+        "warning_type": "insufficient_thickness",
+        "description": "Exterior wall wall_004 has thickness 0.20m (recommended: 0.2m)",
+        "recommendation": "Consider increasing thickness for better insulation and weather resistance",
+        "position": {
+          "x": 37.0,
+          "y": 143.5
+        },
+        "affected_rooms": [],
+        "code_reference": null
+      },
+      {
+        "id": "warn_ext_wall_017",
+        "severity": "info",
+        "element_id": "wall_017",
+        "warning_type": "insufficient_thickness",
+        "description": "Exterior wall wall_017 has thickness 0.20m (recommended: 0.2m)",
+        "recommendation": "Consider increasing thickness for better insulation and weather resistance",
+        "position": {
+          "x": 204.25,
+          "y": 140.25
+        },
+        "affected_rooms": [],
+        "code_reference": null
+      },
+      {
+        "id": "warn_path_wall_031",
+        "severity": "warning",
+        "element_id": "wall_031",
+        "warning_type": "load_path_break",
+        "description": "Load-bearing wall wall_031 may not have continuous load path to foundation",
+        "recommendation": "Verify wall is supported below or add foundation support",
+        "position": {
+          "x": 254.0,
+          "y": 92.375
+        },
+        "affected_rooms": [],
+        "code_reference": null
+      },
+      {
+        "id": "warn_path_wall_050",
+        "severity": "warning",
+        "element_id": "wall_050",
+        "warning_type": "load_path_break",
+        "description": "Load-bearing wall wall_050 may not have continuous load path to foundation",
+        "recommendation": "Verify wall is supported below or add foundation support",
+        "position": {
+          "x": 223.0,
+          "y": 192.33333333333334
+        },
+        "affected_rooms": [],
+        "code_reference": null
       }
     ],
     "camera_bounds": {
       "min": {
-        "x": 2.0555555555555554,
+        "x": 1.4509803921568627,
         "y": 0.0,
-        "z": 1.2222222222222223
+        "z": 0.8627450980392157
       },
       "max": {
-        "x": 20.27777777777778,
+        "x": 14.313725490196079,
         "y": 2.8,
-        "z": 15.444444444444445
+        "z": 10.901960784313726
       },
       "center": {
-        "x": 11.166666666666668,
+        "x": 7.882352941176471,
         "y": 1.4,
-        "z": 8.333333333333334
+        "z": 5.882352941176471
       },
-      "recommended_distance": 27.333333333333332
+      "recommended_distance": 19.294117647058826
     },
     "floor_height_m": 2.8,
     "num_floors": 1,
@@ -3972,7 +4317,7 @@
       {
         "element_id": "wall_012",
         "element_type": "partition",
-        "element_description": "Exterior structural spine wall (18.2m \u00d7 0.33m)",
+        "element_description": "Exterior structural spine wall (12.9m \u00d7 0.23m)",
         "options": [
           {
             "material": {
@@ -4007,7 +4352,7 @@
             "durability_score": 0.8,
             "moisture_score": 0.75,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (18.2m) exceeds material max span (4.5m)"
+            "disqualification_reason": "Wall length (12.9m) exceeds material max span (4.5m)"
           },
           {
             "material": {
@@ -4042,7 +4387,7 @@
             "durability_score": 0.85,
             "moisture_score": 0.7,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (18.2m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (12.9m) exceeds material max span (4.0m)"
           },
           {
             "material": {
@@ -4078,7 +4423,7 @@
             "durability_score": 0.82,
             "moisture_score": 0.65,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (18.2m) exceeds material max span (5.0m)"
+            "disqualification_reason": "Wall length (12.9m) exceeds material max span (5.0m)"
           },
           {
             "material": {
@@ -4114,7 +4459,7 @@
             "durability_score": 0.9,
             "moisture_score": 0.85,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (18.2m) exceeds material max span (8.0m)"
+            "disqualification_reason": "Wall length (12.9m) exceeds material max span (8.0m)"
           },
           {
             "material": {
@@ -4148,7 +4493,7 @@
             "durability_score": 0.65,
             "moisture_score": 0.5,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (18.2m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (12.9m) exceeds material max span (4.0m)"
           }
         ],
         "selected": {
@@ -4191,14 +4536,14 @@
         "context_factors": [
           "Exterior wall - weather exposure",
           "Part of continuous load path",
-          "Long span (18.2m) - span capability important"
+          "Long span (12.9m) - span capability important"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_001",
         "element_type": "partition",
-        "element_description": "Exterior structural spine wall (7.3m \u00d7 0.33m)",
+        "element_description": "Exterior structural spine wall (5.1m \u00d7 0.23m)",
         "options": [
           {
             "material": {
@@ -4233,7 +4578,7 @@
             "durability_score": 0.8,
             "moisture_score": 0.75,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.3m) exceeds material max span (4.5m)"
+            "disqualification_reason": "Wall length (5.1m) exceeds material max span (4.5m)"
           },
           {
             "material": {
@@ -4268,7 +4613,7 @@
             "durability_score": 0.85,
             "moisture_score": 0.7,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.3m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (5.1m) exceeds material max span (4.0m)"
           },
           {
             "material": {
@@ -4304,7 +4649,7 @@
             "durability_score": 0.82,
             "moisture_score": 0.65,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.3m) exceeds material max span (5.0m)"
+            "disqualification_reason": "Wall length (5.1m) exceeds material max span (5.0m)"
           },
           {
             "material": {
@@ -4374,7 +4719,7 @@
             "durability_score": 0.65,
             "moisture_score": 0.5,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.3m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (5.1m) exceeds material max span (4.0m)"
           }
         ],
         "selected": {
@@ -4416,14 +4761,14 @@
         "context_factors": [
           "Exterior wall - weather exposure",
           "Part of continuous load path",
-          "Long span (7.3m) - span capability important"
+          "Long span (5.1m) - span capability important"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_040",
         "element_type": "partition",
-        "element_description": "Exterior structural spine wall (6.8m \u00d7 0.33m)",
+        "element_description": "Exterior structural spine wall (4.8m \u00d7 0.23m)",
         "options": [
           {
             "material": {
@@ -4458,7 +4803,7 @@
             "durability_score": 0.8,
             "moisture_score": 0.75,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (6.8m) exceeds material max span (4.5m)"
+            "disqualification_reason": "Wall length (4.8m) exceeds material max span (4.5m)"
           },
           {
             "material": {
@@ -4493,7 +4838,7 @@
             "durability_score": 0.85,
             "moisture_score": 0.7,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (6.8m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (4.8m) exceeds material max span (4.0m)"
           },
           {
             "material": {
@@ -4528,8 +4873,8 @@
             "strength_score": 0.04,
             "durability_score": 0.82,
             "moisture_score": 0.65,
-            "meets_requirements": false,
-            "disqualification_reason": "Wall length (6.8m) exceeds material max span (5.0m)"
+            "meets_requirements": true,
+            "disqualification_reason": null
           },
           {
             "material": {
@@ -4599,56 +4944,56 @@
             "durability_score": 0.65,
             "moisture_score": 0.5,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (6.8m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (4.8m) exceeds material max span (4.0m)"
           }
         ],
         "selected": {
           "material": {
-            "name": "Precast Concrete Panel (Residential)",
-            "cost_per_sqm": 1700.0,
-            "min_cost_per_sqm": 1600.0,
-            "max_cost_per_sqm": 1800.0,
-            "source": "CPWD 2024",
+            "name": "Porotherm Clay Block",
+            "cost_per_sqm": 800.0,
+            "min_cost_per_sqm": 750.0,
+            "max_cost_per_sqm": 850.0,
+            "source": "Wienerberger India 2024",
             "cost_level": "standard",
-            "compressive_strength_mpa": 25.0,
-            "strength_level": "high",
-            "durability_rating": 0.9,
+            "compressive_strength_mpa": 10.0,
+            "strength_level": "medium",
+            "durability_rating": 0.82,
             "durability_level": "high",
-            "moisture_resistance": 0.85,
-            "thermal_insulation": 0.4,
-            "weight_kg_per_sqm": 200.0,
+            "moisture_resistance": 0.65,
+            "thermal_insulation": 0.9,
+            "weight_kg_per_sqm": 70.0,
             "best_use": [
               "exterior_walls",
-              "fast_construction",
-              "uniform_quality",
-              "medium_spans"
+              "thermal_comfort_priority",
+              "low_rise_residential",
+              "green_buildings"
             ],
             "constraints": [
-              "requires_crane_for_installation",
-              "transportation_limitations",
-              "joint_waterproofing_critical"
+              "higher_cost_than_brick",
+              "requires_specialized_mortar",
+              "limited_suppliers"
             ],
-            "max_span_m": 8.0
+            "max_span_m": 5.0
           },
-          "score": 0.62625,
-          "cost_score": 0.575,
-          "strength_score": 0.1,
-          "durability_score": 0.9,
-          "moisture_score": 0.85,
+          "score": 0.6685000000000001,
+          "cost_score": 0.8,
+          "strength_score": 0.04,
+          "durability_score": 0.82,
+          "moisture_score": 0.65,
           "meets_requirements": true,
           "disqualification_reason": null
         },
         "context_factors": [
           "Exterior wall - weather exposure",
           "Part of continuous load path",
-          "Long span (6.8m) - span capability important"
+          "Long span (4.8m) - span capability important"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_004",
         "element_type": "partition",
-        "element_description": "Exterior structural spine wall (9.5m \u00d7 0.28m)",
+        "element_description": "Exterior structural spine wall (6.7m \u00d7 0.20m)",
         "options": [
           {
             "material": {
@@ -4683,7 +5028,7 @@
             "durability_score": 0.8,
             "moisture_score": 0.75,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.5m) exceeds material max span (4.5m)"
+            "disqualification_reason": "Wall length (6.7m) exceeds material max span (4.5m)"
           },
           {
             "material": {
@@ -4718,7 +5063,7 @@
             "durability_score": 0.85,
             "moisture_score": 0.7,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.5m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (6.7m) exceeds material max span (4.0m)"
           },
           {
             "material": {
@@ -4754,7 +5099,7 @@
             "durability_score": 0.82,
             "moisture_score": 0.65,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.5m) exceeds material max span (5.0m)"
+            "disqualification_reason": "Wall length (6.7m) exceeds material max span (5.0m)"
           },
           {
             "material": {
@@ -4789,8 +5134,8 @@
             "strength_score": 0.1,
             "durability_score": 0.9,
             "moisture_score": 0.85,
-            "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.5m) exceeds material max span (8.0m)"
+            "meets_requirements": true,
+            "disqualification_reason": null
           },
           {
             "material": {
@@ -4824,55 +5169,56 @@
             "durability_score": 0.65,
             "moisture_score": 0.5,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.5m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (6.7m) exceeds material max span (4.0m)"
           }
         ],
         "selected": {
           "material": {
-            "name": "Precast Concrete Panel (Commercial)",
-            "cost_per_sqm": 2400.0,
-            "min_cost_per_sqm": 2200.0,
-            "max_cost_per_sqm": 2600.0,
+            "name": "Precast Concrete Panel (Residential)",
+            "cost_per_sqm": 1700.0,
+            "min_cost_per_sqm": 1600.0,
+            "max_cost_per_sqm": 1800.0,
             "source": "CPWD 2024",
-            "cost_level": "premium",
-            "compressive_strength_mpa": 30.0,
+            "cost_level": "standard",
+            "compressive_strength_mpa": 25.0,
             "strength_level": "high",
-            "durability_rating": 0.93,
+            "durability_rating": 0.9,
             "durability_level": "high",
-            "moisture_resistance": 0.88,
+            "moisture_resistance": 0.85,
             "thermal_insulation": 0.4,
-            "weight_kg_per_sqm": 220.0,
+            "weight_kg_per_sqm": 200.0,
             "best_use": [
-              "commercial_exterior",
-              "curtain_walls",
-              "large_spans",
-              "fast_construction"
+              "exterior_walls",
+              "fast_construction",
+              "uniform_quality",
+              "medium_spans"
             ],
             "constraints": [
-              "expensive_jointing",
-              "specialist_installation"
+              "requires_crane_for_installation",
+              "transportation_limitations",
+              "joint_waterproofing_critical"
             ],
-            "max_span_m": 12.0
+            "max_span_m": 8.0
           },
-          "score": 0.5625,
-          "cost_score": 0.4,
-          "strength_score": 0.12,
-          "durability_score": 0.93,
-          "moisture_score": 0.88,
+          "score": 0.62625,
+          "cost_score": 0.575,
+          "strength_score": 0.1,
+          "durability_score": 0.9,
+          "moisture_score": 0.85,
           "meets_requirements": true,
           "disqualification_reason": null
         },
         "context_factors": [
           "Exterior wall - weather exposure",
           "Part of continuous load path",
-          "Long span (9.5m) - span capability important"
+          "Long span (6.7m) - span capability important"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_026",
         "element_type": "partition",
-        "element_description": "Exterior structural spine wall (7.8m \u00d7 0.39m)",
+        "element_description": "Exterior structural spine wall (5.5m \u00d7 0.28m)",
         "options": [
           {
             "material": {
@@ -4907,7 +5253,7 @@
             "durability_score": 0.8,
             "moisture_score": 0.75,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.8m) exceeds material max span (4.5m)"
+            "disqualification_reason": "Wall length (5.5m) exceeds material max span (4.5m)"
           },
           {
             "material": {
@@ -4942,7 +5288,7 @@
             "durability_score": 0.85,
             "moisture_score": 0.7,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.8m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (5.5m) exceeds material max span (4.0m)"
           },
           {
             "material": {
@@ -4978,7 +5324,7 @@
             "durability_score": 0.82,
             "moisture_score": 0.65,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.8m) exceeds material max span (5.0m)"
+            "disqualification_reason": "Wall length (5.5m) exceeds material max span (5.0m)"
           },
           {
             "material": {
@@ -5048,7 +5394,7 @@
             "durability_score": 0.65,
             "moisture_score": 0.5,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.8m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (5.5m) exceeds material max span (4.0m)"
           }
         ],
         "selected": {
@@ -5090,14 +5436,14 @@
         "context_factors": [
           "Exterior wall - weather exposure",
           "Part of continuous load path",
-          "Long span (7.8m) - span capability important"
+          "Long span (5.5m) - span capability important"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_042",
         "element_type": "partition",
-        "element_description": "Exterior structural spine wall (11.5m \u00d7 0.33m)",
+        "element_description": "Exterior structural spine wall (8.1m \u00d7 0.23m)",
         "options": [
           {
             "material": {
@@ -5132,7 +5478,7 @@
             "durability_score": 0.8,
             "moisture_score": 0.75,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.5m) exceeds material max span (4.5m)"
+            "disqualification_reason": "Wall length (8.1m) exceeds material max span (4.5m)"
           },
           {
             "material": {
@@ -5167,7 +5513,7 @@
             "durability_score": 0.85,
             "moisture_score": 0.7,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.5m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (8.1m) exceeds material max span (4.0m)"
           },
           {
             "material": {
@@ -5203,7 +5549,7 @@
             "durability_score": 0.82,
             "moisture_score": 0.65,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.5m) exceeds material max span (5.0m)"
+            "disqualification_reason": "Wall length (8.1m) exceeds material max span (5.0m)"
           },
           {
             "material": {
@@ -5239,7 +5585,7 @@
             "durability_score": 0.9,
             "moisture_score": 0.85,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.5m) exceeds material max span (8.0m)"
+            "disqualification_reason": "Wall length (8.1m) exceeds material max span (8.0m)"
           },
           {
             "material": {
@@ -5273,7 +5619,7 @@
             "durability_score": 0.65,
             "moisture_score": 0.5,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.5m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (8.1m) exceeds material max span (4.0m)"
           }
         ],
         "selected": {
@@ -5314,14 +5660,14 @@
         "context_factors": [
           "Exterior wall - weather exposure",
           "Part of continuous load path",
-          "Long span (11.5m) - span capability important"
+          "Long span (8.1m) - span capability important"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_014",
         "element_type": "partition",
-        "element_description": "Exterior structural spine wall (11.4m \u00d7 0.33m)",
+        "element_description": "Exterior structural spine wall (8.0m \u00d7 0.23m)",
         "options": [
           {
             "material": {
@@ -5356,7 +5702,7 @@
             "durability_score": 0.8,
             "moisture_score": 0.75,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.4m) exceeds material max span (4.5m)"
+            "disqualification_reason": "Wall length (8.0m) exceeds material max span (4.5m)"
           },
           {
             "material": {
@@ -5391,7 +5737,7 @@
             "durability_score": 0.85,
             "moisture_score": 0.7,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.4m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (8.0m) exceeds material max span (4.0m)"
           },
           {
             "material": {
@@ -5427,7 +5773,7 @@
             "durability_score": 0.82,
             "moisture_score": 0.65,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.4m) exceeds material max span (5.0m)"
+            "disqualification_reason": "Wall length (8.0m) exceeds material max span (5.0m)"
           },
           {
             "material": {
@@ -5463,7 +5809,7 @@
             "durability_score": 0.9,
             "moisture_score": 0.85,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.4m) exceeds material max span (8.0m)"
+            "disqualification_reason": "Wall length (8.0m) exceeds material max span (8.0m)"
           },
           {
             "material": {
@@ -5497,7 +5843,7 @@
             "durability_score": 0.65,
             "moisture_score": 0.5,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (11.4m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (8.0m) exceeds material max span (4.0m)"
           }
         ],
         "selected": {
@@ -5538,14 +5884,14 @@
         "context_factors": [
           "Exterior wall - weather exposure",
           "Part of continuous load path",
-          "Long span (11.4m) - span capability important"
+          "Long span (8.0m) - span capability important"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_017",
         "element_type": "partition",
-        "element_description": "Exterior structural spine wall (7.8m \u00d7 0.28m)",
+        "element_description": "Exterior structural spine wall (5.5m \u00d7 0.20m)",
         "options": [
           {
             "material": {
@@ -5580,7 +5926,7 @@
             "durability_score": 0.8,
             "moisture_score": 0.75,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.8m) exceeds material max span (4.5m)"
+            "disqualification_reason": "Wall length (5.5m) exceeds material max span (4.5m)"
           },
           {
             "material": {
@@ -5615,7 +5961,7 @@
             "durability_score": 0.85,
             "moisture_score": 0.7,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.8m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (5.5m) exceeds material max span (4.0m)"
           },
           {
             "material": {
@@ -5651,7 +5997,7 @@
             "durability_score": 0.82,
             "moisture_score": 0.65,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.8m) exceeds material max span (5.0m)"
+            "disqualification_reason": "Wall length (5.5m) exceeds material max span (5.0m)"
           },
           {
             "material": {
@@ -5721,7 +6067,7 @@
             "durability_score": 0.65,
             "moisture_score": 0.5,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (7.8m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (5.5m) exceeds material max span (4.0m)"
           }
         ],
         "selected": {
@@ -5763,15 +6109,88 @@
         "context_factors": [
           "Exterior wall - weather exposure",
           "Part of continuous load path",
-          "Long span (7.8m) - span capability important"
+          "Long span (5.5m) - span capability important"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_049",
-        "element_type": "partition",
-        "element_description": "Exterior structural spine wall (3.3m \u00d7 0.33m)",
+        "element_type": "exterior_load_bearing",
+        "element_description": "Exterior load bearing wall (2.4m \u00d7 0.23m)",
         "options": [
+          {
+            "material": {
+              "name": "Steel Frame",
+              "cost_per_sqm": 4000.0,
+              "min_cost_per_sqm": 3500.0,
+              "max_cost_per_sqm": 4500.0,
+              "source": "Steel Authority India 2024",
+              "cost_level": "premium",
+              "compressive_strength_mpa": 250.0,
+              "strength_level": "very_high",
+              "durability_rating": 0.9,
+              "durability_level": "high",
+              "moisture_resistance": 0.3,
+              "thermal_insulation": 0.1,
+              "weight_kg_per_sqm": 30.0,
+              "best_use": [
+                "very_long_spans",
+                "industrial",
+                "high_rise",
+                "seismic_zones"
+              ],
+              "constraints": [
+                "very_high_cost",
+                "requires_fire_protection",
+                "corrosion_prone",
+                "requires_specialized_labor"
+              ],
+              "max_span_m": 30.0
+            },
+            "score": 0.67,
+            "cost_score": 0.0,
+            "strength_score": 1.0,
+            "durability_score": 0.9,
+            "moisture_score": 0.3,
+            "meets_requirements": true,
+            "disqualification_reason": null
+          },
+          {
+            "material": {
+              "name": "Precast Concrete Panel (Residential)",
+              "cost_per_sqm": 1700.0,
+              "min_cost_per_sqm": 1600.0,
+              "max_cost_per_sqm": 1800.0,
+              "source": "CPWD 2024",
+              "cost_level": "standard",
+              "compressive_strength_mpa": 25.0,
+              "strength_level": "high",
+              "durability_rating": 0.9,
+              "durability_level": "high",
+              "moisture_resistance": 0.85,
+              "thermal_insulation": 0.4,
+              "weight_kg_per_sqm": 200.0,
+              "best_use": [
+                "exterior_walls",
+                "fast_construction",
+                "uniform_quality",
+                "medium_spans"
+              ],
+              "constraints": [
+                "requires_crane_for_installation",
+                "transportation_limitations",
+                "joint_waterproofing_critical"
+              ],
+              "max_span_m": 8.0
+            },
+            "score": 0.5075000000000001,
+            "cost_score": 0.575,
+            "strength_score": 0.1,
+            "durability_score": 0.9,
+            "moisture_score": 0.85,
+            "meets_requirements": true,
+            "disqualification_reason": null
+          },
           {
             "material": {
               "name": "Fly Ash Brick",
@@ -5799,7 +6218,7 @@
               ],
               "max_span_m": 4.5
             },
-            "score": 0.7184000000000001,
+            "score": 0.5049,
             "cost_score": 0.89,
             "strength_score": 0.036,
             "durability_score": 0.8,
@@ -5834,158 +6253,90 @@
               ],
               "max_span_m": 4.0
             },
-            "score": 0.708025,
+            "score": 0.49639999999999995,
             "cost_score": 0.8625,
             "strength_score": 0.016,
             "durability_score": 0.85,
             "moisture_score": 0.7,
-            "meets_requirements": true,
-            "disqualification_reason": null
+            "meets_requirements": false,
+            "disqualification_reason": "Insufficient strength (4.0 MPa) for load-bearing wall"
           },
           {
             "material": {
-              "name": "Porotherm Clay Block",
-              "cost_per_sqm": 800.0,
-              "min_cost_per_sqm": 750.0,
-              "max_cost_per_sqm": 850.0,
-              "source": "Wienerberger India 2024",
-              "cost_level": "standard",
-              "compressive_strength_mpa": 10.0,
-              "strength_level": "medium",
-              "durability_rating": 0.82,
-              "durability_level": "high",
-              "moisture_resistance": 0.65,
-              "thermal_insulation": 0.9,
-              "weight_kg_per_sqm": 70.0,
-              "best_use": [
-                "exterior_walls",
-                "thermal_comfort_priority",
-                "low_rise_residential",
-                "green_buildings"
-              ],
-              "constraints": [
-                "higher_cost_than_brick",
-                "requires_specialized_mortar",
-                "limited_suppliers"
-              ],
-              "max_span_m": 5.0
-            },
-            "score": 0.6685000000000001,
-            "cost_score": 0.8,
-            "strength_score": 0.04,
-            "durability_score": 0.82,
-            "moisture_score": 0.65,
-            "meets_requirements": true,
-            "disqualification_reason": null
-          },
-          {
-            "material": {
-              "name": "Precast Concrete Panel (Residential)",
-              "cost_per_sqm": 1700.0,
-              "min_cost_per_sqm": 1600.0,
-              "max_cost_per_sqm": 1800.0,
+              "name": "Precast Concrete Panel (Commercial)",
+              "cost_per_sqm": 2400.0,
+              "min_cost_per_sqm": 2200.0,
+              "max_cost_per_sqm": 2600.0,
               "source": "CPWD 2024",
-              "cost_level": "standard",
-              "compressive_strength_mpa": 25.0,
+              "cost_level": "premium",
+              "compressive_strength_mpa": 30.0,
               "strength_level": "high",
-              "durability_rating": 0.9,
+              "durability_rating": 0.93,
               "durability_level": "high",
-              "moisture_resistance": 0.85,
+              "moisture_resistance": 0.88,
               "thermal_insulation": 0.4,
-              "weight_kg_per_sqm": 200.0,
+              "weight_kg_per_sqm": 220.0,
               "best_use": [
-                "exterior_walls",
-                "fast_construction",
-                "uniform_quality",
-                "medium_spans"
+                "commercial_exterior",
+                "curtain_walls",
+                "large_spans",
+                "fast_construction"
               ],
               "constraints": [
-                "requires_crane_for_installation",
-                "transportation_limitations",
-                "joint_waterproofing_critical"
+                "expensive_jointing",
+                "specialist_installation"
               ],
-              "max_span_m": 8.0
+              "max_span_m": 12.0
             },
-            "score": 0.62625,
-            "cost_score": 0.575,
-            "strength_score": 0.1,
-            "durability_score": 0.9,
-            "moisture_score": 0.85,
-            "meets_requirements": true,
-            "disqualification_reason": null
-          },
-          {
-            "material": {
-              "name": "Hollow Concrete Block (150mm)",
-              "cost_per_sqm": 610.0,
-              "min_cost_per_sqm": 580.0,
-              "max_cost_per_sqm": 640.0,
-              "source": "NBO 2024",
-              "cost_level": "budget",
-              "compressive_strength_mpa": 7.0,
-              "strength_level": "low",
-              "durability_rating": 0.65,
-              "durability_level": "medium",
-              "moisture_resistance": 0.5,
-              "thermal_insulation": 0.55,
-              "weight_kg_per_sqm": 120.0,
-              "best_use": [
-                "partition_walls",
-                "boundary_walls",
-                "semi_structural"
-              ],
-              "constraints": [
-                "not_for_heavy_loads",
-                "needs_column_support"
-              ],
-              "max_span_m": 4.0
-            },
-            "score": 0.6230749999999999,
-            "cost_score": 0.8475,
-            "strength_score": 0.028,
-            "durability_score": 0.65,
-            "moisture_score": 0.5,
+            "score": 0.49250000000000005,
+            "cost_score": 0.4,
+            "strength_score": 0.12,
+            "durability_score": 0.93,
+            "moisture_score": 0.88,
             "meets_requirements": true,
             "disqualification_reason": null
           }
         ],
         "selected": {
           "material": {
-            "name": "Fly Ash Brick",
-            "cost_per_sqm": 440.0,
-            "min_cost_per_sqm": 420.0,
-            "max_cost_per_sqm": 460.0,
-            "source": "BIS/NBO 2024",
-            "cost_level": "budget",
-            "compressive_strength_mpa": 9.0,
-            "strength_level": "medium",
-            "durability_rating": 0.8,
+            "name": "Steel Frame",
+            "cost_per_sqm": 4000.0,
+            "min_cost_per_sqm": 3500.0,
+            "max_cost_per_sqm": 4500.0,
+            "source": "Steel Authority India 2024",
+            "cost_level": "premium",
+            "compressive_strength_mpa": 250.0,
+            "strength_level": "very_high",
+            "durability_rating": 0.9,
             "durability_level": "high",
-            "moisture_resistance": 0.75,
-            "thermal_insulation": 0.65,
-            "weight_kg_per_sqm": 85.0,
+            "moisture_resistance": 0.3,
+            "thermal_insulation": 0.1,
+            "weight_kg_per_sqm": 30.0,
             "best_use": [
-              "load_bearing_low_rise",
-              "exterior_walls",
-              "eco_friendly_construction",
-              "wet_areas"
+              "very_long_spans",
+              "industrial",
+              "high_rise",
+              "seismic_zones"
             ],
             "constraints": [
-              "limited_availability_in_some_regions",
-              "not_for_heavy_loads"
+              "very_high_cost",
+              "requires_fire_protection",
+              "corrosion_prone",
+              "requires_specialized_labor"
             ],
-            "max_span_m": 4.5
+            "max_span_m": 30.0
           },
-          "score": 0.7184000000000001,
-          "cost_score": 0.89,
-          "strength_score": 0.036,
-          "durability_score": 0.8,
-          "moisture_score": 0.75,
+          "score": 0.67,
+          "cost_score": 0.0,
+          "strength_score": 1.0,
+          "durability_score": 0.9,
+          "moisture_score": 0.3,
           "meets_requirements": true,
           "disqualification_reason": null
         },
         "context_factors": [
           "Exterior wall - weather exposure",
+          "Load-bearing - strength priority",
           "Part of continuous load path"
         ],
         "alternative_rationale": null
@@ -5993,7 +6344,7 @@
       {
         "element_id": "wall_031",
         "element_type": "interior_load_bearing",
-        "element_description": "Interior load bearing wall (3.1m \u00d7 0.28m)",
+        "element_description": "Interior load bearing wall (2.2m \u00d7 0.20m)",
         "options": [
           {
             "material": {
@@ -6213,15 +6564,14 @@
           "disqualification_reason": null
         },
         "context_factors": [
-          "Load-bearing - strength priority",
-          "Part of continuous load path"
+          "Load-bearing - strength priority"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_033",
         "element_type": "partition",
-        "element_description": "Exterior structural spine wall (9.3m \u00d7 0.33m)",
+        "element_description": "Exterior structural spine wall (6.6m \u00d7 0.23m)",
         "options": [
           {
             "material": {
@@ -6256,7 +6606,7 @@
             "durability_score": 0.8,
             "moisture_score": 0.75,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.3m) exceeds material max span (4.5m)"
+            "disqualification_reason": "Wall length (6.6m) exceeds material max span (4.5m)"
           },
           {
             "material": {
@@ -6291,7 +6641,7 @@
             "durability_score": 0.85,
             "moisture_score": 0.7,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.3m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (6.6m) exceeds material max span (4.0m)"
           },
           {
             "material": {
@@ -6327,7 +6677,7 @@
             "durability_score": 0.82,
             "moisture_score": 0.65,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.3m) exceeds material max span (5.0m)"
+            "disqualification_reason": "Wall length (6.6m) exceeds material max span (5.0m)"
           },
           {
             "material": {
@@ -6362,8 +6712,8 @@
             "strength_score": 0.1,
             "durability_score": 0.9,
             "moisture_score": 0.85,
-            "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.3m) exceeds material max span (8.0m)"
+            "meets_requirements": true,
+            "disqualification_reason": null
           },
           {
             "material": {
@@ -6397,55 +6747,56 @@
             "durability_score": 0.65,
             "moisture_score": 0.5,
             "meets_requirements": false,
-            "disqualification_reason": "Wall length (9.3m) exceeds material max span (4.0m)"
+            "disqualification_reason": "Wall length (6.6m) exceeds material max span (4.0m)"
           }
         ],
         "selected": {
           "material": {
-            "name": "Precast Concrete Panel (Commercial)",
-            "cost_per_sqm": 2400.0,
-            "min_cost_per_sqm": 2200.0,
-            "max_cost_per_sqm": 2600.0,
+            "name": "Precast Concrete Panel (Residential)",
+            "cost_per_sqm": 1700.0,
+            "min_cost_per_sqm": 1600.0,
+            "max_cost_per_sqm": 1800.0,
             "source": "CPWD 2024",
-            "cost_level": "premium",
-            "compressive_strength_mpa": 30.0,
+            "cost_level": "standard",
+            "compressive_strength_mpa": 25.0,
             "strength_level": "high",
-            "durability_rating": 0.93,
+            "durability_rating": 0.9,
             "durability_level": "high",
-            "moisture_resistance": 0.88,
+            "moisture_resistance": 0.85,
             "thermal_insulation": 0.4,
-            "weight_kg_per_sqm": 220.0,
+            "weight_kg_per_sqm": 200.0,
             "best_use": [
-              "commercial_exterior",
-              "curtain_walls",
-              "large_spans",
-              "fast_construction"
+              "exterior_walls",
+              "fast_construction",
+              "uniform_quality",
+              "medium_spans"
             ],
             "constraints": [
-              "expensive_jointing",
-              "specialist_installation"
+              "requires_crane_for_installation",
+              "transportation_limitations",
+              "joint_waterproofing_critical"
             ],
-            "max_span_m": 12.0
+            "max_span_m": 8.0
           },
-          "score": 0.5625,
-          "cost_score": 0.4,
-          "strength_score": 0.12,
-          "durability_score": 0.93,
-          "moisture_score": 0.88,
+          "score": 0.62625,
+          "cost_score": 0.575,
+          "strength_score": 0.1,
+          "durability_score": 0.9,
+          "moisture_score": 0.85,
           "meets_requirements": true,
           "disqualification_reason": null
         },
         "context_factors": [
           "Exterior wall - weather exposure",
           "Part of continuous load path",
-          "Long span (9.3m) - span capability important"
+          "Long span (6.6m) - span capability important"
         ],
         "alternative_rationale": null
       },
       {
         "element_id": "wall_041",
         "element_type": "interior_load_bearing",
-        "element_description": "Interior load bearing wall (3.1m \u00d7 0.39m)",
+        "element_description": "Interior load bearing wall (2.2m \u00d7 0.28m)",
         "options": [
           {
             "material": {
@@ -6673,7 +7024,7 @@
       {
         "element_id": "wall_050",
         "element_type": "interior_load_bearing",
-        "element_description": "Interior load bearing wall (2.2m \u00d7 0.28m)",
+        "element_description": "Interior load bearing wall (1.6m \u00d7 0.20m)",
         "options": [
           {
             "material": {
@@ -6893,8 +7244,7 @@
           "disqualification_reason": null
         },
         "context_factors": [
-          "Load-bearing - strength priority",
-          "Part of continuous load path"
+          "Load-bearing - strength priority"
         ],
         "alternative_rationale": null
       }
@@ -6907,9 +7257,9 @@
       "moisture_weight": 0.15,
       "rationale": "Balanced optimization across all factors"
     },
-    "total_material_cost": 723638.16,
-    "budget_alternative_cost": 156125.19999999998,
-    "premium_alternative_cost": 681273.5999999999
+    "total_material_cost": 496131.99999999994,
+    "budget_alternative_cost": 110233.19999999997,
+    "premium_alternative_cost": 481017.6
   },
   "cost_result": {
     "line_items": [
@@ -6917,10 +7267,10 @@
         "element_id": "foundation_excavation",
         "element_description": "Foundation excavation (1.2m deep)",
         "material": "Earth work",
-        "quantity": 80.39,
+        "quantity": 56.76,
         "unit": "cum",
         "unit_cost": 350.0,
-        "total_cost": 28135.29599999999,
+        "total_cost": 19864.655999999995,
         "room_id": null,
         "category": "foundation"
       },
@@ -6928,10 +7278,10 @@
         "element_id": "foundation_pcc",
         "element_description": "PCC 1:4:8 in foundation",
         "material": "M10 Concrete",
-        "quantity": 8.37,
+        "quantity": 5.91,
         "unit": "cum",
         "unit_cost": 5500.0,
-        "total_cost": 46054.79999999999,
+        "total_cost": 32516.549999999992,
         "room_id": null,
         "category": "foundation"
       },
@@ -6939,10 +7289,10 @@
         "element_id": "foundation_rcc",
         "element_description": "RCC footing & plinth beam",
         "material": "M25 Concrete + Fe500",
-        "quantity": 33.49,
+        "quantity": 23.65,
         "unit": "cum",
         "unit_cost": 9000.0,
-        "total_cost": 301449.5999999999,
+        "total_cost": 212835.59999999995,
         "room_id": null,
         "category": "foundation"
       },
@@ -6950,10 +7300,10 @@
         "element_id": "rcc_slab",
         "element_description": "RCC roof slab (125mm thick)",
         "material": "M25 Concrete + Fe500",
-        "quantity": 21.56,
+        "quantity": 12.42,
         "unit": "cum",
         "unit_cost": 9000.0,
-        "total_cost": 194051.25,
+        "total_cost": 111757.5,
         "room_id": null,
         "category": "rcc_structure"
       },
@@ -6961,21 +7311,21 @@
         "element_id": "slab_steel",
         "element_description": "Reinforcement steel in slab",
         "material": "Fe500 TMT",
-        "quantity": 1724.9,
+        "quantity": 993.4,
         "unit": "kg",
         "unit_cost": 72.0,
-        "total_cost": 124192.8,
+        "total_cost": 71524.8,
         "room_id": null,
         "category": "rcc_structure"
       },
       {
         "element_id": "rcc_beams",
-        "element_description": "RCC beams (6 spans)",
+        "element_description": "RCC beams (7 spans)",
         "material": "M25 Concrete + Fe500",
-        "quantity": 1.2,
+        "quantity": 1.4,
         "unit": "cum",
         "unit_cost": 9500.0,
-        "total_cost": 11400.000000000002,
+        "total_cost": 13300.000000000002,
         "room_id": null,
         "category": "rcc_structure"
       },
@@ -7005,10 +7355,10 @@
         "element_id": "masonry_exterior",
         "element_description": "Exterior brick wall 230mm (CM 1:4)",
         "material": "First class bricks",
-        "quantity": 59.92,
+        "quantity": 42.3,
         "unit": "cum",
         "unit_cost": 7500.0,
-        "total_cost": 449383.1999999999,
+        "total_cost": 317282.69999999995,
         "room_id": null,
         "category": "masonry"
       },
@@ -7016,10 +7366,10 @@
         "element_id": "masonry_interior",
         "element_description": "Interior brick wall 115mm (CM 1:4)",
         "material": "First class bricks",
-        "quantity": 23.35,
+        "quantity": 16.49,
         "unit": "sqm",
         "unit_cost": 700.0,
-        "total_cost": 16346.400000000005,
+        "total_cost": 11544.400000000001,
         "room_id": null,
         "category": "masonry"
       },
@@ -7027,10 +7377,10 @@
         "element_id": "plaster_internal",
         "element_description": "Internal cement plaster 12mm (1:4)",
         "material": "Cement mortar",
-        "quantity": 454.18,
+        "quantity": 320.68,
         "unit": "sqm",
         "unit_cost": 350.0,
-        "total_cost": 158963.84,
+        "total_cost": 112237.44,
         "room_id": null,
         "category": "plastering"
       },
@@ -7038,10 +7388,10 @@
         "element_id": "plaster_external",
         "element_description": "External cement plaster 20mm (1:4)",
         "material": "Cement mortar",
-        "quantity": 113.55,
+        "quantity": 80.17,
         "unit": "sqm",
         "unit_cost": 480.0,
-        "total_cost": 54501.888,
+        "total_cost": 38481.408,
         "room_id": null,
         "category": "plastering"
       },
@@ -7049,10 +7399,10 @@
         "element_id": "floor_room_000",
         "element_description": "Flooring \u2014 LIVING ROOM",
         "material": "Vitrified tiles 600\u00d7600",
-        "quantity": 53.46,
+        "quantity": 29.99,
         "unit": "sqm",
         "unit_cost": 950.0,
-        "total_cost": 50787.0,
+        "total_cost": 28490.5,
         "room_id": "room_000",
         "category": "flooring"
       },
@@ -7060,10 +7410,10 @@
         "element_id": "floor_room_001",
         "element_description": "Flooring \u2014 BEDROOM 1",
         "material": "Vitrified tiles 600\u00d7600",
-        "quantity": 49.9,
+        "quantity": 29.99,
         "unit": "sqm",
         "unit_cost": 950.0,
-        "total_cost": 47405.0,
+        "total_cost": 28490.5,
         "room_id": "room_001",
         "category": "flooring"
       },
@@ -7071,10 +7421,10 @@
         "element_id": "floor_room_002",
         "element_description": "Flooring \u2014 BEDROOM 2",
         "material": "Vitrified tiles 600\u00d7600",
-        "quantity": 37.69,
+        "quantity": 14.52,
         "unit": "sqm",
         "unit_cost": 950.0,
-        "total_cost": 35805.5,
+        "total_cost": 13794.0,
         "room_id": "room_002",
         "category": "flooring"
       },
@@ -7082,10 +7432,10 @@
         "element_id": "floor_room_003",
         "element_description": "Flooring \u2014 KITCHEN",
         "material": "Ceramic tiles",
-        "quantity": 15.99,
+        "quantity": 7.16,
         "unit": "sqm",
         "unit_cost": 650.0,
-        "total_cost": 10393.5,
+        "total_cost": 4654.0,
         "room_id": "room_003",
         "category": "flooring"
       },
@@ -7093,10 +7443,10 @@
         "element_id": "floor_room_004",
         "element_description": "Flooring \u2014 BATH",
         "material": "Anti-skid ceramic tiles",
-        "quantity": 14.14,
+        "quantity": 6.59,
         "unit": "sqm",
         "unit_cost": 800.0,
-        "total_cost": 11312.0,
+        "total_cost": 5272.0,
         "room_id": "room_004",
         "category": "flooring"
       },
@@ -7104,21 +7454,32 @@
         "element_id": "floor_room_005",
         "element_description": "Flooring \u2014 ENTRY",
         "material": "Vitrified tiles 600\u00d7600",
-        "quantity": 2.0,
+        "quantity": 2.17,
         "unit": "sqm",
         "unit_cost": 950.0,
-        "total_cost": 1900.0,
+        "total_cost": 2061.5,
         "room_id": "room_005",
+        "category": "flooring"
+      },
+      {
+        "element_id": "floor_room_006",
+        "element_description": "Flooring \u2014 HALLWAY",
+        "material": "Vitrified tiles 600\u00d7600",
+        "quantity": 8.92,
+        "unit": "sqm",
+        "unit_cost": 950.0,
+        "total_cost": 8474.0,
+        "room_id": "room_006",
         "category": "flooring"
       },
       {
         "element_id": "wall_tile_room_004",
         "element_description": "Wall tiles \u2014 BATH (up to ceiling)",
         "material": "Ceramic wall tiles",
-        "quantity": 31.67,
+        "quantity": 14.76,
         "unit": "sqm",
         "unit_cost": 800.0,
-        "total_cost": 25338.88,
+        "total_cost": 11809.279999999999,
         "room_id": "room_004",
         "category": "flooring"
       },
@@ -7126,10 +7487,10 @@
         "element_id": "painting_interior",
         "element_description": "Interior painting (primer + putty + 2 coat emulsion)",
         "material": "Asian Paints / Berger premium",
-        "quantity": 454.18,
+        "quantity": 320.68,
         "unit": "sqm",
         "unit_cost": 200.0,
-        "total_cost": 90836.48,
+        "total_cost": 64135.68,
         "room_id": null,
         "category": "painting"
       },
@@ -7137,21 +7498,21 @@
         "element_id": "painting_exterior",
         "element_description": "Exterior weather-proof painting (2 coats)",
         "material": "Apex / Ultima exterior paint",
-        "quantity": 113.55,
+        "quantity": 80.17,
         "unit": "sqm",
         "unit_cost": 280.0,
-        "total_cost": 31792.767999999996,
+        "total_cost": 22447.488,
         "room_id": null,
         "category": "painting"
       },
       {
         "element_id": "electrical_wiring",
-        "element_description": "Electrical wiring & points (33 points)",
+        "element_description": "Electrical wiring & points (41 points)",
         "material": "Copper wire + modular switches",
-        "quantity": 33.0,
+        "quantity": 41.0,
         "unit": "points",
         "unit_cost": 2200.0,
-        "total_cost": 72600.0,
+        "total_cost": 90200.0,
         "room_id": null,
         "category": "electrical"
       },
@@ -7223,12 +7584,12 @@
       },
       {
         "element_id": "internal_doors",
-        "element_description": "Internal flush doors (4 nos, 7\u00d73 ft)",
+        "element_description": "Internal flush doors (5 nos, 7\u00d73 ft)",
         "material": "Flush door + frame",
-        "quantity": 4.0,
+        "quantity": 5.0,
         "unit": "unit",
         "unit_cost": 10000.0,
-        "total_cost": 40000.0,
+        "total_cost": 50000.0,
         "room_id": null,
         "category": "doors_windows"
       },
@@ -7258,10 +7619,10 @@
         "element_id": "waterproofing",
         "element_description": "Terrace & bathroom waterproofing",
         "material": "Polymer based coating",
-        "quantity": 186.63,
+        "quantity": 105.93,
         "unit": "sqm",
         "unit_cost": 200.0,
-        "total_cost": 37326.0,
+        "total_cost": 21186.0,
         "room_id": null,
         "category": "finishing"
       },
@@ -7271,8 +7632,8 @@
         "material": "\u2014",
         "quantity": 1.0,
         "unit": "lump",
-        "unit_cost": 160985.77615999998,
-        "total_cost": 160985.77615999998,
+        "unit_cost": 117176.48015999999,
+        "total_cost": 117176.48015999999,
         "room_id": null,
         "category": "overhead"
       }
@@ -7282,83 +7643,94 @@
         "room_id": "room_000",
         "room_label": "LIVING ROOM",
         "room_type": "living",
-        "area_m2": 53.46,
+        "area_m2": 29.99,
         "wall_cost": 0.0,
-        "flooring_cost": 50787.0,
+        "flooring_cost": 28490.5,
         "opening_cost": 0.0,
-        "total_cost": 50787.0,
+        "total_cost": 28490.5,
         "cost_per_sqm": 950.0
       },
       {
         "room_id": "room_001",
         "room_label": "BEDROOM 1",
         "room_type": "bedroom",
-        "area_m2": 49.9,
+        "area_m2": 29.99,
         "wall_cost": 0.0,
-        "flooring_cost": 47405.0,
+        "flooring_cost": 28490.5,
         "opening_cost": 0.0,
-        "total_cost": 47405.0,
+        "total_cost": 28490.5,
         "cost_per_sqm": 950.0
       },
       {
         "room_id": "room_002",
         "room_label": "BEDROOM 2",
         "room_type": "bedroom",
-        "area_m2": 37.69,
+        "area_m2": 14.52,
         "wall_cost": 0.0,
-        "flooring_cost": 35805.5,
+        "flooring_cost": 13794.0,
         "opening_cost": 0.0,
-        "total_cost": 35805.5,
-        "cost_per_sqm": 950.0000000000001
+        "total_cost": 13794.0,
+        "cost_per_sqm": 950.0
       },
       {
         "room_id": "room_003",
         "room_label": "KITCHEN",
         "room_type": "kitchen",
-        "area_m2": 15.99,
+        "area_m2": 7.16,
         "wall_cost": 0.0,
-        "flooring_cost": 10393.5,
+        "flooring_cost": 4654.0,
         "opening_cost": 0.0,
-        "total_cost": 10393.5,
+        "total_cost": 4654.0,
         "cost_per_sqm": 650.0
       },
       {
         "room_id": "room_004",
         "room_label": "BATH",
         "room_type": "bathroom",
-        "area_m2": 14.14,
+        "area_m2": 6.59,
         "wall_cost": 0.0,
-        "flooring_cost": 36650.880000000005,
+        "flooring_cost": 17081.28,
         "opening_cost": 0.0,
-        "total_cost": 36650.880000000005,
+        "total_cost": 17081.28,
         "cost_per_sqm": 2592.0
       },
       {
         "room_id": "room_005",
         "room_label": "ENTRY",
         "room_type": "foyer",
-        "area_m2": 1.31,
+        "area_m2": 2.17,
         "wall_cost": 0.0,
-        "flooring_cost": 1900.0,
+        "flooring_cost": 2061.5,
         "opening_cost": 0.0,
-        "total_cost": 1900.0,
-        "cost_per_sqm": 1450.381679389313
+        "total_cost": 2061.5,
+        "cost_per_sqm": 950.0
+      },
+      {
+        "room_id": "room_006",
+        "room_label": "HALLWAY",
+        "room_type": "hall",
+        "area_m2": 8.92,
+        "wall_cost": 0.0,
+        "flooring_cost": 8474.0,
+        "opening_cost": 0.0,
+        "total_cost": 8474.0,
+        "cost_per_sqm": 950.0
       }
     ],
     "category_totals": [
       {
         "category": "foundation",
-        "total_cost": 375639.6959999999,
-        "percentage": 17.284236738413387,
+        "total_cost": 265216.8059999999,
+        "percentage": 16.765898161907486,
         "line_items": [
           {
             "element_id": "foundation_excavation",
             "element_description": "Foundation excavation (1.2m deep)",
             "material": "Earth work",
-            "quantity": 80.39,
+            "quantity": 56.76,
             "unit": "cum",
             "unit_cost": 350.0,
-            "total_cost": 28135.29599999999,
+            "total_cost": 19864.655999999995,
             "room_id": null,
             "category": "foundation"
           },
@@ -7366,10 +7738,10 @@
             "element_id": "foundation_pcc",
             "element_description": "PCC 1:4:8 in foundation",
             "material": "M10 Concrete",
-            "quantity": 8.37,
+            "quantity": 5.91,
             "unit": "cum",
             "unit_cost": 5500.0,
-            "total_cost": 46054.79999999999,
+            "total_cost": 32516.549999999992,
             "room_id": null,
             "category": "foundation"
           },
@@ -7377,10 +7749,10 @@
             "element_id": "foundation_rcc",
             "element_description": "RCC footing & plinth beam",
             "material": "M25 Concrete + Fe500",
-            "quantity": 33.49,
+            "quantity": 23.65,
             "unit": "cum",
             "unit_cost": 9000.0,
-            "total_cost": 301449.5999999999,
+            "total_cost": 212835.59999999995,
             "room_id": null,
             "category": "foundation"
           }
@@ -7388,17 +7760,17 @@
       },
       {
         "category": "rcc_structure",
-        "total_cost": 338490.05,
-        "percentage": 15.574877256309422,
+        "total_cost": 205428.3,
+        "percentage": 12.986318662527669,
         "line_items": [
           {
             "element_id": "rcc_slab",
             "element_description": "RCC roof slab (125mm thick)",
             "material": "M25 Concrete + Fe500",
-            "quantity": 21.56,
+            "quantity": 12.42,
             "unit": "cum",
             "unit_cost": 9000.0,
-            "total_cost": 194051.25,
+            "total_cost": 111757.5,
             "room_id": null,
             "category": "rcc_structure"
           },
@@ -7406,21 +7778,21 @@
             "element_id": "slab_steel",
             "element_description": "Reinforcement steel in slab",
             "material": "Fe500 TMT",
-            "quantity": 1724.9,
+            "quantity": 993.4,
             "unit": "kg",
             "unit_cost": 72.0,
-            "total_cost": 124192.8,
+            "total_cost": 71524.8,
             "room_id": null,
             "category": "rcc_structure"
           },
           {
             "element_id": "rcc_beams",
-            "element_description": "RCC beams (6 spans)",
+            "element_description": "RCC beams (7 spans)",
             "material": "M25 Concrete + Fe500",
-            "quantity": 1.2,
+            "quantity": 1.4,
             "unit": "cum",
             "unit_cost": 9500.0,
-            "total_cost": 11400.000000000002,
+            "total_cost": 13300.000000000002,
             "room_id": null,
             "category": "rcc_structure"
           },
@@ -7450,17 +7822,17 @@
       },
       {
         "category": "masonry",
-        "total_cost": 465729.5999999999,
-        "percentage": 21.42952608098845,
+        "total_cost": 328827.1,
+        "percentage": 20.78707512779326,
         "line_items": [
           {
             "element_id": "masonry_exterior",
             "element_description": "Exterior brick wall 230mm (CM 1:4)",
             "material": "First class bricks",
-            "quantity": 59.92,
+            "quantity": 42.3,
             "unit": "cum",
             "unit_cost": 7500.0,
-            "total_cost": 449383.1999999999,
+            "total_cost": 317282.69999999995,
             "room_id": null,
             "category": "masonry"
           },
@@ -7468,10 +7840,10 @@
             "element_id": "masonry_interior",
             "element_description": "Interior brick wall 115mm (CM 1:4)",
             "material": "First class bricks",
-            "quantity": 23.35,
+            "quantity": 16.49,
             "unit": "sqm",
             "unit_cost": 700.0,
-            "total_cost": 16346.400000000005,
+            "total_cost": 11544.400000000001,
             "room_id": null,
             "category": "masonry"
           }
@@ -7479,17 +7851,17 @@
       },
       {
         "category": "plastering",
-        "total_cost": 213465.728,
-        "percentage": 9.822157289494134,
+        "total_cost": 150718.848,
+        "percentage": 9.527815732190117,
         "line_items": [
           {
             "element_id": "plaster_internal",
             "element_description": "Internal cement plaster 12mm (1:4)",
             "material": "Cement mortar",
-            "quantity": 454.18,
+            "quantity": 320.68,
             "unit": "sqm",
             "unit_cost": 350.0,
-            "total_cost": 158963.84,
+            "total_cost": 112237.44,
             "room_id": null,
             "category": "plastering"
           },
@@ -7497,10 +7869,10 @@
             "element_id": "plaster_external",
             "element_description": "External cement plaster 20mm (1:4)",
             "material": "Cement mortar",
-            "quantity": 113.55,
+            "quantity": 80.17,
             "unit": "sqm",
             "unit_cost": 480.0,
-            "total_cost": 54501.888,
+            "total_cost": 38481.408,
             "room_id": null,
             "category": "plastering"
           }
@@ -7508,17 +7880,17 @@
       },
       {
         "category": "flooring",
-        "total_cost": 182941.88,
-        "percentage": 8.417669370306417,
+        "total_cost": 103045.78,
+        "percentage": 6.514123594016601,
         "line_items": [
           {
             "element_id": "floor_room_000",
             "element_description": "Flooring \u2014 LIVING ROOM",
             "material": "Vitrified tiles 600\u00d7600",
-            "quantity": 53.46,
+            "quantity": 29.99,
             "unit": "sqm",
             "unit_cost": 950.0,
-            "total_cost": 50787.0,
+            "total_cost": 28490.5,
             "room_id": "room_000",
             "category": "flooring"
           },
@@ -7526,10 +7898,10 @@
             "element_id": "floor_room_001",
             "element_description": "Flooring \u2014 BEDROOM 1",
             "material": "Vitrified tiles 600\u00d7600",
-            "quantity": 49.9,
+            "quantity": 29.99,
             "unit": "sqm",
             "unit_cost": 950.0,
-            "total_cost": 47405.0,
+            "total_cost": 28490.5,
             "room_id": "room_001",
             "category": "flooring"
           },
@@ -7537,10 +7909,10 @@
             "element_id": "floor_room_002",
             "element_description": "Flooring \u2014 BEDROOM 2",
             "material": "Vitrified tiles 600\u00d7600",
-            "quantity": 37.69,
+            "quantity": 14.52,
             "unit": "sqm",
             "unit_cost": 950.0,
-            "total_cost": 35805.5,
+            "total_cost": 13794.0,
             "room_id": "room_002",
             "category": "flooring"
           },
@@ -7548,10 +7920,10 @@
             "element_id": "floor_room_003",
             "element_description": "Flooring \u2014 KITCHEN",
             "material": "Ceramic tiles",
-            "quantity": 15.99,
+            "quantity": 7.16,
             "unit": "sqm",
             "unit_cost": 650.0,
-            "total_cost": 10393.5,
+            "total_cost": 4654.0,
             "room_id": "room_003",
             "category": "flooring"
           },
@@ -7559,10 +7931,10 @@
             "element_id": "floor_room_004",
             "element_description": "Flooring \u2014 BATH",
             "material": "Anti-skid ceramic tiles",
-            "quantity": 14.14,
+            "quantity": 6.59,
             "unit": "sqm",
             "unit_cost": 800.0,
-            "total_cost": 11312.0,
+            "total_cost": 5272.0,
             "room_id": "room_004",
             "category": "flooring"
           },
@@ -7570,21 +7942,32 @@
             "element_id": "floor_room_005",
             "element_description": "Flooring \u2014 ENTRY",
             "material": "Vitrified tiles 600\u00d7600",
-            "quantity": 2.0,
+            "quantity": 2.17,
             "unit": "sqm",
             "unit_cost": 950.0,
-            "total_cost": 1900.0,
+            "total_cost": 2061.5,
             "room_id": "room_005",
+            "category": "flooring"
+          },
+          {
+            "element_id": "floor_room_006",
+            "element_description": "Flooring \u2014 HALLWAY",
+            "material": "Vitrified tiles 600\u00d7600",
+            "quantity": 8.92,
+            "unit": "sqm",
+            "unit_cost": 950.0,
+            "total_cost": 8474.0,
+            "room_id": "room_006",
             "category": "flooring"
           },
           {
             "element_id": "wall_tile_room_004",
             "element_description": "Wall tiles \u2014 BATH (up to ceiling)",
             "material": "Ceramic wall tiles",
-            "quantity": 31.67,
+            "quantity": 14.76,
             "unit": "sqm",
             "unit_cost": 800.0,
-            "total_cost": 25338.88,
+            "total_cost": 11809.279999999999,
             "room_id": "room_004",
             "category": "flooring"
           }
@@ -7592,17 +7975,17 @@
       },
       {
         "category": "painting",
-        "total_cost": 122629.24799999999,
-        "percentage": 5.642515889709395,
+        "total_cost": 86583.168,
+        "percentage": 5.4734260589177275,
         "line_items": [
           {
             "element_id": "painting_interior",
             "element_description": "Interior painting (primer + putty + 2 coat emulsion)",
             "material": "Asian Paints / Berger premium",
-            "quantity": 454.18,
+            "quantity": 320.68,
             "unit": "sqm",
             "unit_cost": 200.0,
-            "total_cost": 90836.48,
+            "total_cost": 64135.68,
             "room_id": null,
             "category": "painting"
           },
@@ -7610,10 +7993,10 @@
             "element_id": "painting_exterior",
             "element_description": "Exterior weather-proof painting (2 coats)",
             "material": "Apex / Ultima exterior paint",
-            "quantity": 113.55,
+            "quantity": 80.17,
             "unit": "sqm",
             "unit_cost": 280.0,
-            "total_cost": 31792.767999999996,
+            "total_cost": 22447.488,
             "room_id": null,
             "category": "painting"
           }
@@ -7621,17 +8004,17 @@
       },
       {
         "category": "electrical",
-        "total_cost": 84600.0,
-        "percentage": 3.8926834507654724,
+        "total_cost": 102200.0,
+        "percentage": 6.460656916843141,
         "line_items": [
           {
             "element_id": "electrical_wiring",
-            "element_description": "Electrical wiring & points (33 points)",
+            "element_description": "Electrical wiring & points (41 points)",
             "material": "Copper wire + modular switches",
-            "quantity": 33.0,
+            "quantity": 41.0,
             "unit": "points",
             "unit_cost": 2200.0,
-            "total_cost": 72600.0,
+            "total_cost": 90200.0,
             "room_id": null,
             "category": "electrical"
           },
@@ -7651,7 +8034,7 @@
       {
         "category": "plumbing",
         "total_cost": 71500.0,
-        "percentage": 3.2899156823845304,
+        "percentage": 4.5199312089460335,
         "line_items": [
           {
             "element_id": "plumbing_water",
@@ -7701,8 +8084,8 @@
       },
       {
         "category": "doors_windows",
-        "total_cost": 120000.0,
-        "percentage": 5.521536809596415,
+        "total_cost": 130000.0,
+        "percentage": 8.218056743538241,
         "line_items": [
           {
             "element_id": "main_door",
@@ -7717,12 +8100,12 @@
           },
           {
             "element_id": "internal_doors",
-            "element_description": "Internal flush doors (4 nos, 7\u00d73 ft)",
+            "element_description": "Internal flush doors (5 nos, 7\u00d73 ft)",
             "material": "Flush door + frame",
-            "quantity": 4.0,
+            "quantity": 5.0,
             "unit": "unit",
             "unit_cost": 10000.0,
-            "total_cost": 40000.0,
+            "total_cost": 50000.0,
             "room_id": null,
             "category": "doors_windows"
           },
@@ -7752,17 +8135,17 @@
       },
       {
         "category": "finishing",
-        "total_cost": 37326.0,
-        "percentage": 1.7174740246249647,
+        "total_cost": 21186.0,
+        "percentage": 1.3392903859123169,
         "line_items": [
           {
             "element_id": "waterproofing",
             "element_description": "Terrace & bathroom waterproofing",
             "material": "Polymer based coating",
-            "quantity": 186.63,
+            "quantity": 105.93,
             "unit": "sqm",
             "unit_cost": 200.0,
-            "total_cost": 37326.0,
+            "total_cost": 21186.0,
             "room_id": null,
             "category": "finishing"
           }
@@ -7770,7 +8153,7 @@
       },
       {
         "category": "overhead",
-        "total_cost": 160985.77615999998,
+        "total_cost": 117176.48015999999,
         "percentage": 7.4074074074074066,
         "line_items": [
           {
@@ -7779,28 +8162,28 @@
             "material": "\u2014",
             "quantity": 1.0,
             "unit": "lump",
-            "unit_cost": 160985.77615999998,
-            "total_cost": 160985.77615999998,
+            "unit_cost": 117176.48015999999,
+            "total_cost": 117176.48015999999,
             "room_id": null,
             "category": "overhead"
           }
         ]
       }
     ],
-    "grand_total": 2173307.97816,
-    "budget_total": 2970691.776,
-    "premium_total": 5570047.08,
-    "savings_vs_premium": 3396739.10184,
-    "cost_per_sqm": 12599.61724250681,
-    "total_area_sqm": 172.49,
+    "grand_total": 1581882.48216,
+    "budget_total": 1710873.216,
+    "premium_total": 3207887.28,
+    "savings_vs_premium": 1626004.79784,
+    "cost_per_sqm": 15923.92271149587,
+    "total_area_sqm": 99.34,
     "currency": "INR"
   },
   "report": {
-    "project_summary": "This rectangular floor plan contains 6 rooms with a total area of 172.5 square meters. The structural analysis identified 3 load-bearing walls and 0 partition walls.\n\nThe overall structural integrity score is 43% with 3 critical issues and 0 warnings requiring attention. The maximum span of 9.2m requires intermediate support.\n\nThe estimated construction cost is \u20b92,173,308 (\u20b912,600/sqm), representing a potential savings of \u20b93,396,739 compared to premium material options.",
+    "project_summary": "This rectangular floor plan contains 7 rooms with a total area of 99.3 square meters. The structural analysis identified 4 load-bearing walls and 0 partition walls.\n\nThe overall structural integrity score is 57% with 0 critical issues and 5 warnings requiring attention. The maximum span of 5.9m requires intermediate support.\n\nThe estimated construction cost is \u20b91,581,882 (\u20b915,924/sqm), representing a potential savings of \u20b91,626,005 compared to premium material options.",
     "element_explanations": [
       {
         "element_id": "wall_012",
-        "element_description": "Exterior structural spine wall (18.2m \u00d7 0.33m)",
+        "element_description": "Exterior structural spine wall (12.9m \u00d7 0.23m)",
         "recommendation_text": "Steel Frame (250.0 MPa compressive strength, \u20b94000.0/sqm) is recommended for this partition. Chosen over AAC Block (Autoclaved) (4.0 MPa) for better structural performance.",
         "tradeoff_summary": "Score: 0.42. Key factors: Exterior wall - weather exposure, Part of continuous load path.",
         "structural_notes": null,
@@ -7812,7 +8195,7 @@
       },
       {
         "element_id": "wall_001",
-        "element_description": "Exterior structural spine wall (7.3m \u00d7 0.33m)",
+        "element_description": "Exterior structural spine wall (5.1m \u00d7 0.23m)",
         "recommendation_text": "Precast Concrete Panel (Residential) (25.0 MPa compressive strength, \u20b91700.0/sqm) is recommended for this partition. Chosen over AAC Block (Autoclaved) (4.0 MPa) for better structural performance.",
         "tradeoff_summary": "Score: 0.63. Key factors: Exterior wall - weather exposure, Part of continuous load path.",
         "structural_notes": null,
@@ -7824,28 +8207,28 @@
       },
       {
         "element_id": "wall_040",
-        "element_description": "Exterior structural spine wall (6.8m \u00d7 0.33m)",
-        "recommendation_text": "Precast Concrete Panel (Residential) (25.0 MPa compressive strength, \u20b91700.0/sqm) is recommended for this partition. Chosen over AAC Block (Autoclaved) (4.0 MPa) for better structural performance.",
-        "tradeoff_summary": "Score: 0.63. Key factors: Exterior wall - weather exposure, Part of continuous load path.",
+        "element_description": "Exterior structural spine wall (4.8m \u00d7 0.23m)",
+        "recommendation_text": "Porotherm Clay Block (10.0 MPa compressive strength, \u20b9800.0/sqm) is recommended for this partition. Chosen over AAC Block (Autoclaved) (4.0 MPa) for better structural performance.",
+        "tradeoff_summary": "Score: 0.67. Key factors: Exterior wall - weather exposure, Part of continuous load path.",
         "structural_notes": null,
         "measurements_cited": [
-          "Material strength: 25.0 MPa",
-          "Cost: \u20b91700.0/sqm"
+          "Material strength: 10.0 MPa",
+          "Cost: \u20b9800.0/sqm"
         ],
-        "confidence": 0.62625
+        "confidence": 0.6685000000000001
       }
     ],
     "structural_warnings": [
       {
         "id": "warn_span_room_000",
-        "severity": "critical",
+        "severity": "warning",
         "element_id": "room_000",
         "warning_type": "excessive_span",
-        "description": "LIVING ROOM has a span of 9.2m which may require intermediate support",
-        "recommendation": "Steel beam or RCC beam required for 9.2m span",
+        "description": "LIVING ROOM has a span of 5.9m which may require intermediate support",
+        "recommendation": "Consider beam support for 5.9m span",
         "position": {
-          "x": 108.5,
-          "y": 114.5
+          "x": 135.0,
+          "y": 154.0
         },
         "affected_rooms": [
           "room_000"
@@ -7854,14 +8237,14 @@
       },
       {
         "id": "warn_span_room_001",
-        "severity": "critical",
+        "severity": "warning",
         "element_id": "room_001",
         "warning_type": "excessive_span",
-        "description": "BEDROOM 1 has a span of 8.6m which may require intermediate support",
-        "recommendation": "Steel beam or RCC beam required for 8.6m span",
+        "description": "BEDROOM 1 has a span of 5.9m which may require intermediate support",
+        "recommendation": "Consider beam support for 5.9m span",
         "position": {
-          "x": 290.0,
-          "y": 114.5
+          "x": 293.0,
+          "y": 154.0
         },
         "affected_rooms": [
           "room_001"
@@ -7870,18 +8253,74 @@
       },
       {
         "id": "warn_span_room_002",
-        "severity": "critical",
+        "severity": "warning",
         "element_id": "room_002",
         "warning_type": "excessive_span",
-        "description": "BEDROOM 2 has a span of 9.2m which may require intermediate support",
-        "recommendation": "Steel beam or RCC beam required for 9.2m span",
+        "description": "BEDROOM 2 has a span of 5.9m which may require intermediate support",
+        "recommendation": "Consider beam support for 5.9m span",
         "position": {
-          "x": 108.5,
-          "y": 227.0
+          "x": 135.0,
+          "y": 258.5
         },
         "affected_rooms": [
           "room_002"
         ],
+        "code_reference": null
+      },
+      {
+        "id": "warn_ext_wall_004",
+        "severity": "info",
+        "element_id": "wall_004",
+        "warning_type": "insufficient_thickness",
+        "description": "Exterior wall wall_004 has thickness 0.20m (recommended: 0.2m)",
+        "recommendation": "Consider increasing thickness for better insulation and weather resistance",
+        "position": {
+          "x": 37.0,
+          "y": 143.5
+        },
+        "affected_rooms": [],
+        "code_reference": null
+      },
+      {
+        "id": "warn_ext_wall_017",
+        "severity": "info",
+        "element_id": "wall_017",
+        "warning_type": "insufficient_thickness",
+        "description": "Exterior wall wall_017 has thickness 0.20m (recommended: 0.2m)",
+        "recommendation": "Consider increasing thickness for better insulation and weather resistance",
+        "position": {
+          "x": 204.25,
+          "y": 140.25
+        },
+        "affected_rooms": [],
+        "code_reference": null
+      },
+      {
+        "id": "warn_path_wall_031",
+        "severity": "warning",
+        "element_id": "wall_031",
+        "warning_type": "load_path_break",
+        "description": "Load-bearing wall wall_031 may not have continuous load path to foundation",
+        "recommendation": "Verify wall is supported below or add foundation support",
+        "position": {
+          "x": 254.0,
+          "y": 92.375
+        },
+        "affected_rooms": [],
+        "code_reference": null
+      },
+      {
+        "id": "warn_path_wall_050",
+        "severity": "warning",
+        "element_id": "wall_050",
+        "warning_type": "load_path_break",
+        "description": "Load-bearing wall wall_050 may not have continuous load path to foundation",
+        "recommendation": "Verify wall is supported below or add foundation support",
+        "position": {
+          "x": 223.0,
+          "y": 192.33333333333334
+        },
+        "affected_rooms": [],
         "code_reference": null
       }
     ],
@@ -7891,10 +8330,10 @@
           "element_id": "foundation_excavation",
           "element_description": "Foundation excavation (1.2m deep)",
           "material": "Earth work",
-          "quantity": 80.39,
+          "quantity": 56.76,
           "unit": "cum",
           "unit_cost": 350.0,
-          "total_cost": 28135.29599999999,
+          "total_cost": 19864.655999999995,
           "room_id": null,
           "category": "foundation"
         },
@@ -7902,10 +8341,10 @@
           "element_id": "foundation_pcc",
           "element_description": "PCC 1:4:8 in foundation",
           "material": "M10 Concrete",
-          "quantity": 8.37,
+          "quantity": 5.91,
           "unit": "cum",
           "unit_cost": 5500.0,
-          "total_cost": 46054.79999999999,
+          "total_cost": 32516.549999999992,
           "room_id": null,
           "category": "foundation"
         },
@@ -7913,10 +8352,10 @@
           "element_id": "foundation_rcc",
           "element_description": "RCC footing & plinth beam",
           "material": "M25 Concrete + Fe500",
-          "quantity": 33.49,
+          "quantity": 23.65,
           "unit": "cum",
           "unit_cost": 9000.0,
-          "total_cost": 301449.5999999999,
+          "total_cost": 212835.59999999995,
           "room_id": null,
           "category": "foundation"
         },
@@ -7924,10 +8363,10 @@
           "element_id": "rcc_slab",
           "element_description": "RCC roof slab (125mm thick)",
           "material": "M25 Concrete + Fe500",
-          "quantity": 21.56,
+          "quantity": 12.42,
           "unit": "cum",
           "unit_cost": 9000.0,
-          "total_cost": 194051.25,
+          "total_cost": 111757.5,
           "room_id": null,
           "category": "rcc_structure"
         },
@@ -7935,21 +8374,21 @@
           "element_id": "slab_steel",
           "element_description": "Reinforcement steel in slab",
           "material": "Fe500 TMT",
-          "quantity": 1724.9,
+          "quantity": 993.4,
           "unit": "kg",
           "unit_cost": 72.0,
-          "total_cost": 124192.8,
+          "total_cost": 71524.8,
           "room_id": null,
           "category": "rcc_structure"
         },
         {
           "element_id": "rcc_beams",
-          "element_description": "RCC beams (6 spans)",
+          "element_description": "RCC beams (7 spans)",
           "material": "M25 Concrete + Fe500",
-          "quantity": 1.2,
+          "quantity": 1.4,
           "unit": "cum",
           "unit_cost": 9500.0,
-          "total_cost": 11400.000000000002,
+          "total_cost": 13300.000000000002,
           "room_id": null,
           "category": "rcc_structure"
         },
@@ -7979,10 +8418,10 @@
           "element_id": "masonry_exterior",
           "element_description": "Exterior brick wall 230mm (CM 1:4)",
           "material": "First class bricks",
-          "quantity": 59.92,
+          "quantity": 42.3,
           "unit": "cum",
           "unit_cost": 7500.0,
-          "total_cost": 449383.1999999999,
+          "total_cost": 317282.69999999995,
           "room_id": null,
           "category": "masonry"
         },
@@ -7990,10 +8429,10 @@
           "element_id": "masonry_interior",
           "element_description": "Interior brick wall 115mm (CM 1:4)",
           "material": "First class bricks",
-          "quantity": 23.35,
+          "quantity": 16.49,
           "unit": "sqm",
           "unit_cost": 700.0,
-          "total_cost": 16346.400000000005,
+          "total_cost": 11544.400000000001,
           "room_id": null,
           "category": "masonry"
         },
@@ -8001,10 +8440,10 @@
           "element_id": "plaster_internal",
           "element_description": "Internal cement plaster 12mm (1:4)",
           "material": "Cement mortar",
-          "quantity": 454.18,
+          "quantity": 320.68,
           "unit": "sqm",
           "unit_cost": 350.0,
-          "total_cost": 158963.84,
+          "total_cost": 112237.44,
           "room_id": null,
           "category": "plastering"
         },
@@ -8012,10 +8451,10 @@
           "element_id": "plaster_external",
           "element_description": "External cement plaster 20mm (1:4)",
           "material": "Cement mortar",
-          "quantity": 113.55,
+          "quantity": 80.17,
           "unit": "sqm",
           "unit_cost": 480.0,
-          "total_cost": 54501.888,
+          "total_cost": 38481.408,
           "room_id": null,
           "category": "plastering"
         },
@@ -8023,10 +8462,10 @@
           "element_id": "floor_room_000",
           "element_description": "Flooring \u2014 LIVING ROOM",
           "material": "Vitrified tiles 600\u00d7600",
-          "quantity": 53.46,
+          "quantity": 29.99,
           "unit": "sqm",
           "unit_cost": 950.0,
-          "total_cost": 50787.0,
+          "total_cost": 28490.5,
           "room_id": "room_000",
           "category": "flooring"
         },
@@ -8034,10 +8473,10 @@
           "element_id": "floor_room_001",
           "element_description": "Flooring \u2014 BEDROOM 1",
           "material": "Vitrified tiles 600\u00d7600",
-          "quantity": 49.9,
+          "quantity": 29.99,
           "unit": "sqm",
           "unit_cost": 950.0,
-          "total_cost": 47405.0,
+          "total_cost": 28490.5,
           "room_id": "room_001",
           "category": "flooring"
         },
@@ -8045,10 +8484,10 @@
           "element_id": "floor_room_002",
           "element_description": "Flooring \u2014 BEDROOM 2",
           "material": "Vitrified tiles 600\u00d7600",
-          "quantity": 37.69,
+          "quantity": 14.52,
           "unit": "sqm",
           "unit_cost": 950.0,
-          "total_cost": 35805.5,
+          "total_cost": 13794.0,
           "room_id": "room_002",
           "category": "flooring"
         },
@@ -8056,10 +8495,10 @@
           "element_id": "floor_room_003",
           "element_description": "Flooring \u2014 KITCHEN",
           "material": "Ceramic tiles",
-          "quantity": 15.99,
+          "quantity": 7.16,
           "unit": "sqm",
           "unit_cost": 650.0,
-          "total_cost": 10393.5,
+          "total_cost": 4654.0,
           "room_id": "room_003",
           "category": "flooring"
         },
@@ -8067,10 +8506,10 @@
           "element_id": "floor_room_004",
           "element_description": "Flooring \u2014 BATH",
           "material": "Anti-skid ceramic tiles",
-          "quantity": 14.14,
+          "quantity": 6.59,
           "unit": "sqm",
           "unit_cost": 800.0,
-          "total_cost": 11312.0,
+          "total_cost": 5272.0,
           "room_id": "room_004",
           "category": "flooring"
         },
@@ -8078,21 +8517,32 @@
           "element_id": "floor_room_005",
           "element_description": "Flooring \u2014 ENTRY",
           "material": "Vitrified tiles 600\u00d7600",
-          "quantity": 2.0,
+          "quantity": 2.17,
           "unit": "sqm",
           "unit_cost": 950.0,
-          "total_cost": 1900.0,
+          "total_cost": 2061.5,
           "room_id": "room_005",
+          "category": "flooring"
+        },
+        {
+          "element_id": "floor_room_006",
+          "element_description": "Flooring \u2014 HALLWAY",
+          "material": "Vitrified tiles 600\u00d7600",
+          "quantity": 8.92,
+          "unit": "sqm",
+          "unit_cost": 950.0,
+          "total_cost": 8474.0,
+          "room_id": "room_006",
           "category": "flooring"
         },
         {
           "element_id": "wall_tile_room_004",
           "element_description": "Wall tiles \u2014 BATH (up to ceiling)",
           "material": "Ceramic wall tiles",
-          "quantity": 31.67,
+          "quantity": 14.76,
           "unit": "sqm",
           "unit_cost": 800.0,
-          "total_cost": 25338.88,
+          "total_cost": 11809.279999999999,
           "room_id": "room_004",
           "category": "flooring"
         },
@@ -8100,10 +8550,10 @@
           "element_id": "painting_interior",
           "element_description": "Interior painting (primer + putty + 2 coat emulsion)",
           "material": "Asian Paints / Berger premium",
-          "quantity": 454.18,
+          "quantity": 320.68,
           "unit": "sqm",
           "unit_cost": 200.0,
-          "total_cost": 90836.48,
+          "total_cost": 64135.68,
           "room_id": null,
           "category": "painting"
         },
@@ -8111,21 +8561,21 @@
           "element_id": "painting_exterior",
           "element_description": "Exterior weather-proof painting (2 coats)",
           "material": "Apex / Ultima exterior paint",
-          "quantity": 113.55,
+          "quantity": 80.17,
           "unit": "sqm",
           "unit_cost": 280.0,
-          "total_cost": 31792.767999999996,
+          "total_cost": 22447.488,
           "room_id": null,
           "category": "painting"
         },
         {
           "element_id": "electrical_wiring",
-          "element_description": "Electrical wiring & points (33 points)",
+          "element_description": "Electrical wiring & points (41 points)",
           "material": "Copper wire + modular switches",
-          "quantity": 33.0,
+          "quantity": 41.0,
           "unit": "points",
           "unit_cost": 2200.0,
-          "total_cost": 72600.0,
+          "total_cost": 90200.0,
           "room_id": null,
           "category": "electrical"
         },
@@ -8197,12 +8647,12 @@
         },
         {
           "element_id": "internal_doors",
-          "element_description": "Internal flush doors (4 nos, 7\u00d73 ft)",
+          "element_description": "Internal flush doors (5 nos, 7\u00d73 ft)",
           "material": "Flush door + frame",
-          "quantity": 4.0,
+          "quantity": 5.0,
           "unit": "unit",
           "unit_cost": 10000.0,
-          "total_cost": 40000.0,
+          "total_cost": 50000.0,
           "room_id": null,
           "category": "doors_windows"
         },
@@ -8232,10 +8682,10 @@
           "element_id": "waterproofing",
           "element_description": "Terrace & bathroom waterproofing",
           "material": "Polymer based coating",
-          "quantity": 186.63,
+          "quantity": 105.93,
           "unit": "sqm",
           "unit_cost": 200.0,
-          "total_cost": 37326.0,
+          "total_cost": 21186.0,
           "room_id": null,
           "category": "finishing"
         },
@@ -8245,8 +8695,8 @@
           "material": "\u2014",
           "quantity": 1.0,
           "unit": "lump",
-          "unit_cost": 160985.77615999998,
-          "total_cost": 160985.77615999998,
+          "unit_cost": 117176.48015999999,
+          "total_cost": 117176.48015999999,
           "room_id": null,
           "category": "overhead"
         }
@@ -8256,83 +8706,94 @@
           "room_id": "room_000",
           "room_label": "LIVING ROOM",
           "room_type": "living",
-          "area_m2": 53.46,
+          "area_m2": 29.99,
           "wall_cost": 0.0,
-          "flooring_cost": 50787.0,
+          "flooring_cost": 28490.5,
           "opening_cost": 0.0,
-          "total_cost": 50787.0,
+          "total_cost": 28490.5,
           "cost_per_sqm": 950.0
         },
         {
           "room_id": "room_001",
           "room_label": "BEDROOM 1",
           "room_type": "bedroom",
-          "area_m2": 49.9,
+          "area_m2": 29.99,
           "wall_cost": 0.0,
-          "flooring_cost": 47405.0,
+          "flooring_cost": 28490.5,
           "opening_cost": 0.0,
-          "total_cost": 47405.0,
+          "total_cost": 28490.5,
           "cost_per_sqm": 950.0
         },
         {
           "room_id": "room_002",
           "room_label": "BEDROOM 2",
           "room_type": "bedroom",
-          "area_m2": 37.69,
+          "area_m2": 14.52,
           "wall_cost": 0.0,
-          "flooring_cost": 35805.5,
+          "flooring_cost": 13794.0,
           "opening_cost": 0.0,
-          "total_cost": 35805.5,
-          "cost_per_sqm": 950.0000000000001
+          "total_cost": 13794.0,
+          "cost_per_sqm": 950.0
         },
         {
           "room_id": "room_003",
           "room_label": "KITCHEN",
           "room_type": "kitchen",
-          "area_m2": 15.99,
+          "area_m2": 7.16,
           "wall_cost": 0.0,
-          "flooring_cost": 10393.5,
+          "flooring_cost": 4654.0,
           "opening_cost": 0.0,
-          "total_cost": 10393.5,
+          "total_cost": 4654.0,
           "cost_per_sqm": 650.0
         },
         {
           "room_id": "room_004",
           "room_label": "BATH",
           "room_type": "bathroom",
-          "area_m2": 14.14,
+          "area_m2": 6.59,
           "wall_cost": 0.0,
-          "flooring_cost": 36650.880000000005,
+          "flooring_cost": 17081.28,
           "opening_cost": 0.0,
-          "total_cost": 36650.880000000005,
+          "total_cost": 17081.28,
           "cost_per_sqm": 2592.0
         },
         {
           "room_id": "room_005",
           "room_label": "ENTRY",
           "room_type": "foyer",
-          "area_m2": 1.31,
+          "area_m2": 2.17,
           "wall_cost": 0.0,
-          "flooring_cost": 1900.0,
+          "flooring_cost": 2061.5,
           "opening_cost": 0.0,
-          "total_cost": 1900.0,
-          "cost_per_sqm": 1450.381679389313
+          "total_cost": 2061.5,
+          "cost_per_sqm": 950.0
+        },
+        {
+          "room_id": "room_006",
+          "room_label": "HALLWAY",
+          "room_type": "hall",
+          "area_m2": 8.92,
+          "wall_cost": 0.0,
+          "flooring_cost": 8474.0,
+          "opening_cost": 0.0,
+          "total_cost": 8474.0,
+          "cost_per_sqm": 950.0
         }
       ],
       "category_totals": [
         {
           "category": "foundation",
-          "total_cost": 375639.6959999999,
-          "percentage": 17.284236738413387,
+          "total_cost": 265216.8059999999,
+          "percentage": 16.765898161907486,
           "line_items": [
             {
               "element_id": "foundation_excavation",
               "element_description": "Foundation excavation (1.2m deep)",
               "material": "Earth work",
-              "quantity": 80.39,
+              "quantity": 56.76,
               "unit": "cum",
               "unit_cost": 350.0,
-              "total_cost": 28135.29599999999,
+              "total_cost": 19864.655999999995,
               "room_id": null,
               "category": "foundation"
             },
@@ -8340,10 +8801,10 @@
               "element_id": "foundation_pcc",
               "element_description": "PCC 1:4:8 in foundation",
               "material": "M10 Concrete",
-              "quantity": 8.37,
+              "quantity": 5.91,
               "unit": "cum",
               "unit_cost": 5500.0,
-              "total_cost": 46054.79999999999,
+              "total_cost": 32516.549999999992,
               "room_id": null,
               "category": "foundation"
             },
@@ -8351,10 +8812,10 @@
               "element_id": "foundation_rcc",
               "element_description": "RCC footing & plinth beam",
               "material": "M25 Concrete + Fe500",
-              "quantity": 33.49,
+              "quantity": 23.65,
               "unit": "cum",
               "unit_cost": 9000.0,
-              "total_cost": 301449.5999999999,
+              "total_cost": 212835.59999999995,
               "room_id": null,
               "category": "foundation"
             }
@@ -8362,17 +8823,17 @@
         },
         {
           "category": "rcc_structure",
-          "total_cost": 338490.05,
-          "percentage": 15.574877256309422,
+          "total_cost": 205428.3,
+          "percentage": 12.986318662527669,
           "line_items": [
             {
               "element_id": "rcc_slab",
               "element_description": "RCC roof slab (125mm thick)",
               "material": "M25 Concrete + Fe500",
-              "quantity": 21.56,
+              "quantity": 12.42,
               "unit": "cum",
               "unit_cost": 9000.0,
-              "total_cost": 194051.25,
+              "total_cost": 111757.5,
               "room_id": null,
               "category": "rcc_structure"
             },
@@ -8380,21 +8841,21 @@
               "element_id": "slab_steel",
               "element_description": "Reinforcement steel in slab",
               "material": "Fe500 TMT",
-              "quantity": 1724.9,
+              "quantity": 993.4,
               "unit": "kg",
               "unit_cost": 72.0,
-              "total_cost": 124192.8,
+              "total_cost": 71524.8,
               "room_id": null,
               "category": "rcc_structure"
             },
             {
               "element_id": "rcc_beams",
-              "element_description": "RCC beams (6 spans)",
+              "element_description": "RCC beams (7 spans)",
               "material": "M25 Concrete + Fe500",
-              "quantity": 1.2,
+              "quantity": 1.4,
               "unit": "cum",
               "unit_cost": 9500.0,
-              "total_cost": 11400.000000000002,
+              "total_cost": 13300.000000000002,
               "room_id": null,
               "category": "rcc_structure"
             },
@@ -8424,17 +8885,17 @@
         },
         {
           "category": "masonry",
-          "total_cost": 465729.5999999999,
-          "percentage": 21.42952608098845,
+          "total_cost": 328827.1,
+          "percentage": 20.78707512779326,
           "line_items": [
             {
               "element_id": "masonry_exterior",
               "element_description": "Exterior brick wall 230mm (CM 1:4)",
               "material": "First class bricks",
-              "quantity": 59.92,
+              "quantity": 42.3,
               "unit": "cum",
               "unit_cost": 7500.0,
-              "total_cost": 449383.1999999999,
+              "total_cost": 317282.69999999995,
               "room_id": null,
               "category": "masonry"
             },
@@ -8442,10 +8903,10 @@
               "element_id": "masonry_interior",
               "element_description": "Interior brick wall 115mm (CM 1:4)",
               "material": "First class bricks",
-              "quantity": 23.35,
+              "quantity": 16.49,
               "unit": "sqm",
               "unit_cost": 700.0,
-              "total_cost": 16346.400000000005,
+              "total_cost": 11544.400000000001,
               "room_id": null,
               "category": "masonry"
             }
@@ -8453,17 +8914,17 @@
         },
         {
           "category": "plastering",
-          "total_cost": 213465.728,
-          "percentage": 9.822157289494134,
+          "total_cost": 150718.848,
+          "percentage": 9.527815732190117,
           "line_items": [
             {
               "element_id": "plaster_internal",
               "element_description": "Internal cement plaster 12mm (1:4)",
               "material": "Cement mortar",
-              "quantity": 454.18,
+              "quantity": 320.68,
               "unit": "sqm",
               "unit_cost": 350.0,
-              "total_cost": 158963.84,
+              "total_cost": 112237.44,
               "room_id": null,
               "category": "plastering"
             },
@@ -8471,10 +8932,10 @@
               "element_id": "plaster_external",
               "element_description": "External cement plaster 20mm (1:4)",
               "material": "Cement mortar",
-              "quantity": 113.55,
+              "quantity": 80.17,
               "unit": "sqm",
               "unit_cost": 480.0,
-              "total_cost": 54501.888,
+              "total_cost": 38481.408,
               "room_id": null,
               "category": "plastering"
             }
@@ -8482,17 +8943,17 @@
         },
         {
           "category": "flooring",
-          "total_cost": 182941.88,
-          "percentage": 8.417669370306417,
+          "total_cost": 103045.78,
+          "percentage": 6.514123594016601,
           "line_items": [
             {
               "element_id": "floor_room_000",
               "element_description": "Flooring \u2014 LIVING ROOM",
               "material": "Vitrified tiles 600\u00d7600",
-              "quantity": 53.46,
+              "quantity": 29.99,
               "unit": "sqm",
               "unit_cost": 950.0,
-              "total_cost": 50787.0,
+              "total_cost": 28490.5,
               "room_id": "room_000",
               "category": "flooring"
             },
@@ -8500,10 +8961,10 @@
               "element_id": "floor_room_001",
               "element_description": "Flooring \u2014 BEDROOM 1",
               "material": "Vitrified tiles 600\u00d7600",
-              "quantity": 49.9,
+              "quantity": 29.99,
               "unit": "sqm",
               "unit_cost": 950.0,
-              "total_cost": 47405.0,
+              "total_cost": 28490.5,
               "room_id": "room_001",
               "category": "flooring"
             },
@@ -8511,10 +8972,10 @@
               "element_id": "floor_room_002",
               "element_description": "Flooring \u2014 BEDROOM 2",
               "material": "Vitrified tiles 600\u00d7600",
-              "quantity": 37.69,
+              "quantity": 14.52,
               "unit": "sqm",
               "unit_cost": 950.0,
-              "total_cost": 35805.5,
+              "total_cost": 13794.0,
               "room_id": "room_002",
               "category": "flooring"
             },
@@ -8522,10 +8983,10 @@
               "element_id": "floor_room_003",
               "element_description": "Flooring \u2014 KITCHEN",
               "material": "Ceramic tiles",
-              "quantity": 15.99,
+              "quantity": 7.16,
               "unit": "sqm",
               "unit_cost": 650.0,
-              "total_cost": 10393.5,
+              "total_cost": 4654.0,
               "room_id": "room_003",
               "category": "flooring"
             },
@@ -8533,10 +8994,10 @@
               "element_id": "floor_room_004",
               "element_description": "Flooring \u2014 BATH",
               "material": "Anti-skid ceramic tiles",
-              "quantity": 14.14,
+              "quantity": 6.59,
               "unit": "sqm",
               "unit_cost": 800.0,
-              "total_cost": 11312.0,
+              "total_cost": 5272.0,
               "room_id": "room_004",
               "category": "flooring"
             },
@@ -8544,21 +9005,32 @@
               "element_id": "floor_room_005",
               "element_description": "Flooring \u2014 ENTRY",
               "material": "Vitrified tiles 600\u00d7600",
-              "quantity": 2.0,
+              "quantity": 2.17,
               "unit": "sqm",
               "unit_cost": 950.0,
-              "total_cost": 1900.0,
+              "total_cost": 2061.5,
               "room_id": "room_005",
+              "category": "flooring"
+            },
+            {
+              "element_id": "floor_room_006",
+              "element_description": "Flooring \u2014 HALLWAY",
+              "material": "Vitrified tiles 600\u00d7600",
+              "quantity": 8.92,
+              "unit": "sqm",
+              "unit_cost": 950.0,
+              "total_cost": 8474.0,
+              "room_id": "room_006",
               "category": "flooring"
             },
             {
               "element_id": "wall_tile_room_004",
               "element_description": "Wall tiles \u2014 BATH (up to ceiling)",
               "material": "Ceramic wall tiles",
-              "quantity": 31.67,
+              "quantity": 14.76,
               "unit": "sqm",
               "unit_cost": 800.0,
-              "total_cost": 25338.88,
+              "total_cost": 11809.279999999999,
               "room_id": "room_004",
               "category": "flooring"
             }
@@ -8566,17 +9038,17 @@
         },
         {
           "category": "painting",
-          "total_cost": 122629.24799999999,
-          "percentage": 5.642515889709395,
+          "total_cost": 86583.168,
+          "percentage": 5.4734260589177275,
           "line_items": [
             {
               "element_id": "painting_interior",
               "element_description": "Interior painting (primer + putty + 2 coat emulsion)",
               "material": "Asian Paints / Berger premium",
-              "quantity": 454.18,
+              "quantity": 320.68,
               "unit": "sqm",
               "unit_cost": 200.0,
-              "total_cost": 90836.48,
+              "total_cost": 64135.68,
               "room_id": null,
               "category": "painting"
             },
@@ -8584,10 +9056,10 @@
               "element_id": "painting_exterior",
               "element_description": "Exterior weather-proof painting (2 coats)",
               "material": "Apex / Ultima exterior paint",
-              "quantity": 113.55,
+              "quantity": 80.17,
               "unit": "sqm",
               "unit_cost": 280.0,
-              "total_cost": 31792.767999999996,
+              "total_cost": 22447.488,
               "room_id": null,
               "category": "painting"
             }
@@ -8595,17 +9067,17 @@
         },
         {
           "category": "electrical",
-          "total_cost": 84600.0,
-          "percentage": 3.8926834507654724,
+          "total_cost": 102200.0,
+          "percentage": 6.460656916843141,
           "line_items": [
             {
               "element_id": "electrical_wiring",
-              "element_description": "Electrical wiring & points (33 points)",
+              "element_description": "Electrical wiring & points (41 points)",
               "material": "Copper wire + modular switches",
-              "quantity": 33.0,
+              "quantity": 41.0,
               "unit": "points",
               "unit_cost": 2200.0,
-              "total_cost": 72600.0,
+              "total_cost": 90200.0,
               "room_id": null,
               "category": "electrical"
             },
@@ -8625,7 +9097,7 @@
         {
           "category": "plumbing",
           "total_cost": 71500.0,
-          "percentage": 3.2899156823845304,
+          "percentage": 4.5199312089460335,
           "line_items": [
             {
               "element_id": "plumbing_water",
@@ -8675,8 +9147,8 @@
         },
         {
           "category": "doors_windows",
-          "total_cost": 120000.0,
-          "percentage": 5.521536809596415,
+          "total_cost": 130000.0,
+          "percentage": 8.218056743538241,
           "line_items": [
             {
               "element_id": "main_door",
@@ -8691,12 +9163,12 @@
             },
             {
               "element_id": "internal_doors",
-              "element_description": "Internal flush doors (4 nos, 7\u00d73 ft)",
+              "element_description": "Internal flush doors (5 nos, 7\u00d73 ft)",
               "material": "Flush door + frame",
-              "quantity": 4.0,
+              "quantity": 5.0,
               "unit": "unit",
               "unit_cost": 10000.0,
-              "total_cost": 40000.0,
+              "total_cost": 50000.0,
               "room_id": null,
               "category": "doors_windows"
             },
@@ -8726,17 +9198,17 @@
         },
         {
           "category": "finishing",
-          "total_cost": 37326.0,
-          "percentage": 1.7174740246249647,
+          "total_cost": 21186.0,
+          "percentage": 1.3392903859123169,
           "line_items": [
             {
               "element_id": "waterproofing",
               "element_description": "Terrace & bathroom waterproofing",
               "material": "Polymer based coating",
-              "quantity": 186.63,
+              "quantity": 105.93,
               "unit": "sqm",
               "unit_cost": 200.0,
-              "total_cost": 37326.0,
+              "total_cost": 21186.0,
               "room_id": null,
               "category": "finishing"
             }
@@ -8744,7 +9216,7 @@
         },
         {
           "category": "overhead",
-          "total_cost": 160985.77615999998,
+          "total_cost": 117176.48015999999,
           "percentage": 7.4074074074074066,
           "line_items": [
             {
@@ -8753,20 +9225,20 @@
               "material": "\u2014",
               "quantity": 1.0,
               "unit": "lump",
-              "unit_cost": 160985.77615999998,
-              "total_cost": 160985.77615999998,
+              "unit_cost": 117176.48015999999,
+              "total_cost": 117176.48015999999,
               "room_id": null,
               "category": "overhead"
             }
           ]
         }
       ],
-      "grand_total": 2173307.97816,
-      "budget_total": 2970691.776,
-      "premium_total": 5570047.08,
-      "savings_vs_premium": 3396739.10184,
-      "cost_per_sqm": 12599.61724250681,
-      "total_area_sqm": 172.49,
+      "grand_total": 1581882.48216,
+      "budget_total": 1710873.216,
+      "premium_total": 3207887.28,
+      "savings_vs_premium": 1626004.79784,
+      "cost_per_sqm": 15923.92271149587,
+      "total_area_sqm": 99.34,
       "currency": "INR"
     },
     "optimization_suggestions": [
@@ -8778,9 +9250,18 @@
         "potential_savings": 45000.0,
         "effort_level": "medium",
         "priority": 2
+      },
+      {
+        "id": "proportion_room_005",
+        "category": "layout",
+        "title": "ENTRY too narrow",
+        "description": "ENTRY has aspect ratio of 3.5:1. Consider making it more square for better usability.",
+        "potential_savings": null,
+        "effort_level": "medium",
+        "priority": 3
       }
     ],
-    "overall_assessment": "Based on the comprehensive analysis, this floor plan demonstrates acceptable structural integrity. Professional structural engineering review is recommended before construction.\n\nKey recommendations: Address the 0 identified warnings, consider the 1 optimization suggestions for potential cost savings, and ensure proper material specifications during construction.",
+    "overall_assessment": "Based on the comprehensive analysis, this floor plan demonstrates acceptable structural integrity. The design appears suitable for residential construction with the recommended materials.\n\nKey recommendations: Address the 5 identified warnings, consider the 2 optimization suggestions for potential cost savings, and ensure proper material specifications during construction.",
     "methodology_notes": "Analysis performed using VLM+CV fusion parsing, graph-based geometry analysis, and multi-criteria material optimization. (Mock mode - LLM explanations disabled)",
     "limitations": [
       "Scale detection accuracy depends on image quality",
@@ -8788,24 +9269,25 @@
       "Regional material cost variations not accounted for",
       "Professional structural review recommended for construction"
     ],
-    "generated_at": "2026-03-30T11:52:37.257350",
+    "generated_at": "2026-03-30T12:03:50.640840",
     "version": "1.0-mock"
   },
-  "analyzed_at": "2026-03-30T11:52:37.258727",
+  "analyzed_at": "2026-03-30T12:03:50.642746",
   "summary": {
-    "room_count": 6,
+    "room_count": 7,
     "room_names": [
       "LIVING ROOM",
       "BEDROOM 1",
       "BEDROOM 2",
       "KITCHEN",
       "BATH",
-      "ENTRY"
+      "ENTRY",
+      "HALLWAY"
     ],
     "wall_count": 13,
-    "structural_score": 0.4347826086956522,
-    "total_cost": 2173307.97816,
-    "beam_count": 5,
-    "column_count": 10
+    "structural_score": 0.5747126436781609,
+    "total_cost": 1581882.48216,
+    "beam_count": 7,
+    "column_count": 14
   }
 }

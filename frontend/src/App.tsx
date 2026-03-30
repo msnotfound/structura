@@ -27,17 +27,21 @@ import {
   LogOut,
   Trash2,
   ChevronRight,
+  Compass,
+  Hammer,
 } from 'lucide-react'
 
-type TabId = 'walls' | 'structural' | 'materials' | 'cost' | 'report' | 'dimensions'
+type TabId = 'walls' | 'structural' | 'materials' | 'cost' | 'report' | 'dimensions' | 'vastu' | 'foundation'
 
 const TABS: { id: TabId; label: string; icon: React.ReactNode }[] = [
-  { id: 'walls',       label: 'Walls',     icon: <Layers className="w-4 h-4" /> },
-  { id: 'structural',  label: 'Structure', icon: <AlertTriangle className="w-4 h-4" /> },
-  { id: 'materials',   label: 'Materials', icon: <Package className="w-4 h-4" /> },
-  { id: 'cost',        label: 'Cost',      icon: <Calculator className="w-4 h-4" /> },
-  { id: 'report',      label: 'Report',    icon: <FileText className="w-4 h-4" /> },
-  { id: 'dimensions',  label: 'Dims',      icon: <Ruler className="w-4 h-4" /> },
+  { id: 'walls',       label: 'Walls',      icon: <Layers className="w-4 h-4" /> },
+  { id: 'structural',  label: 'Structure',  icon: <AlertTriangle className="w-4 h-4" /> },
+  { id: 'materials',   label: 'Materials',  icon: <Package className="w-4 h-4" /> },
+  { id: 'cost',        label: 'Cost',       icon: <Calculator className="w-4 h-4" /> },
+  { id: 'vastu',       label: 'Vastu',      icon: <Compass className="w-4 h-4" /> },
+  { id: 'foundation',  label: 'Foundation', icon: <Hammer className="w-4 h-4" /> },
+  { id: 'report',      label: 'Report',     icon: <FileText className="w-4 h-4" /> },
+  { id: 'dimensions',  label: 'Dims',       icon: <Ruler className="w-4 h-4" /> },
 ]
 
 const STAGE_LABELS: Record<string, string> = {
@@ -537,6 +541,15 @@ function App() {
                 {activeTab === 'report' && (
                   <ReportPanel report={result.report} />
                 )}
+                {activeTab === 'vastu' && (
+                  <VastuPanel data={(result as any).vastu_result} />
+                )}
+                {activeTab === 'foundation' && (
+                  <FoundationPanel
+                    foundation={(result as any).foundation_result}
+                    plinth={(result as any).plinth_result}
+                  />
+                )}
                 {activeTab === 'dimensions' && (
                   <DimensionsPanel
                     parseResult={result.parse_result}
@@ -582,4 +595,134 @@ function StatCard({ label, value, color }: { label: string; value: string | numb
   )
 }
 
+function VastuPanel({ data }: { data: any }) {
+  if (!data) return <div style={{ padding: 16, color: '#999', fontSize: 13 }}>No Vastu data available</div>
+  const results = data.results ?? []
+  const score = data.overall_score ?? 0
+  const scoreColor = score >= 70 ? '#22c55e' : score >= 40 ? '#f59e0b' : '#ef4444'
+
+  return (
+    <div style={{ padding: '12px' }}>
+      {/* Score header */}
+      <div style={{
+        background: `${scoreColor}10`, border: `1px solid ${scoreColor}30`,
+        borderRadius: 12, padding: '16px', textAlign: 'center', marginBottom: 12,
+      }}>
+        <p style={{ fontSize: '2rem', fontWeight: 800, color: scoreColor }}>{score}%</p>
+        <p style={{ fontSize: 11, color: '#ccc', marginTop: 2 }}>Vastu Shastra Compliance</p>
+        <p style={{ fontSize: 10, color: '#888', marginTop: 4 }}>{data.summary}</p>
+      </div>
+
+      {/* Rules */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {results.map((r: any, i: number) => (
+          <div key={i} style={{
+            background: r.compliant ? 'rgba(34,197,94,0.06)' : 'rgba(239,68,68,0.06)',
+            border: `1px solid ${r.compliant ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}`,
+            borderRadius: 10, padding: '10px 12px',
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ fontWeight: 700, fontSize: 12, color: '#e0e0e0' }}>{r.room_label}</span>
+              <span style={{
+                fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 6,
+                background: r.compliant ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)',
+                color: r.compliant ? '#22c55e' : '#ef4444',
+              }}>{r.status}</span>
+            </div>
+            <p style={{ fontSize: 10, color: '#aaa', marginTop: 4 }}>{r.description}</p>
+            <p style={{ fontSize: 10, color: '#78a0dc', marginTop: 3 }}>
+              Direction: <strong>{r.actual_direction}</strong> (Ideal: {r.ideal_direction})
+            </p>
+            <p style={{ fontSize: 10, color: r.compliant ? '#6ee7a0' : '#fca5a5', marginTop: 2 }}>{r.recommendation}</p>
+          </div>
+        ))}
+      </div>
+      {results.length === 0 && (
+        <p style={{ color: '#888', fontSize: 12, textAlign: 'center', padding: 20 }}>
+          No rooms with known Vastu rules detected
+        </p>
+      )}
+    </div>
+  )
+}
+
+function FoundationPanel({ foundation, plinth }: { foundation: any; plinth: any }) {
+  if (!foundation && !plinth) return <div style={{ padding: 16, color: '#999', fontSize: 13 }}>No foundation data</div>
+
+  return (
+    <div style={{ padding: '12px' }}>
+      {/* Plinth Area */}
+      {plinth && (
+        <div style={{
+          background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.2)',
+          borderRadius: 12, padding: 14, marginBottom: 12,
+        }}>
+          <h3 style={{ fontSize: 13, fontWeight: 700, color: '#60a5fa', marginBottom: 10 }}>📐 Plinth Area Calculation</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 11 }}>
+            {[
+              ['Built-up Area', `${plinth.built_up_area?.sqm?.toFixed(1)} m² (${plinth.built_up_area?.sqft?.toFixed(0)} sqft)`],
+              ['Carpet Area', `${plinth.carpet_area?.sqm?.toFixed(1)} m² (${plinth.carpet_area?.sqft?.toFixed(0)} sqft)`],
+              ['Super Built-up', `${plinth.super_built_up_sqm?.toFixed(1)} m² (${plinth.super_built_up_sqft?.toFixed(0)} sqft)`],
+              ['Wall Area', `${plinth.wall_area_sqm?.toFixed(1)} m²`],
+              ['FAR', plinth.far?.toFixed(2)],
+              ['Ground Coverage', `${plinth.ground_coverage_percent?.toFixed(1)}%`],
+            ].map(([label, val]) => (
+              <div key={String(label)}>
+                <span style={{ color: '#888' }}>{label}: </span>
+                <span style={{ color: '#e0e0e0', fontWeight: 600 }}>{val}</span>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 10, marginTop: 8, color: plinth.far <= 2.5 ? '#22c55e' : '#ef4444', fontWeight: 600 }}>
+            {plinth.far_status}
+          </p>
+        </div>
+      )}
+
+      {/* Foundation Design */}
+      {foundation && (
+        <>
+          <div style={{
+            background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.2)',
+            borderRadius: 12, padding: 14, marginBottom: 12,
+          }}>
+            <h3 style={{ fontSize: 13, fontWeight: 700, color: '#f59e0b', marginBottom: 8 }}>🏗 Foundation Design (IS 1904)</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, fontSize: 11 }}>
+              <div><span style={{ color: '#888' }}>Soil Type: </span><span style={{ color: '#e0e0e0' }}>{foundation.soil_type}</span></div>
+              <div><span style={{ color: '#888' }}>SBC: </span><span style={{ color: '#e0e0e0' }}>{foundation.net_sbc_kpa} kPa</span></div>
+              <div><span style={{ color: '#888' }}>Depth: </span><span style={{ color: '#e0e0e0' }}>{foundation.foundation_depth_m}m</span></div>
+              <div><span style={{ color: '#888' }}>Grade: </span><span style={{ color: '#e0e0e0' }}>{foundation.concrete_grade} + {foundation.steel_grade}</span></div>
+              <div><span style={{ color: '#888' }}>Concrete: </span><span style={{ color: '#e0e0e0' }}>{foundation.total_concrete_cum} m³</span></div>
+              <div><span style={{ color: '#888' }}>Steel: </span><span style={{ color: '#e0e0e0' }}>{foundation.total_steel_kg} kg</span></div>
+            </div>
+          </div>
+
+          <h4 style={{ fontSize: 12, fontWeight: 700, color: '#ccc', marginBottom: 8 }}>
+            Footings ({foundation.safe_count}/{foundation.total_footings} safe)
+          </h4>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {(foundation.footings ?? []).slice(0, 10).map((f: any) => (
+              <div key={f.footing_id} style={{
+                background: f.safe ? 'rgba(34,197,94,0.05)' : 'rgba(239,68,68,0.05)',
+                border: `1px solid ${f.safe ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)'}`,
+                borderRadius: 8, padding: '8px 10px', fontSize: 10,
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ fontWeight: 700, color: '#e0e0e0' }}>{f.footing_id}</span>
+                  <span style={{ color: f.safe ? '#22c55e' : '#ef4444', fontWeight: 700 }}>{f.status}</span>
+                </div>
+                <div style={{ color: '#aaa', marginTop: 3 }}>
+                  {f.size} · Depth: {f.depth_m}m · Load: {f.axial_load_kn} kN · Pressure: {f.gross_pressure_kpa} kPa
+                </div>
+                <div style={{ color: '#78a0dc', marginTop: 2 }}>{f.rebar}</div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+
 export default App
+
