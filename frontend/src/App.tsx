@@ -461,7 +461,7 @@ function App() {
               </div>
 
               {/* Quick Stats */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '10px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6,1fr)', gap: '8px', marginTop: '12px' }}>
                 <StatCard label="Walls" value={result.geometry_result?.classified_walls?.length ?? 0} color="#3b82f6" />
                 <StatCard label="Rooms" value={result.geometry_result?.rooms?.length ?? (result.geometry_result as any)?.room_polygons?.length ?? 0} color="#22d3ee" />
                 <StatCard
@@ -475,11 +475,93 @@ function App() {
                   color="#3b82f6"
                 />
                 <StatCard
+                  label="Vastu"
+                  value={`${(result as any).vastu_result?.overall_score ?? '—'}%`}
+                  color="#22c55e"
+                />
+                <StatCard
                   label="Est. Cost"
                   value={`₹${((result.cost_result?.grand_total ?? 0) / 100000).toFixed(1)}L`}
                   color="#f59e0b"
                 />
               </div>
+              {/* Download Report */}
+              <button
+                onClick={() => {
+                  const r = result as any
+                  const lines = [
+                    '═══════════════════════════════════════════════════',
+                    '  STRUCTURA — Structural Intelligence Report',
+                    '  Generated: ' + new Date().toLocaleString(),
+                    '═══════════════════════════════════════════════════',
+                    '',
+                    '▸ ROOMS DETECTED: ' + (r.parse_result?.rooms?.length ?? 0),
+                    ...(r.parse_result?.rooms ?? []).map((rm: any) =>
+                      `  • ${rm.label} — ${rm.area_m2?.toFixed(1)} m² (${rm.room_type})`
+                    ),
+                    '',
+                    '▸ STRUCTURAL ANALYSIS',
+                    `  Walls: ${r.geometry_result?.classified_walls?.length ?? 0}`,
+                    `  Beams: ${r.scene_graph?.beams?.length ?? 0}`,
+                    `  Columns: ${r.scene_graph?.columns?.length ?? 0}`,
+                    `  Integrity Score: ${((r.structural_result?.overall_structural_score ?? 0) * 100).toFixed(0)}%`,
+                    '',
+                    '▸ VASTU COMPLIANCE: ' + (r.vastu_result?.overall_score ?? 'N/A') + '%',
+                    ...(r.vastu_result?.results ?? []).map((v: any) =>
+                      `  ${v.status} ${v.room_label} — ${v.actual_direction} (Ideal: ${v.ideal_direction})`
+                    ),
+                    '',
+                    '▸ FOUNDATION DESIGN (IS 1904)',
+                    `  Soil: ${r.foundation_result?.soil_type ?? 'N/A'}`,
+                    `  Footings: ${r.foundation_result?.total_footings ?? 0} (${r.foundation_result?.safe_count ?? 0} safe)`,
+                    `  Concrete: ${r.foundation_result?.total_concrete_cum ?? 0} m³`,
+                    `  Steel: ${r.foundation_result?.total_steel_kg ?? 0} kg`,
+                    '',
+                    '▸ PLINTH AREA',
+                    `  Built-up: ${r.plinth_result?.built_up_area?.sqm?.toFixed(1) ?? 'N/A'} m² (${r.plinth_result?.built_up_area?.sqft?.toFixed(0) ?? 'N/A'} sqft)`,
+                    `  Carpet: ${r.plinth_result?.carpet_area?.sqm?.toFixed(1) ?? 'N/A'} m²`,
+                    `  FAR: ${r.plinth_result?.far?.toFixed(2) ?? 'N/A'}`,
+                    '',
+                    '▸ COST ESTIMATION',
+                    `  Grand Total: ₹${(r.cost_result?.grand_total ?? 0).toLocaleString()}`,
+                    `  Per sqm: ₹${(r.cost_result?.cost_per_sqm ?? 0).toLocaleString()}`,
+                    `  Budget: ₹${(r.cost_result?.budget_total ?? 0).toLocaleString()}`,
+                    `  Premium: ₹${(r.cost_result?.premium_total ?? 0).toLocaleString()}`,
+                    '',
+                    ...(r.cost_result?.category_totals ?? []).map((c: any) =>
+                      `  ${c.category}: ₹${c.total_cost?.toLocaleString()} (${c.percentage?.toFixed(1)}%)`
+                    ),
+                    '',
+                    '▸ AI REPORT',
+                    r.report?.full_report ?? r.report?.executive_summary ?? 'N/A',
+                    '',
+                    '═══════════════════════════════════════════════════',
+                    '  IS 456:2000 | IS 1904:1986 | Vastu Shastra',
+                    '  Team TylerDurden · IIIT Naya Raipur',
+                    '═══════════════════════════════════════════════════',
+                  ]
+                  const blob = new Blob([lines.join('\n')], { type: 'text/plain' })
+                  const url = URL.createObjectURL(blob)
+                  const a = document.createElement('a')
+                  a.href = url
+                  a.download = `structura-report-${new Date().toISOString().slice(0,10)}.txt`
+                  a.click()
+                  URL.revokeObjectURL(url)
+                }}
+                style={{
+                  marginTop: '8px', width: '100%', padding: '10px',
+                  background: 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(34,211,238,0.1))',
+                  border: '1px solid rgba(59,130,246,0.3)', borderRadius: '10px',
+                  color: '#60a5fa', fontWeight: 700, fontSize: '0.8rem',
+                  cursor: 'pointer', display: 'flex', alignItems: 'center',
+                  justifyContent: 'center', gap: '8px',
+                  transition: 'all 0.2s',
+                }}
+                onMouseOver={e => (e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.25), rgba(34,211,238,0.15))')}
+                onMouseOut={e => (e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(34,211,238,0.1))')}
+              >
+                <FileText className="w-4 h-4" /> Download Full Report
+              </button>
             </div>
 
             {/* Right — Tabs Panel */}
